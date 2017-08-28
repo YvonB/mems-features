@@ -1,0 +1,53 @@
+# application: php-gds-demo
+# version: alpha2
+runtime: php55
+api_version: 1
+# threadsafe: true
+
+handlers:
+
+# Application static resources
+
+- url: /css
+  static_dir: public/css
+
+- url: /js
+  static_dir: public/js
+
+- url: /img
+  static_dir: public/img
+
+- url: /fonts
+  static_dir: public/fonts
+
+- url: /medias
+  static_dir: public/medias
+
+# Form handler
+- url: /insert
+  script: public/insert.php
+
+- url: /login
+  script: public/login.php
+
+# Protected handler
+- url: /home
+  script: private/home.php
+
+# Default handler
+- url: /
+  script: public/main.php
+
+# LogOut handler
+- url: /logout
+  script: public/logout.php
+
+# CO2, CO and NH3 handler
+- url: /home/co2
+  script: private/co2.php
+
+- url: /home/co
+  script: private/co.php
+
+- url: /home/nh3
+  script: private/nh3.php

@@ -1,0 +1,87 @@
+runtime: php55
+api_version: 1
+
+handlers:
+
+# Accueil global
+- url: /
+  script: index.php
+
+#===================================== /zone_1/Premier Zone =============================
+#Accueil Premier zone
+- url: /zone_1
+  script: zone_1/public/main.php
+
+#Les ressources statiques
+- url: /css
+  static_dir: zone_1/public/css
+- url: /js
+  static_dir: zone_1/public/js
+- url: /img
+  static_dir: zone_1/public/img
+- url: /fonts
+  static_dir: zone_1/public/fonts
+- url: /medias
+  static_dir: zone_1/public/medias
+
+#Insertion
+- url: /zone_1/insert
+  script: zone_1/public/insert.php
+
+#Connexion
+- url: /zone_1/login
+  script: zone_1/public/login.php
+
+#home Page
+- url: /zone_1/home
+  script: zone_1/private/home.php
+
+#Deconnexion 
+- url: /zone_1/logout
+  script: zone_1/public/logout.php
+
+# les pages CO2, CO and NH3 
+- url: /zone_1/home/co2
+  script: zone_1/private/co2.php
+- url: /zone_1/home/co
+  script: zone_1/private/co.php
+- url: /zone_1/home/nh3
+  script: zone_1/private/nh3.php
+ # ======================================== end Premier Zone ===================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Second Zone
+- url: /zone_2
+  script: /zone_2/public/main.php
+
+
+
