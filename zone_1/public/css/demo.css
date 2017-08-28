@@ -54,6 +54,46 @@ body
 
 }
 
+.date_time
+{
+  height: 55px;
+  background-color: #fafafa;
+}
+
+.date_time h3:hover
+{
+  color:#212121;
+}
+.date p:hover
+{
+  color:#212121;
+}
+
+#afficherheure
+{
+  color:#757575;
+  font-size: 40px;
+  padding-top: 20px;
+  float: right;
+  padding-right: 22px;
+  cursor: pointer;
+}
+.date_time h3
+{
+  display: inline;
+  margin-top: 10px !important;
+  position: absolute;
+  padding-left: 15px;
+  color: #757575;
+  cursor: pointer;
+}
+.date p
+{
+  padding-left: 890px;
+  color:#757575;
+  padding-top: 20px;
+}
+
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
    
     background-color: #959595;
@@ -65,7 +105,10 @@ body
 }
 
 #contenu
-{padding-top: 50px;}
+{padding-top: 100px;}
+
+#contenu_main
+{padding-top: 0px;}
 
 #gds-logo 
 {

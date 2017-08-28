@@ -129,7 +129,7 @@ require_once('../vendor/autoload.php');
     
     <!-- =================================== end banière ===================================== -->
         
-        <div class="container" id="contenu">  <!-- ========= Pour tout le contenu de notre site======== -->
+        <div class="container" id="contenu_main">  <!-- ========= Pour tout le contenu de notre site======== -->
 
             <!-- =========================== Le logo et le titre ============================ -->
             <div class="row">

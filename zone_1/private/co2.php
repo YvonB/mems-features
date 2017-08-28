@@ -251,6 +251,25 @@
     <!--************************ Début Navigation ************************************-->
     <header>
         <nav class="navbar navbar-default navbar-fixed-top colornav">
+
+        <div class="date_time">
+          <h3>Follow your healf closely</h3>
+
+          <div id="afficherheure">
+          </div> 
+
+          <div class="date">
+            <p>We are on <?php echo  date('l jS \of F'); ?></p>
+          </div> <!-- end date -->
+
+           <!-- affiche heure -->
+          <script type="text/javascript">
+              setInterval(function(){
+                document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
+                      }, 1000);
+          </script><!-- end heure -->
+        </div>
+
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -279,7 +298,7 @@
                 <li><a href="/zone_1/home/co">Monoxyde de Carbone</a></li>
                 <li><a href="/zone_1/home/nh3">Amoniaque</a></li>
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 0px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="/zone_1/login"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
                   </ul>

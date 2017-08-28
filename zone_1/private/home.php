@@ -48,13 +48,33 @@
      <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <!-- end head -->
 
 <body>
     <!--************************ Début Navigation ************************************-->
     <header>
+
         <nav class="navbar navbar-default navbar-fixed-top colornav">
+        <div class="date_time">
+          <h3>Follow your healf closely</h3>
+
+          <div id="afficherheure">
+          </div> 
+
+          <div class="date">
+            <p>We are on <?php echo  date('l jS \of F'); ?></p>
+          </div> <!-- end date -->
+
+           <!-- affiche heure -->
+          <script type="text/javascript">
+              setInterval(function(){
+                document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
+                      }, 1000);
+          </script><!-- end heure -->
+        </div>
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -184,7 +204,7 @@
                         if($pource_co2 == null AND $pource_co == null AND $pource_nh3 == null)
                         {
                             ?>
-                            <p>En attente des <strong>données</strong> provenant des <strong>capteurs</strong>...</p>
+                            <p style="text-align: center;">En attente des <strong>données</strong>...</p>
                             <div class="loader_compteurs"></div>
                             <?php
                         }
