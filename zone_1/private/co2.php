@@ -419,120 +419,61 @@
 
 <!-- ********************************* Footer ***************************************** -->
     <footer>
-    <!--footer-->
-        <footer class="footer1">
-        <div class="container">
-
-            <div class="row"><!-- row --> 
-
-                <!-- 1er colonne          -->
-                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-                    <ul class="list-unstyled clear-margins"><!-- widgets -->              
-                        <li class="widget-container widget_nav_menu"><!-- widgets list -->     
-                            <h1 class="title-widget">Useful links</h1>           
-                                <ul>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> Success Stories</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                </ul>    
-                        </li> <!-- end list  -->              
-                    </ul>
-                </div><!-- widgets column left end -->
-            
-                <!-- 2ème colonne -->
-                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-                    <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                            <h1 class="title-widget">Useful links</h1>
-                                <ul>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a  href="#" target="_blank"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                </ul>
-                        </li>   
-                    </ul>     
-                </div><!-- widgets column left end -->
-                 
-                <!-- 3éme colonne -->
-                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
-                    <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        <li class="widget-container widget_nav_menu"><!-- widgets list -->
-                            <h1 class="title-widget">Useful links</h1>            
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> LOREM IPSUM</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  LOREM IPSUM</a></li>
-                                </ul>
-                        </li>              
-                    </ul>    
-                </div><!-- widgets column left end -->
-
-                <!-- 4éme colonne  -->
-                <div class="col-lg-3 col-md-3"><!-- widgets column center -->
-                    <ul class="list-unstyled clear-margins"><!-- widgets -->
-                        <li class="widget-container widget_recent_news"><!-- widgets list -->
-                            <h1 class="title-widget">Contact Detail </h1>
-                                <!-- 1° Contact Rapide -->
-                                <div class="footerp"> 
-                                    <h2 class="title-median">Web Developper Junior</h2>
-                                    <p><b>Email id:</b> <a href="mailto:yvonbenahita@gmail.com">yvonbenahita@gmail.com</a></p>
-                                    <p><b>Helpline Numbers </b>
-                                    <b style="color:#ffc106;">(8AM to 10PM):</b>  +91-8130890090, +91-8130190010  </p>
-                                    <p><b>Corp Office / Postal Address</b></p>
-                                    <p><b>Phone Numbers : </b>7042827160, </p>
-                                    <p> 011-27568832, 9868387223</p>
-                                </div>
-                                <!-- 2° Réseaux Sociaux -->
-                                <div class="social-icons">
-                                    <ul class="nomargin">
-                                        <a href="https://www.facebook.com/"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
-                                        <a href="https://twitter.com/"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
-                                        <a href="https://plus.google.com/"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
-                                        <a href="mailto:yvonbenahita@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                     </div>
-            </div> <!--end row -->
-        </div>
-    </footer>
-    
-    <!-- copyright -->
-    <div class="footer-bottom">
+    <div class="footer" id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="copyright">
-                         © 2017, YY, All rights reserved
-                    </div>
+                <div class="col-md-4">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
                 </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="design">
-                        <a href="https://github.com/YvonB">Yvon B | Web Developer</a>
-                    </div>
+                <div class="col-md-4">
+                    <h3> Important Links </h3>
+                    <ul>
+                        <li> <a href="#"> Admission </a> </li>
+                        <li> <a href="#"> Academic </a> </li>
+                        <li> <a href="#"> Career </a> </li>
+                        <li> <a href="#"> Administration </a> </li>
+                        <li> <a href="#"> Notice </a> </li>
+                        <li> <a href="#"> Tender </a> </li>
+                        <li> <a href="login.php"> Teacher Login </a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3> Location </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
                 </div>
             </div>
+            <!--/.row-->
         </div>
-    </div> <!-- end copyright -->
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
 
-</footer> 
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © 2017, JKKNIU. All rights reserved.</p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
 <!--*********************************** Fin footer **************************************** -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
