@@ -47,7 +47,7 @@ handlers:
   script: zone_1/private/co.php
 - url: /zone_1/home/nh3
   script: zone_1/private/nh3.php
- # ======================================== end Premier Zone ===================================
+ # ===================================== end Premier Zone ===================================
 
 
 
