@@ -5,6 +5,7 @@
 	<title>SDP - IoT Choix de zones</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/demo.css">
+	<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
 	<style type="text/css">
 		
 		body
@@ -34,18 +35,21 @@
 		        background-color: grey;
      	 	}
 
-     	.titre_zones a
+     	.titre_zones
      	{
-     		color: #039be5 !important;
      		text-align: center;
      	}
 
-     	.titre_zones a:hover
+		a
+		{
+			color: #039be5 !important;
+		}
+
+        a:hover
      	{
      		color: #337ab7 !important;
      		text-decoration: none !important;
      	}
-
 
 	</style>
 </head>
@@ -72,7 +76,7 @@
 		    <script async defer
 		    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDYv6GZEKyU1Kj9Sp0hP7RYfChScPuciM8&callback=initMap">
 		    </script>
-		    <h3 class="titre_zones"><a href="/zone_1">Zonne 1</a></h3>
+		    <h3 class="titre_zones"><a href="/zone_1">Zone 1</a></h3>
 	    </div> <!-- fin div de gauche -->
 
 	    <div class="zone_2"> <!-- div de droite -->
@@ -95,7 +99,7 @@
 		    <script async defer
 		    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDYv6GZEKyU1Kj9Sp0hP7RYfChScPuciM8&callback=initMap">
 		    </script> 
-		     <h3 class="titre_zones"><a href="">Zonne 2</a></h3>         
+		     <h3 class="titre_zones"><a href="">Zone 2</a></h3>         
 	    </div> <!-- fin div de droite -->
 	</div> <!-- fin div global -->
 
