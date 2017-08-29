@@ -435,9 +435,12 @@
 </script>
 <!-- ===================================== fin script ================================ -->
 <!-- ============================ Historiques ====================================== -->
-<div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+<div class="col-md-8">
+    <h2>Historics</h2>
+</div>
+<div class="histCo2Tab">
     <table class="table stats caps">
-        <thead>
+        <thead class="titresHistCo2Tab">
             <tr>
                 <td>Il y a 2 jours</td>
                 <td>Hier</td>
@@ -446,11 +449,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr style="background:#e73a3f;color:#e6f0f9; border-radius:6px;"><!--Adjust bg and font colors inline-->
-                <td><input type="date" name="deux_jours"></td>
-                <td><input type="date" name="hier"></td>
-                <td><input type="date" name="aujourdui"></td>
-                <td><input type="date" name="tous"></td>
+            <tr style=""; border-radius:6px;"><!--Adjust bg and font colors inline-->
+                <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
+                <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
+                <td><input type="time" name="aujourduiCo2" placeholder="hh:mm:ss" class="form-control"><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
+                <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
             </tr>
             <!--Spacer-->
             <tr class="spacing">
