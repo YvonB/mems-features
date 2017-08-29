@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/demo.css">
 	<style type="text/css">
-
+		
 		body
 		{
 			padding-top: 100px;
@@ -16,11 +16,15 @@
 			{
 	    		float:left;
 	    		width:45%;
+
+	    		box-shadow: 0 0 10px;
 			}
 		.global .zone_2 
 			{
     			float:right; 
     			width:45%;
+
+    			box-shadow: 0 0 10px;
 			}
 
 		#map 
@@ -30,7 +34,7 @@
 		        background-color: grey;
      	 	}
 
-     	.titre_zones
+     	.titre_zones a
      	{
      		color: #039be5 !important;
      		text-align: center;
@@ -77,7 +81,7 @@
 
 	        <script>
 		      function initMap() {
-		        var uluru = {lat: -25.363, lng: 131.044};
+		        var uluru = {lat: -18.9703576, lng: 47.42391939999993};
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          zoom: 4,
 		          center: uluru
@@ -91,7 +95,7 @@
 		    <script async defer
 		    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDYv6GZEKyU1Kj9Sp0hP7RYfChScPuciM8&callback=initMap">
 		    </script> 
-		     <h3 class="titre_zones">Zonne 2</h3>         
+		     <h3 class="titre_zones"><a href="">Zonne 2</a></h3>         
 	    </div> <!-- fin div de droite -->
 	</div> <!-- fin div global -->
 
