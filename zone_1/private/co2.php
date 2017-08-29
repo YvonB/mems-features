@@ -452,7 +452,7 @@
             <tr style=""; border-radius:6px;"><!--Adjust bg and font colors inline-->
                 <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
                 <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
-                <td><input type="time" name="aujourduiCo2" placeholder="hh:mm:ss" class="form-control"><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
+                <td><input type="time" name="aujourduiCo2" placeholder="hh:mm:ss" class="form-control"><button class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px;">Voir</button></td>
                 <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
             </tr>
             <!--Spacer-->
