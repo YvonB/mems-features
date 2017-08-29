@@ -256,7 +256,7 @@ ok.onclick = function()
           </div> 
 
           <div class="date">
-            <p>We are on <?php echo  date('l jS \of F'); ?></p>
+            <p>We are on <?php echo  date('l jS \of F Y'); ?></p>
           </div> <!-- end date -->
 
            <!-- affiche heure -->

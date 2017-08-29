@@ -233,6 +233,7 @@
     <link rel="stylesheet" href="/css/demo.css">
 
     <link rel="stylesheet" href="/css/slide.css">  <!-- pour l'utilisation de #slider ect -->
+    <link rel="stylesheet" href="/css/historiqueCo2.css">
 
     <meta name="author" content="Yvon Benahita">
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
@@ -259,7 +260,7 @@
           </div> 
 
           <div class="date">
-            <p>We are on <?php echo  date('l jS \of F'); ?></p>
+            <p>We are on <?php echo  date('l jS \of F Y'); ?></p>
           </div> <!-- end date -->
 
            <!-- affiche heure -->
@@ -434,36 +435,33 @@
 </script>
 <!-- ===================================== fin script ================================ -->
 <!-- ============================ Historiques ====================================== -->
-<div class="col-md-8">
-    <h2>Historics</h2>
-    <table class="rwd-table">
-      <tr>
-        <th>Movie Title</th>
-        <th>Genre</th>
-        <th>Year</th>
-        <th>Gross</th>
-      </tr>
-      <tr>
-        <td data-th="Movie Title">Star Wars</td>
-        <td data-th="Genre">Adventure, Sci-fi</td>
-        <td data-th="Year">1977</td>
-        <td data-th="Gross">$460,935,665</td>
-      </tr>
-      <tr>
-        <td data-th="Movie Title">Howard The Duck</td>
-        <td data-th="Genre">"Comedy"</td>
-        <td data-th="Year">1986</td>
-        <td data-th="Gross">$16,295,774</td>
-      </tr>
-      <tr>
-        <td data-th="Movie Title">American Graffiti</td>
-        <td data-th="Genre">Comedy, Drama</td>
-        <td data-th="Year">1973</td>
-        <td data-th="Gross">$115,000,000</td>
-      </tr>
+<div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+    <table class="table stats caps">
+        <thead>
+            <tr>
+                <td>Il y a 2 jours</td>
+                <td>Hier</td>
+                <td>Aujourd'hui</td>
+                <td>Tous</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background:#e73a3f;color:#e6f0f9; border-radius:6px;"><!--Adjust bg and font colors inline-->
+                <td><input type="date" name="deux_jours"></td>
+                <td><input type="date" name="hier"></td>
+                <td><input type="date" name="aujourdui"></td>
+                <td><input type="date" name="tous"></td>
+            </tr>
+            <!--Spacer-->
+            <tr class="spacing">
+                <td colspan="4"></td><!--Colspan should match width of your table-->
+            </tr>
+            <!--End Spacer-->
+        </tbody>
     </table>
 </div>
 <!-- ========================= fin historique ======================================= -->
+
 </div> <!-- fin de container de la page --> 
 
 <!-- ********************************* Footer ***************************************** -->
