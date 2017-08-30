@@ -454,9 +454,10 @@
                     </button></td>
                 <td><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></td>
-                <td>Il y a <form method="POST" action="/zone_1/home/co2/histminco2.php"><input type="time" name="aujourduiMinCo2" class="form-control" placeholder="mm">minute(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
-                    </button></form><br><br>
-                Il y a <form method="POST" action="/zone_1/home/co2/histheureco2.php"><input type="time" name="aujourduiHeurCo2" class="form-control" placeholder="hh"> heure(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                <td>Il y a <form method="POST" action="/zone_1/home/co2/histminco2.php"><input type="time" name="aujourduiMinCo2" class="form-control" placeholder="mm" required>minute(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                    </button>
+                    </form><br><br>
+                Il y a <form method="POST" action="/zone_1/home/co2/histheureco2.php"><input type="time" name="aujourduiHeurCo2" class="form-control" placeholder="hh" required> heure(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></form>
                 </td>
                 <td><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
