@@ -450,10 +450,17 @@
         </thead>
         <tbody>
             <tr style=""; border-radius:6px;"><!--Adjust bg and font colors inline-->
-                <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
-                <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
-                <td><input type="time" name="aujourduiCo2" placeholder="hh:mm:ss" class="form-control"><button class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px;">Voir</button></td>
-                <td><button class="btn btn-primary" id="voirHistCo2Btn">Voir</button></td>
+                <td><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
+                    </button></td>
+                <td><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
+                    </button></td>
+                <td>Il y a <form method="POST" action="/zone_1/home/co2/histMinCo2.php"><input type="time" name="aujourduiMinCo2" class="form-control" placeholder="mm">minutes<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                    </button></form><br><br>
+                Il y a <form method="POST" action="/zone_1/home/co2/histHeurCo2.php"><input type="time" name="aujourduiHeurCo2" class="form-control" placeholder="hh"> heures<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                    </button></form>
+                </td>
+                <td><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
+                    </button></td>
             </tr>
             <!--Spacer-->
             <tr class="spacing">
