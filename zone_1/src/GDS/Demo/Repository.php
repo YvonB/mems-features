@@ -95,7 +95,6 @@ class Repository
             }
     }
 
-
     /**
      * Mettre à jour le cache de Datastore (pour l'affichage brute des 10 dernières valeurs)
      *
