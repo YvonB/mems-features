@@ -100,7 +100,7 @@ require_once('../vendor/autoload.php');
               <!-- Recherche -->
               <form class="navbar-form navbar-left" style="margin-left: 150px;">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search" style="width: 370px;">
+                  <input type="text" class="form-control" placeholder="Search" style="width: 370px; display: none;">
                 </div>
                 <button type="submit" class="btn btn-default" style="display: none;"><b>Chercher</b></button>
               </form>
