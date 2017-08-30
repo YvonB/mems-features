@@ -413,6 +413,8 @@ body
 .my_map
     {
        margin-left: 40px;
+       box-shadow: 0 0 10px; 
+       width: 675px;
     }
 
 p 

@@ -14,6 +14,8 @@
     // Pour notre lib
     require_once('../vendor/autoload.php');
 
+    // pour cacher les notices au niveau des compteurs lorsque les valeures ne sont pas encore dispo
+    ini_set("display_errors",0);error_reporting(0);
     // Chercher les dernières valeurs insérées
     $obj_repo = new \GDS\Demo\Repository();
     $arr_posts = $obj_repo->getRecentPosts();

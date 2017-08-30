@@ -8,12 +8,14 @@ define('MASSE_MOLAIRE_CO', 28);
 define('MASSE_MOLAIRE_NH3', 17);
 define('VOLUME_MOLAIRE', 22.4); // une mole de gaz occupe toujours le même volume dans les CNTP
 
-
 use google\appengine\api\users\User;
 use google\appengine\api\users\UserService;
 
 # Looks for current Google account session
 $user = UserService::getCurrentUser();
+
+// pour cacher les notices au niveau des compteurs lorsque les valeures ne sont pas encore dispo
+ini_set("display_errors",0);error_reporting(0);
 
 // Inclusion pour notre lib
 require_once('../vendor/autoload.php');
@@ -107,7 +109,7 @@ require_once('../vendor/autoload.php');
 
               <ul class="nav navbar-nav navbar-right colortextnav">
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Options</b><span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Options</b><span class="caret" style="margin-left: 8px;"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="/zone_1/home/co2" style="text-transform: lowercase;">Voir l'état de CO2</a></li>
                     <li><a href="/zone_1/home/co" style="text-transform: lowercase;">Voir l'état de CO</a></li>
@@ -300,7 +302,7 @@ require_once('../vendor/autoload.php');
                 </div> <!-- fin col md 4 -->
             </div> <!-- fin row -->
         <!-- ========================================================================== -->
-
+		<hr style="width: 50%; border-top: 1px solid #cacaca;">
         <!-- ============================== Le Map ==================================== -->
             <div>
                 <h2>Where are our sensors?</h2>
@@ -331,9 +333,9 @@ require_once('../vendor/autoload.php');
                                 }
                             </script>
 <!-- ======================= fin actu auto ===================== --> 
-
+<hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
-<div class="brute" id="mg_m3">
+<div class="brute" id="mg_m3" style="height: 500px;">
 <h2>Notifications</h2>
 
 <!-- Calculs -->
@@ -514,8 +516,9 @@ catch(\Exception $obj_ex)
 </div>
 <!-- ========================== fin Tab Dèr=============================== -->
 
+<hr style="width: 50%; border-top: 1px solid #cacaca;">
 
-        <!-- ========================== Espace connexion ============================== -->
+ <!-- ========================== Espace connexion ============================== -->
             <div class="row">
                 <div class="col-md-12">
                     <h2>See more content</h2>
