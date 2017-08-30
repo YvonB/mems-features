@@ -1,0 +1,21 @@
+table{margin:10px 0px; border:none !important;}
+thead{font-weight:700;}
+.table tbody>tr>td, .table tfoot>tr>td {padding: 8px; line-height: 1.428571429; vertical-align: top; border-top:none;}
+.spacing{height:10px; background: transparent; content: none;}
+
+@media (max-width: 632px){
+ 
+    /*Responsive Table*/    
+    thead{display: none;}
+    tr:nth-of-type(odd) {background: #eee;}
+    td, tr {display: block;}
+    
+    /*Column Section Titles*/
+    .stats td:nth-of-type(1):before {content: "Superhero: ";}
+    .stats td:nth-of-type(2):before {content: "Alter Ego: ";}
+    .stats td:nth-of-type(3):before {content: "Sidekick: ";}
+    .stats td:nth-of-type(4):before {content: "Vehicle: ";}
+    
+    .spacing td:before {content:" "!important;}
+    /*Add More based on the number of columns you have*/
+}
