@@ -254,13 +254,13 @@
         <nav class="navbar navbar-default navbar-fixed-top colornav">
 
         <div class="date_time">
-          <h3>Follow your healf closely</h3>
+          <h3 style="display: none;">Follow your healf closely</h3>
 
           <div id="afficherheure">
           </div> 
 
           <div class="date">
-            <p>We are on <?php echo  date('l jS \of F Y'); ?></p>
+            <h3><?php echo  date('l jS \of F Y'); ?></h3>
           </div> <!-- end date -->
 
            <!-- affiche heure -->

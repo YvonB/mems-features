@@ -251,13 +251,13 @@ ok.onclick = function()
     <header>
         <nav class="navbar navbar-default navbar-fixed-top colornav">
         <div class="date_time">
-          <h3>Follow your healf closely</h3>
+          <h3 style="display: none;">Follow your healf closely</h3>
 
           <div id="afficherheure">
           </div> 
 
           <div class="date">
-            <p>We are on <?php echo  date('l jS \of F Y'); ?></p>
+            <h3><?php echo  date('l jS \of F Y'); ?></h3>
           </div> <!-- end date -->
 
            <!-- affiche heure -->
@@ -282,7 +282,7 @@ ok.onclick = function()
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active colortextnav"><a href="" style="color:black !important;"><b>NH3</b><span class="sr-only">(current)</span></a></li>/zone_1
+                <li class="active colortextnav"><a href="" style="color:#fafafa !important;"><b>NH3</b><span class="sr-only">(current)</span></a></li>
               </ul>
               <form class="navbar-form navbar-left" style="margin-left: 150px;">
                 <div class="form-group">
