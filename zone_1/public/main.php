@@ -302,6 +302,7 @@ require_once('../vendor/autoload.php');
                 </div> <!-- fin col md 4 -->
             </div> <!-- fin row -->
         <!-- ========================================================================== -->
+        <br>
 		<hr style="width: 50%; border-top: 1px solid #cacaca;">
         <!-- ============================== Le Map ==================================== -->
             <div>
@@ -333,6 +334,7 @@ require_once('../vendor/autoload.php');
                                 }
                             </script>
 <!-- ======================= fin actu auto ===================== --> 
+<br>
 <hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
 <div class="brute" id="mg_m3" style="height: 500px;">
