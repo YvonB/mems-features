@@ -334,7 +334,7 @@ require_once('../vendor/autoload.php');
                                 }
                             </script>
 <!-- ======================= fin actu auto ===================== --> 
-<br>
+<br><br>
 <hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
 <div class="brute" id="mg_m3" style="height: 500px;">
