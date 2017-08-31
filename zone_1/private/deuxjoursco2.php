@@ -83,7 +83,7 @@ if(empty($arr_posts))
 				                        <div class="panel-body">
 											<div class="loader" style="margin:auto;"></div> 
 											<br>
-											<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est disponnible dans la Base De Données <em>Datastore </em>! </p>
+											<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est insérée dans la Base De Données <em>Datastore </em>! </p>
 										</div> <!-- end panel body -->
 									</div> <!-- end panel default -->
 									<a href="/zone_1/home/co2"><button class="btn btn-default retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
