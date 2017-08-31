@@ -186,7 +186,7 @@ else
 									Retour</button></a>	
 											</div> <!-- col md 8 et results -->
 										</div> <!-- end row -->
-										
+
 							</div> <!-- end container -->
 
 							<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -227,7 +227,8 @@ else
 										float: none !important;
 
 										box-shadow: 0 0 10px;
-										height: 310px;
+										height: 265px;
+
 									}
 
 									.retourBtn
@@ -261,7 +262,7 @@ else
 						echo '<div class="post">';
 					?>
 						<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red; "></i>
-						<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
+						<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé. <br> <br>Le serveur n'a pas encore tourné d'ici il y a 2 jours.</p>
 
 					<?php
 						echo '</div>';
