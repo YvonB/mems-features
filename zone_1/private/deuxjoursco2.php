@@ -262,7 +262,7 @@ else
 						echo '<div class="post">';
 					?>
 						<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red; "></i>
-						<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé. <br> <br>Le serveur n'a pas encore tourné d'ici il y a 2 jours.</p>
+						<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé. <br> <br>Aucune donnée n'est arrivée au serveur d'ici il y a 2 jours.</p>
 
 					<?php
 						echo '</div>';

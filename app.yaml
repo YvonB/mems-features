@@ -49,16 +49,16 @@ handlers:
   script: zone_1/private/nh3.php
 
 # pour les historiques
-- url: /zone_1/home/co2/histminco2
+- url: /zone_1/home/co2/histmin
   script: zone_1/private/histminco2.php
-- url: /zone_1/home/co2/histheureco2
+- url: /zone_1/home/co2/histheure
   script: zone_1/private/histheureco2.php
 
-- url: /zone_1/home/co2/deuxjoursco2
+- url: /zone_1/home/co2/deuxjours
   script: zone_1/private/deuxjoursco2.php
-- url: /zone_1/home/co2/hierco2
+- url: /zone_1/home/co2/hier
   script: zone_1/private/hierco2.php
-- url: /zone_1/home/co2/tousco2
+- url: /zone_1/home/co2/tous
   script: zone_1/private/tousco2.php
  # ===================================== end Premier Zone ===================================
 
