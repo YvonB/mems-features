@@ -124,8 +124,8 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 							                    	// On n'a pas trouvé aucune correspondance
 							                    	echo '<div class="post">';
 							                    	?>
-														<p><i class="fa fa-ban" style="font-size:48px;color:red"></i>
-														<p>Aucune correspondance n'a été trouvée !</p>
+														<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
+														<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
 
 							                    	<?php
 							                    	echo '</div>';
@@ -141,12 +141,12 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 				    echo '<em>Whoops, something went wrong!</em>';
 				}
 				?>
-							</div>
-						</div>
+							</div> <!-- end panel body -->
+						</div> <!-- end panel default -->
 						<a href="/zone_1/home/co2"><button class="btn btn-default retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 						Retour</button></a>	
-					</div>
-				</div>
+					</div> <!-- end col md 8 -->
+				</div> <!-- end row -->
 				</div> <!-- end container -->
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
