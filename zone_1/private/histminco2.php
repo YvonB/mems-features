@@ -146,7 +146,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 				?>
 							</div> <!-- end panel body -->
 						</div> <!-- end panel default -->
-						<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+						<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 						Retour</button></a>	
 					</div> <!-- end col md 8 -->
 				</div> <!-- end row -->
