@@ -370,6 +370,7 @@ body
     font-style: italic;
     margin-top: 3px;
     color: #339;
+    float: right;
 }
 .panel-default
 {

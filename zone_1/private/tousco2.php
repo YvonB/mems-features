@@ -39,7 +39,7 @@
 										box-shadow: 0 0 10px;
 										padding: 1px 25px 45px 25px;
 									}
-
+									
 									.retourBtn
 									{
 										float: right;
@@ -66,7 +66,7 @@
 							                <div class="col-md-8" id="results">
 							                    <h2>Tous les CO2 émis </h2>
 							                    <div class="panel panel-default" style="background-color: #cdf;">
-							                        <div class="panel-body">
+							                        <div class="panel-body";">
 
 <?php
 // Inclusion pour notre lib
@@ -88,7 +88,7 @@ if(empty($arr_posts))
 											<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est insérée dans la Base De Données <em>Datastore </em>! </p>
 										</div> <!-- end panel body -->
 									</div> <!-- end panel default -->
-									<a href="/zone_1/home/co2"><button class="btn btn-default retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+									<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 									Retour</button></a>	
 								</div> <!-- end col md 8  -->
 							</div> <!-- end row -->
@@ -142,7 +142,7 @@ else
 										                echo '<div class="post">';
 										                    if(isset($obj_post->co2) AND !empty($obj_post->co2))
 										                        {
-										                            echo '<div class="gas">CO2 = <strong>', htmlspecialchars($obj_post->co2),'</strong><em> ppm</em>    ', '<br><span class="time">', $str_date_display, '</span></div>';
+										                            echo '<div class="gas">CO2 = <strong>', htmlspecialchars($obj_post->co2),'</strong><em> ppm</em>    ', '<span class="time"> Il y a ', $str_date_display, '</span></div>';
 										                        }
 										                echo '</div>';
 					
@@ -154,7 +154,7 @@ else
 			 </div> <!-- end panel body -->
 												</div> <!-- end panel default -->
 
-									<a href="/zone_1/home/co2"><button class="btn btn-default retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+									<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 									Retour</button></a>	
 								</div> <!-- end col md 8 et results -->
 							</div> <!-- end row -->
