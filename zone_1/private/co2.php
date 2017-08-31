@@ -460,7 +460,7 @@
                 Il y a <form method="POST" action="/zone_1/home/co2/histheureco2"><input type="time" name="aujourduiHeurCo2" class="form-control" placeholder="hh" required> heure(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></form>
                 </td>
-                <td><a href="/zone_1/home/co2/tousco2">co2<button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
+                <td><a href="/zone_1/home/co2/tousco2"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></a></td>
             </tr>
             <!--Spacer-->
