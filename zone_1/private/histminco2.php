@@ -118,20 +118,20 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 							                                }
 
 							                    	echo '</div>';
-							                    	break;
+							              
 							                    }
 							                    else
-							                                {
-							                                	// On n'a pas trouvé aucune correspondance
-							                    				echo '<div class="post">';
-							                    				?>
-																<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
-																<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
+							                        {
+								                        // On n'a pas trouvé aucune correspondance
+								                    	echo '<div class="post">';
+								                    	?>
+														<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
+														<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
 
-							                    				<?php
-							                    				
-							                    				break;
-							                                }
+								                    	<?php
+								                    				
+								                    	break;
+							                     }
 							                }
 							          } // end foreach  
 							} 
