@@ -140,13 +140,13 @@ else
 				    		
 				    <?php
 				    	// On n'a pas trouvé aucune correspondance
-						echo '<div class="post">';
+						// echo '<div class="post">';
 					?>
-						<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red; "></i>
-						<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé. <br> <br>Aucune donnée n'est arrivée au serveur hier.</p>
+						<!-- <p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red; "></i> -->
+						<!-- <p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé. <br> <br>Aucune donnée n'est arrivée au serveur hier.</p> -->
 
 					<?php
-						echo '</div>';
+						// echo '</div>';
 					?>
 						<!-- html -->
 						</div> <!-- end panel body -->

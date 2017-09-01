@@ -17,20 +17,6 @@
 							padding-top: 100px;
 						}
 
-						.loader 
-						{
-						  border: 16px solid #f3f3f3;
-						  border-radius: 50%;
-						  border-top: 16px solid blue;
-						  border-right: 16px solid green;
-						  border-bottom: 16px solid red;
-						  border-left: 16px solid pink;
-						  width: 120px;
-						  height: 120px;
-						  -webkit-animation: spin 2s linear infinite;
-						  animation: spin 2s linear infinite;
-						}
-
 						#results
 						{
 							margin:auto !important;
@@ -63,7 +49,7 @@
 
 				            <div class="row">
 				                <div class="col-md-8" id="results">
-				                    <h2>Quantité de CO2 émis il y a <?php echo $_POST['aujourduiMinCo2'].' min';?></h2>
+				                    <h2>Quantité de CO2 émis il y a <em><?php echo $_POST['aujourduiMinCo2'].' min';?></em></h2>
 				                    <div class="panel panel-primary" style="background-color: #cdf;">
 				                        <div class="panel-body" style="text-align: center;">
 <?php
@@ -89,7 +75,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 				    if(empty($arr_posts))
 				    	{	
 				    		?>
-				    		<div class="loader" style="margin:auto;"></div> 
+				    		<p align="center"><i class="fa fa-database" aria-hidden="true" style="font-size: 100px"></i></p> 
 				    		<br>
 				    		<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est disponnible dans la Base De Données <em>Datastore </em>! </p> 
 				    		<?php
@@ -97,6 +83,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 				    	else
 				    		{
 				    			//Apres on selection les valeures de co2 qui correspondent à la minute saisie
+				    			$exist = false;
 				    			foreach ($arr_posts as $obj_post) 
 					    			{
 								    	// Effectuez une belle chaîne d'affichage de date et heure
@@ -110,6 +97,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 							                    //on compare avec ce que l'utilisateur a rentrée
 							                    if($_POST['aujourduiMinCo2'] == $str_date_display)
 							                    {
+							                    	$exist = true;
 							                    	// On affiche les résultats pour le CO2
 							                    	echo '<div class="post">';
 							                    		if(isset($obj_post->co2) AND !empty($obj_post->co2))
@@ -120,20 +108,18 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 							                    	echo '</div>';
 							              
 							                    }
-							                    else
-							                        {
-								                        // On n'a pas trouvé aucune correspondance
-								                    	echo '<div class="post">';
-								                    	?>
-														<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
-														<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
-
-								                    	<?php
-								                    				
-								                    	break;
-							                     }
+							                    
 							                }
 							          } // end foreach  
+							          // On n'a pas trouvé aucune correspondance
+							          if (!$exist) {
+				      	              	echo '<div class="post">';
+				                    	?>
+										<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
+										<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
+
+				                    	<?php
+							          }
 							} 
 							// fin else empty array_posts
 
@@ -189,7 +175,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
     	?>
     	    	
 			<div>
-				<h1 style="color:red">An Error Has Occurred</h1>
+				<h1 style="color:red">What is this charabian ?</h1>
 			    <h2>Veuillez entrez une minute valide svp.</h2>
 			    <h2 style="color:green">Un nombre entier entre 0 et 59</h2>
 			    </div> <!-- end panel body -->
