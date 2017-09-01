@@ -2,8 +2,10 @@
 			<html lang="en">
 			<head>
 				<meta charset="UTF-8">
-				<title>Document</title>
-				
+				<title>SDP-IoT Co2 Historics one hours ago</title>
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="author" content="Yvon Benahita">
+				<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
 				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 			    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 				<!-- font awesome -->
@@ -15,6 +17,7 @@
 			    	body
 					{
 						padding-top: 100px;
+						padding-bottom: 100px;
 					}
 
 					#results
@@ -190,9 +193,9 @@ else
 			<div>
 				<h1 style="color:red">What is this charabian ?</h1>
 			    <h2>Veuillez entrez une heure valide svp.</h2>
+			    <h2 style="color:green">Un nombre entier entre 1 et 23</h2>
 			    </div> <!-- end panel body -->
 				</div> <!-- end panel default -->
-			    <h2 style="color:green">Un nombre entier entre 1 et 23</h2>
 			    <a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 				Retour</button></a>	
 		    </div>

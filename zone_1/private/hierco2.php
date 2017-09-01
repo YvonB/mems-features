@@ -2,8 +2,10 @@
 				<html lang="en">
 				<head>
 					<meta charset="UTF-8">
-					<title>Document</title>
-					
+					<title>SDP-IoT Yersterday Co2 Historics</title>
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="author" content="Yvon Benahita">
+					<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 				    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 					<!-- font awesome -->

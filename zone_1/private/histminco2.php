@@ -2,8 +2,10 @@
 				<html lang="en">
 				<head>
 					<meta charset="UTF-8">
-					<title>Document</title>
-					
+					<title>SDP-IoT co2 Historics some minute ago</title>
+					<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<meta name="author" content="Yvon Benahita">
+					<link rel="icon" type="image/png" href="/img/datastore-logo.png" />					
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 				    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 					<!-- font awesome -->
@@ -52,7 +54,7 @@
 				            <div class="row">
 				                <div class="col-md-8" id="results">
 				                    <h2>Quantité de CO2 émis il y a <em><?php echo $_POST['aujourduiMinCo2'].' min';?></em></h2>
-				                    <div class="panel panel-primary" style="background-color: #cdf;">
+				                    <div class="panel panel-default" style="background-color: #cdf;">
 				                        <div class="panel-body" style="text-align: center;">
 <?php
 // Inclusion pour notre lib // la classe

@@ -27,6 +27,8 @@ else
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- CSS global -->
+    <link rel="stylesheet" href="/css/demo.css">
 <style>
 /*body*/
 body
@@ -104,7 +106,7 @@ body
 
 .modal-header {
     padding: 2px 16px;
-   	background-color: #37424b;
+   	background-color: rgb(59, 120, 231);
     color: #c8c8c8;
 
 }
@@ -118,38 +120,38 @@ body
 }
 .okbtn
 {
-	float: right;
+	float: left;
 	margin-right: 15px;
 }
 
-.mark_ok 
+/*.mark_ok 
 {
 	background-color: yellow;
-}
+}*/
 
-.okbtn:hover
+/*.okbtn:hover
 {
 	background-color: yellow;
-}
+}*/
 
 .cancelbtn
 {
 	float: right;
 }
 
-.mark_cancel 
+/*.mark_cancel 
+{
+	background-color: #e74c3c;
+}*/
+
+/*.cancelbtn:hover
 {
 	background-color: #e74c3c;
 }
-
-.cancelbtn:hover
-{
-	background-color: #e74c3c;
-}
-
+*/
 .modal-footer {
     padding: 2px 16px;
-    background-color: #37424b;
+    background-color: rgb(59, 120, 231);
     color: #c8c8c8;
 }
 </style>
@@ -163,18 +165,18 @@ body
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      	<h3 align="center">SDP - IoT</h3>
+      	<h3 align="center" style="color:#fafafa">SDP - IoT</h3>
     </div>
     <div class="modal-body">
       <p align="center">Une connexion à votre compte est requise pour voir le contenu de la page que vous avez demandée !</p>
-      <p align="center">Cliuquer sur <mark class="mark_ok">"Ok"</mark> pour <mark class="mark_ok">accepter et continuer</mark> , sinon <mark class="mark_cancel">fermez</mark> cette fenêtre ou cliquez le bouton <mark class="mark_cancel">"Cancel" pour annuler</mark>. Merci !</p>
+      <p align="center">Cliquer sur <mark class="mark_ok">"Accepter"</mark> pour <mark class="mark_ok">accepter et continuer</mark> , sinon <mark class="mark_cancel">fermez</mark> cette fenêtre ou cliquez le bouton <mark class="mark_cancel">"Cancel" pour annuler</mark>. Merci !</p>
      
-      <button type="button" onclick="document.location.href='javascript:history.back()'" class="btn btn-default cancelbtn">Cancel</button>
-       <button type="button" id="ok_btn" class="btn btn-default okbtn">Ok</button>
+      <button type="button" onclick="document.location.href='javascript:history.back()'" class="btn btn-primary cancelbtn">Cancel</button>
+       <button type="button" id="ok_btn" class="btn btn-primary okbtn">Accepter</button>
 
     </div>
     <div class="modal-footer">
-      <h4 align="center">© 2017, YvonB All rights reserved</h4>
+      <h4 align="center" style="color:#fafafa">© 2017, YvonB All rights reserved</h4>
     </div>
   </div>
 
