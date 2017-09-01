@@ -15,6 +15,7 @@
 							    	body
 									{
 										padding-top: 100px;
+										padding-bottom: 100px;
 									}
 
 									#results
@@ -22,6 +23,7 @@
 										margin:auto !important;
 										width: 70% !important;
 										float: none !important;
+										border-radius: 10px;
 										box-shadow: 0 0 10px;
 										padding: 1px 25px 45px 25px;
 									}
@@ -29,7 +31,7 @@
 									.retourBtn
 									{
 										float: right;
-										margin-right: 15px;
+										/*margin-right: 15px;*/
 									}
 
 									@-webkit-keyframes spin {
@@ -52,7 +54,7 @@
 							                <div class="col-md-8" id="results">
 							                    <h2>Tous les CO2 émis </h2>
 							                    <div class="panel panel-default" style="background-color: #cdf;">
-							                        <div class="panel-body";">
+							                        <div class="panel-body">
 
 <?php
 // Inclusion pour notre lib
@@ -125,12 +127,14 @@ else
 										<?php
 							
 										                // On affiche les résultats pour le CO2
+														echo "<pre>";
 										                echo '<div class="post">';
 										                    if(isset($obj_post->co2) AND !empty($obj_post->co2))
 										                        {
 										                            echo '<div class="gas">CO2 = <strong>', htmlspecialchars($obj_post->co2),'</strong><em> ppm</em>    ', '<span class="time"> Il y a ', $str_date_display, '</span></div>';
 										                        }
 										                echo '</div>';
+										                echo "</pre>";
 					
 					
 					

@@ -22,7 +22,7 @@
 						margin:auto !important;
 						width: 70% !important;
 						float: none !important;
-
+						border-radius: 10px;
 						box-shadow: 0 0 10px;
 						padding: 1px 25px 45px 25px;
 					}
@@ -30,7 +30,7 @@
 					.retourBtn
 					{
 						float: right;
-						margin-right: 15px;
+						/*margin-right: 15px;*/
 					}
 
 					@-webkit-keyframes spin {
@@ -52,7 +52,7 @@
 			                <div class="col-md-8" id="results">
 			                    <h2>Quantité de CO2 émis il y a <?php echo $_POST['aujourduiHeurCo2'].' h';?></h2>
 			                    <div class="panel panel-default" style="background-color: #cdf;">
-			                        <div class="panel-body">
+			                        <div class="panel-body" style="text-align: center;">
 
 
 
@@ -87,6 +87,7 @@ if(is_numeric($_POST['aujourduiHeurCo2']))
 			    	else
 			    		{
 			    			//Apres on selection les valeures de co2 qui correspondent à la minute saisie
+			    			$exist = false;
 			    			foreach ($arr_posts as $obj_post) 
 				    			{
 							    	// Effectuez une belle chaîne d'affichage de date et heure
@@ -96,35 +97,52 @@ if(is_numeric($_POST['aujourduiHeurCo2']))
 
 						            if ($int_date_diff < (3600 * 24)) 
 						                {
+
 						                    $str_date_display = round($int_date_diff / 3600); // Tous les heures du post
 						                   
 						                    //on compare avec ce que l'utilisateur a rentrée
 						                    if($_POST['aujourduiHeurCo2'] == $str_date_display)
 						                    {
+
+						                    	$exist = true;
 						                    	// On affiche les résultats pour le CO2
+						                    	echo "<pre>";
 						                    	echo '<div class="post">';
 						                    		if(isset($obj_post->co2) AND !empty($obj_post->co2))
 						                                {
-						                                    echo '<div class="gas">Taux de CO2: <strong>', htmlspecialchars($obj_post->co2),'</strong><em>ppm</em>    ', '</div>';
+						                                    echo '<div class="gas">Taux de CO2: <strong>', htmlspecialchars($obj_post->co2),'</strong><em> ppm</em>    ', '</div>';
 						                                }
 						                    	echo '</div>';
-
+						                    	echo "</pre>";
+			
 						                    }
-						                    // else
-						                    // {
-						                    	// On n'a pas trouvé aucune correspondance
-						                    	// echo '<div class="post">';
-						                    	?>
-													<!-- <p><i class="fa fa-ban" style="font-size:48px;color:red"></i> -->
-													<!-- <p>Aucune correspondance n'a été trouvée !</p> -->
-
-						                    	<?php
-						                    	// echo '</div>';
-						                    // }
+						                    
 						                }
 							    }
-						}
+							    // end foreach
 
+							    // On n'a pas trouvé aucune correspondance
+							          if (!$exist) {
+				      	              	echo '<div class="post">';
+				                    	?>
+										<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
+										<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
+										</div> <!-- end panel body -->
+										</div> <!-- end panel default -->
+										<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+										Retour</button></a>	
+									</div> <!-- end col md 8 -->
+								</div> <!-- end row -->
+								</div> <!-- end container -->
+								<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+								<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+								</body>
+								</html>
+				                    	<?php
+				                    	exit;// on arrête tout
+				                    			}
+						}
+						// fin else empty array_posts 
 			}
 			catch(\Exception $obj_ex)
 			{
@@ -132,19 +150,17 @@ if(is_numeric($_POST['aujourduiHeurCo2']))
 			    echo '<em>Whoops, something went wrong!</em>';
 			}
 			?>
-						</div>
-					</div>
-					<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
-					Retour</button></a>	
-				</div>
-			</div>
-			</div> <!-- end container -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-			</body>
-			</html>
-
-
+			</div> <!-- end panel body -->
+						</div> <!-- end panel default -->
+						<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+						Retour</button></a>	
+					</div> <!-- end col md 8 -->
+				</div> <!-- end row -->
+				</div> <!-- end container -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+				</body>
+				</html>
 		<?php
 	}
 	else
@@ -155,6 +171,8 @@ if(is_numeric($_POST['aujourduiHeurCo2']))
 				<h1 style="color:red">An Error Has Occurred</h1>
 			    <h2>Veuillez entrez une heure valide svp.</h2>
 			    <h2 style="color:green">Un nombre entier entre 1 et 23</h2>
+			    </div> <!-- end panel body -->
+				</div> <!-- end panel default -->
 			    <a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 				Retour</button></a>	
 		    </div>
@@ -172,6 +190,8 @@ else
 			<div>
 				<h1 style="color:red">What is this charabian ?</h1>
 			    <h2>Veuillez entrez une heure valide svp.</h2>
+			    </div> <!-- end panel body -->
+				</div> <!-- end panel default -->
 			    <h2 style="color:green">Un nombre entier entre 1 et 23</h2>
 			    <a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 				Retour</button></a>	

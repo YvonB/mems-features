@@ -15,6 +15,7 @@
 				    	body
 						{
 							padding-top: 100px;
+							padding-bottom: 100px;
 						}
 
 						#results
@@ -22,15 +23,15 @@
 							margin:auto !important;
 							width: 70% !important;
 							float: none !important;
-
+							border-radius: 10px;
 							box-shadow: 0 0 10px;
-							height: 310px;
+							padding: 1px 25px 45px 25px;
 						}
 
 						.retourBtn
 						{
 							float: right;
-							margin-right: 15px;
+							/*margin-right: 15px;*/
 						}
 
 						@-webkit-keyframes spin {
@@ -52,7 +53,7 @@
 				                <div class="col-md-8" id="results">
 				                    <h2>Quantité de CO2 émis il y a 2 jours</h2>
 				                    <div class="panel panel-default" style="background-color: #cdf;">
-				                        <div class="panel-body">
+				                        <div class="panel-body" style="text-align: center;">
 
 
 
@@ -93,6 +94,7 @@ if(empty($arr_posts))
 }
 else
 {
+	$exist = false;
 	foreach ($arr_posts as $obj_post) 
 			{
 			    // Effectuez une belle chaîne d'affichage de date et heure
@@ -103,78 +105,46 @@ else
 			    // 2jours = 172800sec
 				if($int_date_diff == 172800)
 					{
+						$exist = true;
 						//on affiche tous les valeurs de co2
 						?>
 							
 										<?php
 							
 										                // On affiche les résultats pour le CO2
+														echo "<pre>";
 										                echo '<div class="post">';
 										                    if(isset($obj_post->co2) AND !empty($obj_post->co2))
 										                        {
 										                            echo '<div class="gas">CO2 = <strong>', htmlspecialchars($obj_post->co2),'</strong><em>ppm</em>    ', '</div>';
 										                        }
 										                echo '</div>';
-					
-										?>
-													</div> <!-- end panel body -->
-												</div> <!-- end panel default -->
-									<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
-									Retour</button></a>	
-											</div> <!-- col md 8 et results -->
-										</div> <!-- end row -->
-
-							</div> <!-- end container -->
-
-							<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-							<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-							</body>
-							</html>
+														echo "</pre>";
+					}	
+					// fin if			
+				}
+				// end foreach	
+					// On n'a pas trouvé aucune correspondance
+							          if (!$exist) {
+				      	              	echo '<div class="post">';
+				                    	?>
+										<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
+										<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
+										</div> <!-- end panel body -->
+										</div> <!-- end panel default -->
+										<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+										Retour</button></a>	
+									</div> <!-- end col md 8 -->
+								</div> <!-- end row -->
+								</div> <!-- end container -->
+								<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+								<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+								</body>
+								</html>
 
 						<?php
+
 					}
-					//fin if post==2jours
-				else
-				    {	
-				    	?>
-				    <!-- html -->
-				    		
-				    <?php
-				    	// On n'a pas trouvé aucune correspondance
-						echo '<div class="post">';
-					?>
-						<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red; "></i>
-						<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé. <br> <br>Aucune donnée n'est arrivée au serveur d'ici il y a 2 jours.</p>
-
-					<?php
-						echo '</div>';
-					?>
-						<!-- html -->
-						</div> <!-- end panel body -->
-												</div> <!-- end panel default -->
-									<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
-									Retour</button></a>	
-											</div> <!-- col md 8 et results -->
-										</div> <!-- end row -->
-							</div> <!-- end container -->
-
-							<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-							<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-							</body>
-							</html>
-
-					<?php
-				   } 
-				     // end else 2 jours
-				   ?> 
-
-				   <?php
-			   }
-			   // end foreach
-			?>
-			<?php
-} // fin else vide arr_posts
-?>
-			
+		}
 			   
 

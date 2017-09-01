@@ -15,6 +15,7 @@
 				    	body
 						{
 							padding-top: 100px;
+							padding-bottom: 100px
 						}
 
 						#results
@@ -24,6 +25,7 @@
 										float: none !important;
 										box-shadow: 0 0 10px;
 										padding: 1px 25px 45px 25px;
+										border-radius: 10px;
 						}
 
 						.retourBtn
@@ -99,6 +101,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 							                    {
 							                    	$exist = true;
 							                    	// On affiche les résultats pour le CO2
+							                    	echo "<pre>";
 							                    	echo '<div class="post">';
 							                    		if(isset($obj_post->co2) AND !empty($obj_post->co2))
 							                                {
@@ -106,7 +109,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 							                                }
 
 							                    	echo '</div>';
-							              
+							              			echo "</pre>";
 							                    }
 							                    
 							                }
@@ -117,8 +120,19 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 				                    	?>
 										<p style="text-align: center"><i class="fa fa-ban" style="font-size:48px;color:red"></i>
 										<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
-
+										</div> <!-- end panel body -->
+										</div> <!-- end panel default -->
+										<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+										Retour</button></a>	
+									</div> <!-- end col md 8 -->
+								</div> <!-- end row -->
+								</div> <!-- end container -->
+								<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+								<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+								</body>
+								</html>
 				                    	<?php
+				                    exit; // on arrête tout	
 							          }
 							} 
 							// fin else empty array_posts
@@ -132,7 +146,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 				?>
 							</div> <!-- end panel body -->
 						</div> <!-- end panel default -->
-						<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+						<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 						Retour</button></a>	
 					</div> <!-- end col md 8 -->
 				</div> <!-- end row -->
@@ -158,10 +172,13 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 				</div> <!-- end panel default -->
 				    <a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 					Retour</button></a>	
-			    </div>
-			</div>
-			</body>
-			</html>
+			    </div> <!-- end col md 8 -->
+				</div> <!-- end row -->
+				</div> <!-- end container -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+				</body>
+				</html>
 				<?php  
     		}
     	?>
@@ -182,10 +199,13 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 			</div> <!-- end panel default -->
 			    <a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 				Retour</button></a>	
-		    </div>
-		</div>
-		</body>
-		</html>
+		    </div> <!-- end col md 8 -->
+				</div> <!-- end row -->
+				</div> <!-- end container -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+				</body>
+				</html>
 <?php    
     
 	}
