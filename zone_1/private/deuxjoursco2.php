@@ -17,20 +17,6 @@
 							padding-top: 100px;
 						}
 
-						.loader 
-						{
-						  border: 16px solid #f3f3f3;
-						  border-radius: 50%;
-						  border-top: 16px solid blue;
-						  border-right: 16px solid green;
-						  border-bottom: 16px solid red;
-						  border-left: 16px solid pink;
-						  width: 120px;
-						  height: 120px;
-						  -webkit-animation: spin 2s linear infinite;
-						  animation: spin 2s linear infinite;
-						}
-
 						#results
 						{
 							margin:auto !important;
@@ -86,7 +72,7 @@ if(empty($arr_posts))
 	?>
 	<!-- html -->
 	
-											<div class="loader" style="margin:auto;"></div> 
+											<p align="center"><i class="fa fa-database" aria-hidden="true" style="font-size: 100px"></i></p>
 											<br>
 											<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est insérée dans la Base De Données <em>Datastore </em>! </p>
 										</div> <!-- end panel body -->

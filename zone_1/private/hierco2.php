@@ -72,9 +72,9 @@ if(empty($arr_posts))
 	?>
 	<!-- html -->
 
-											<p align="center"><i class="fa fa-database fa-5" aria-hidden="true"></i></p>
+											<p align="center"><i class="fa fa-database" aria-hidden="true" style="font-size: 100px"></i></p>
 											<br>
-											<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est disponnible dans la Base De Données <em>Datastore </em>! </p>
+											<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est insérée dans la Base De Données <em>Datastore </em>! </p>
 										</div> <!-- end panel body -->
 									</div> <!-- end panel default -->
 									<a href="/zone_1/home/co2"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
