@@ -386,10 +386,84 @@
                      }
                     </script>
 
+<!-- ================ Fin slide de 3 courbes ============================ -->
 
-            <!-- ================================Fin slide de 3 courbes======================================================== -->
+<!-- ================= les 10 dernières valeurs insérées ================== -->
+<!-- jquery hide show toggle -->
+<div class="col-md-8">
+    <h2>Voir Rapidement les 10 dernières valeurs inserés</h2>
+</div>
+<div class="row">
+                <div class="col-md-8" >
+                    <!-- <h2>Results</h2> -->
+                    <div class="panel panel-default" style="background-color: #cdf;">
+                        <div class="panel-body">
 
-        </div> <!-- fin de container de la page --> 
+                            <?php
+                                try 
+                                    {   
+                                        // On crée un objet de type Repository.
+                                        $obj_repo = new \GDS\Demo\Repository();
+                                        // Chercher les 10 dernières valeurs insérées
+                                        $arr_posts = $obj_repo->getRecentPosts();
+
+                                        // Les afficher
+                                        foreach ($arr_posts as $obj_post) 
+                                        {
+
+                                            // Effectuez une belle chaîne d'affichage de date et heure
+                                            $int_posted_date = strtotime($obj_post->posted);
+                                            $int_date_diff = time() - $int_posted_date;
+
+                                            if ($int_date_diff < 3600) 
+                                            {
+                                                $str_date_display = round($int_date_diff / 60) . ' minute(s)';
+                                            } 
+                                            else if ($int_date_diff < (3600 * 24)) 
+                                            {
+                                                $str_date_display = round($int_date_diff / 3600) . ' heure(s)';
+                                            } 
+                                            else 
+                                            {
+                                                $str_date_display = date('\a\t jS M Y, H:i', $int_posted_date);
+                                            }
+
+                                            echo "<pre>";
+                                            echo '<div class="post">';
+                                            if(isset($obj_post->co2) AND !empty($obj_post->co2))
+                                                {
+                                                    echo '<div class="gas">Taux de CO2: <strong>', htmlspecialchars($obj_post->co2),'</strong><em>cm³/m³</em>    ', '</div>';
+                                                }
+                                            if(isset($obj_post->co) AND !empty($obj_post->co))
+                                                {
+                                                    echo '<div class="gas">  |  Taux de CO: <strong>', htmlspecialchars($obj_post->co),'</strong><em>cm³/m³</em>    ', '</div>';
+                                                }
+                                            if(isset($obj_post->nh3) AND !empty($obj_post->nh3))
+                                                {
+                                                    echo '<div class="gas">  |  Taux de NH3: <strong>', htmlspecialchars($obj_post->nh3), '</strong><em>cm³/m³</em>    ', '<br><span class="time">', $str_date_display, '</span></div>';
+                                                }
+                                            echo '</div>';
+                                            echo "</pre>";
+                                        }
+
+                                        $int_posts = count($arr_posts);
+
+                                        echo '<div class="post"><em>Showing last ', $int_posts, '</em></div>';
+
+                                    } 
+                                catch (\Exception $obj_ex)
+                                {
+                                    syslog(LOG_ERR, $obj_ex->getMessage());
+                                    echo '<em>Whoops, something went wrong!</em>';
+                                }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- ================ fin 10 dernières valeurs insérées =================== -->
+
+</div> <!-- fin de container de la page --> 
 
    <!-- ********************************* Footer ***************************************** -->
     <footer>
