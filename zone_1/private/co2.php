@@ -380,7 +380,7 @@
                     var series = this.series[0];
                     setInterval(function () {
                         var x = (new Date()).getTime(), // heure actuelle
-                            y = <?php echo $ppm_co2 ; ?>; // les valeurs en ppm sur l'axe des abscisses
+                            y = <?php echo $ppm_co2 ; ?>; // les valeurs en ppm sur l'axe des ordonnées
                         series.addPoint([x, y], true, true);
                     }, 4000);
                 }
