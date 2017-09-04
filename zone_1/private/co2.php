@@ -7,25 +7,23 @@
     // on a pas le droit de voir index si on était pas connecter au préalable.
     if(!$user)
     {   
+         ?>  
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Login-SDP</title>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+                <!-- CSS global -->
+                <link rel="stylesheet" href="/css/demo.css">
 
-        // header("Location: /zone_1"); // on rédirige vers l'accueil et 
-        // exit; // On arrête tout.
-            ?>  
-                    <!DOCTYPE html>
-                    <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>Login-SDP</title>
-                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-                         <!-- CSS global -->
-    <link rel="stylesheet" href="/css/demo.css">
-                    <style>
+                <style>
                     /*body*/
                     body
                     {
-                       /*body de google*/
+                        /*body de google*/
                         background-color: #fafafa !important;
                         color: rgba(0,0,0,.987) !important;
                         font-family: 'Roboto',sans-serif !important;
@@ -40,115 +38,104 @@
                     }
 
                     /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-}
+                    .modal 
+                    {
+                        display: none; /* Hidden by default */
+                        position: fixed; /* Stay in place */
+                        z-index: 1; /* Sit on top */
+                        padding-top: 100px; /* Location of the box */
+                        left: 0;
+                        top: 0;
+                        width: 100%; /* Full width */
+                        height: 100%; /* Full height */
+                        overflow: auto; /* Enable scroll if needed */
+                        background-color: rgb(0,0,0); /* Fallback color */
+                        background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+                    }
 
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-   /* border: 1px solid #888;*/
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
+                    /* Modal Content */
+                    .modal-content 
+                    {
+                        position: relative;
+                        background-color: #fefefe;
+                        margin: auto;
+                        padding: 0;
+                       /* border: 1px solid #888;*/
+                        width: 80%;
+                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                        -webkit-animation-name: animatetop;
+                        -webkit-animation-duration: 0.4s;
+                        animation-name: animatetop;
+                        animation-duration: 0.4s
+                    }
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
+                    /* Add Animation */
+                    @-webkit-keyframes animatetop {
+                        from {top:-300px; opacity:0} 
+                        to {top:0; opacity:1}
+                    }
 
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
+                    @keyframes animatetop {
+                        from {top:-300px; opacity:0}
+                        to {top:0; opacity:1}
+                    }
 
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: 14px !important;
-}
+                    /* The Close Button */
+                    .close 
+                    {
+                        color: white;
+                        float: right;
+                        font-size: 28px;
+                        font-weight: bold;
+                        margin-top: 14px !important;
+                    }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+                    .close:hover,
+                    .close:focus 
+                    {
+                        color: #000;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
 
-.modal-header {
-    padding: 2px 16px;
-    background-color: rgb(59, 120, 231);
-    color: #c8c8c8;
+                    .modal-header 
+                    {
+                        padding: 2px 16px;
+                        background-color: rgb(59, 120, 231);
+                        color: #c8c8c8;
 
-}
+                    }
 
-.modal-body 
-{
-    padding: 40px 16px !important;
-    background-color: #fafafa;
-    font: 400 16px/24px Roboto, sans-serif;
-    color: #212121;
-}
-.okbtn
-{
-    float: left;
-    margin-right: 15px;
-}
+                    .modal-body 
+                    {
+                        padding: 40px 16px !important;
+                        background-color: #fafafa;
+                        font: 400 16px/24px Roboto, sans-serif;
+                        color: #212121;
+                    }
 
-/*.mark_ok 
-{
-    background-color: yellow;
-}*/
+                    .okbtn
+                    {
+                        float: left;
+                        margin-right: 15px;
+                    }
 
-/*.okbtn:hover
-{
-    background-color: yellow;
-}*/
 
-.cancelbtn
-{
-    float: right;
-}
+                    .cancelbtn
+                    {
+                        float: right;
+                    }
 
-/*.mark_cancel 
-{
-    background-color: #e74c3c;
-}*/
+                    .modal-footer 
+                    {
+                        padding: 2px 16px;
+                        background-color: rgb(59, 120, 231);
+                        color: #c8c8c8;
+                    }
+                </style>
+            </head>
 
-/*.cancelbtn:hover
-{
-    background-color: #e74c3c;
-}
-*/
-.modal-footer {
-    padding: 2px 16px;
-    background-color: rgb(59, 120, 231);
-    color: #c8c8c8;
-}
-</style>
-                    </head>
-                    <body>
+            <body>
 
                     <!-- The Modal -->
                     <div id="myModal" class="modal">
@@ -174,6 +161,7 @@
 
                     </div>
                     <a href="<?php echo UserService::createLoginURL($_SERVER['REQUEST_URI']) ?>" id="lien"></a>
+
                     <script>
                     // Get the modal
                     var modal = document.getElementById('myModal');
@@ -201,16 +189,17 @@
                             modal.style.display = "none";
                             document.getElementById('lien').click();
                     }
-
                     </script>
 
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-                    </body>
-                    </html>
+            </body>
+            </html>
 
-                    <?php   
+<?php  
+ 
     }
+    // end if(!$user)
 
     // Pour notre lib
     require_once('../vendor/autoload.php');
@@ -391,7 +380,7 @@
                                     }
                              }
                             ?>; // les valeurs en ppm sur l'axe des ordonnées
-                            
+
                         series.addPoint([x, y], true, true);
                     }, 4000);
                 }
