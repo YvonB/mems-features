@@ -23,6 +23,16 @@
 </div>
 
 <!-- ===================== le script de la courbe lui même ================ -->
+
+<!-- tout d'abord on cherche les valeurs -->
+<?php
+foreach($arr_posts as $obj_post)
+        {
+            // val ppm
+            $ppm_co2 = $obj_post->co2; 
+        }
+?> 
+                                  }
 <script type="text/javascript">
    $(document).ready(function () {
     Highcharts.setOptions({
@@ -43,15 +53,7 @@
                     var series = this.series[0];
                     setInterval(function () {
                         var x = (new Date()).getTime(), // heure actuelle
-                            y = <?php 
-                            foreach($arr_posts as $obj_post)
-                                    {
-                                        // val ppm
-                                        $ppm_co2 = $obj_post->co2; 
-                                        echo $ppm_co2 ;
-                                    }
-                            
-                            ?>; // les valeurs en ppm sur l'axe des abscisses
+                            y = <?php echo $ppm_co2 ;?>; // les valeurs en ppm sur l'axe des ordonnées
                         series.addPoint([x, y], true, true);
                     }, 4000);
                 }
@@ -97,16 +99,7 @@
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 1000,
-                        y: <?php 
-                            
-                                foreach($arr_posts as $obj_post)
-                                    {
-                                        // val ppm
-                                        $ppm_co2 = $obj_post->co2; 
-                                        echo $ppm_co2 ;
-                                    }
-                             
-                            ?>; // les valeurs en ppm sur l'axe des abscisses
+                        y: <?php echo $ppm_co2 ;?>; // les valeurs en ppm sur l'axe des ordonnées
                     });
                 }
                 return data;
