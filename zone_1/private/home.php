@@ -391,12 +391,28 @@
 <!-- ================= les 10 dernières valeurs insérées ================== -->
 <!-- jquery hide show toggle -->
 <div class="col-md-8">
-    <h2>Voir Rapidement les 10 dernières valeurs inserés</h2>
+    <h2 id="toggler">See Quickly the last 10 inserted values</h2>
 </div>
 <div class="row">
-                <div class="col-md-8" >
+
+              <script>
+              // On attend que la page soit chargée 
+              jQuery(document).ready(function()
+              {
+              // On cache la zone de texte
+              jQuery('#toggle').hide();
+              // toggle() lorsque le lien avec l'ID #toggler est cliqué
+              jQuery('h2#toggler').click(function()
+              {
+              jQuery('#toggle').toggle(400);
+              return false;
+              });
+              });
+              </script>
+
+                <div class="col-md-8" id="toggle">
                     <!-- <h2>Results</h2> -->
-                    <div class="panel panel-default" style="background-color: #cdf;">
+                    <div class="panel panel-default" style="background-color: #cdf;box-shadow: 0 0 10px;margin-bottom: 50px;margin-top: 25px;width: 842px;margin-left: 40px;">
                         <div class="panel-body">
 
                             <?php
@@ -436,11 +452,11 @@
                                                 }
                                             if(isset($obj_post->co) AND !empty($obj_post->co))
                                                 {
-                                                    echo '<div class="gas">  |  Taux de CO: <strong>', htmlspecialchars($obj_post->co),'</strong><em>cm³/m³</em>    ', '</div>';
+                                                    echo '<div class="gas"> Taux de CO: <strong>', htmlspecialchars($obj_post->co),'</strong><em>cm³/m³</em>    ', '</div>';
                                                 }
                                             if(isset($obj_post->nh3) AND !empty($obj_post->nh3))
                                                 {
-                                                    echo '<div class="gas">  |  Taux de NH3: <strong>', htmlspecialchars($obj_post->nh3), '</strong><em>cm³/m³</em>    ', '<br><span class="time">', $str_date_display, '</span></div>';
+                                                    echo '<div class="gas"> Taux de NH3: <strong>', htmlspecialchars($obj_post->nh3), '</strong><em>cm³/m³</em>    ', '<br><span class="time">', $str_date_display, '</span></div>';
                                                 }
                                             echo '</div>';
                                             echo "</pre>";
