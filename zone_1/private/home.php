@@ -412,7 +412,7 @@
 
                 <div class="col-md-8" id="toggle">
                     <!-- <h2>Results</h2> -->
-                    <div class="panel panel-default" style="background-color: #cdf;box-shadow: 0 0 10px;margin-bottom: 50px;margin-top: 25px;width: 842px;margin-left: 40px;">
+                    <div class="panel panel-default" style="background-color: #cdf;box-shadow: 0 0 10px;margin-bottom: 50px;width: 1000px;margin-left: 40px;">
                         <div class="panel-body">
 
                             <?php

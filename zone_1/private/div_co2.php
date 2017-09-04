@@ -44,15 +44,13 @@
                     setInterval(function () {
                         var x = (new Date()).getTime(), // heure actuelle
                             y = <?php 
-                            if(isset($arr_posts))
-                            {
-                                foreach($arr_posts as $obj_post)
+                            foreach($arr_posts as $obj_post)
                                     {
                                         // val ppm
                                         $ppm_co2 = $obj_post->co2; 
                                         echo $ppm_co2 ;
                                     }
-                             }
+                            
                             ?>; // les valeurs en ppm sur l'axe des abscisses
                         series.addPoint([x, y], true, true);
                     }, 4000);
@@ -100,15 +98,14 @@
                     data.push({
                         x: time + i * 1000,
                         y: <?php 
-                            if(isset($arr_posts))
-                            {
+                            
                                 foreach($arr_posts as $obj_post)
                                     {
                                         // val ppm
                                         $ppm_co2 = $obj_post->co2; 
                                         echo $ppm_co2 ;
                                     }
-                             }
+                             
                             ?>; // les valeurs en ppm sur l'axe des abscisses
                     });
                 }
