@@ -1,6 +1,12 @@
 <?php    
     // Pour notre lib
     require_once('../vendor/autoload.php');
+
+    // On crée un objet de type Repository.
+    $obj_repo = new \GDS\Demo\Repository();
+    // Chercher juste les dernières valeurs insérées.
+    $arr_posts = $obj_repo->getLatestRecentPost();
+
 ?>
 <html>
 <head>
@@ -15,31 +21,6 @@
         <h4>Gaz carbonique</h4>
         <div id="co2" style="height: 400px; min-width: 310px"></div> <!-- div qui va contenir de la courbe -->
 </div>
-
-<!-- pour récupérer les valeurs dans la BD -->
-    <?php
-        try
-            {   
-                // ========Appel de notre modèle
-
-                // On crée un objet de type Repository.
-                $obj_repo = new \GDS\Demo\Repository();
-                // Chercher juste la dernière valeure insérée récemment.
-                $arr_posts = $obj_repo->getLatestRecentPost();
-
-                // =========fin appel de notre modèle
-
-               // val de co2 en ppm
-                if(isset($arr_posts)){$ppm_co2 = $arr_posts->co2;}   
-            }
-            catch(\Exception $obj_ex)
-                {
-                    syslog(LOG_ERR, $obj_ex->getMessage());
-                    echo '<em>Whoops, something went wrong!</em>';
-                }
-     
-    ?>
-<!-- ========================= fin récupération ========================= -->
 
 <!-- ===================== le script de la courbe lui même ================ -->
 <script type="text/javascript">
@@ -62,7 +43,17 @@
                     var series = this.series[0];
                     setInterval(function () {
                         var x = (new Date()).getTime(), // heure actuelle
-                            y = <?php echo $ppm_co2 ; ?>; // les valeurs en ppm sur l'axe des abscisses
+                            y = <?php 
+                            if(isset($arr_posts))
+                            {
+                                foreach($arr_posts as $obj_post)
+                                    {
+                                        // val ppm
+                                        $ppm_co2 = $obj_post->co2; 
+                                        echo $ppm_co2 ;
+                                    }
+                             }
+                            ?>; // les valeurs en ppm sur l'axe des abscisses
                         series.addPoint([x, y], true, true);
                     }, 4000);
                 }
@@ -108,7 +99,17 @@
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 1000,
-                        y: <?php echo $ppm_co2 ; ?> // les valeurs en ppm sur l'axe des abscisses
+                        y: <?php 
+                            if(isset($arr_posts))
+                            {
+                                foreach($arr_posts as $obj_post)
+                                    {
+                                        // val ppm
+                                        $ppm_co2 = $obj_post->co2; 
+                                        echo $ppm_co2 ;
+                                    }
+                             }
+                            ?>; // les valeurs en ppm sur l'axe des abscisses
                     });
                 }
                 return data;
