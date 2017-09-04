@@ -197,16 +197,17 @@
             </html>
 
 <?php  
- 
+
     }
     // end if(!$user)
 
     // Pour notre lib
     require_once('../vendor/autoload.php');
 
-    // Chercher les dernières valeurs insérées
+    // On crée un objet de type Repository.
     $obj_repo = new \GDS\Demo\Repository();
-    $arr_posts = $obj_repo->getRecentPosts();
+    // Chercher juste les dernières valeurs insérées.
+    $arr_posts = $obj_repo->getLatestRecentPost();
 
 ?>
 
@@ -214,18 +215,15 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>Détéction de Pollution</title>
+	<title>SDPE - IoT</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
     <!-- CSS -->
     <link rel="stylesheet" href="/css/demo.css">
-
     <link rel="stylesheet" href="/css/slide.css">  <!-- pour l'utilisation de #slider ect -->
     <link rel="stylesheet" href="/css/historiqueCo2.css">
-
     <meta name="author" content="Yvon Benahita">
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
 
@@ -237,8 +235,8 @@
 
     <!-- font pour home-->
     <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
-
 </head>
+
 <body>
     <!--************************ Début Navigation ************************************-->
     <header>
@@ -322,31 +320,6 @@
            </div>
         </div>
     </div> <!-- fin div courbe -->
-
-<!-- pour récupérer les valeurs dans la BD -->
-    <?php
-        try
-            {   
-                // ========Appel de notre modèle
-
-                // On crée un objet de type Repository.
-                $obj_repo = new \GDS\Demo\Repository();
-                // Chercher juste la dernières valeurs insérées récemment.
-                $arr_posts = $obj_repo->getLatestRecentPost();
-
-                // =========fin appel de notre modèle
-
-               // val ppm
-                // if(isset($arr_posts)){$ppm_co2 = $arr_posts->co2;} 
-            }
-            catch(\Exception $obj_ex)
-                {
-                    syslog(LOG_ERR, $obj_ex->getMessage());
-                    echo '<em>Whoops, something went wrong!</em>';
-                }
-     
-    ?>
-<!-- fin récupération -->
 	
 <!-- le script de la courbe lui même -->
 <script type="text/javascript">
@@ -446,6 +419,7 @@
 });
 </script>
 <!-- ===================================== fin script ================================ -->
+
 <!-- ============================ Historiques ====================================== -->
 <div class="col-md-8">
     <h2>Historics</h2>
