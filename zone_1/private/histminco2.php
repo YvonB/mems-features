@@ -1,61 +1,62 @@
 <!DOCTYPE html>
-				<html lang="en">
-				<head>
-					<meta charset="UTF-8">
-					<title>SDP-IoT co2 Historics some minute ago</title>
-					<meta http-equiv="X-UA-Compatible" content="IE=edge">
-					<meta name="author" content="Yvon Benahita">
-					<link rel="icon" type="image/png" href="/img/datastore-logo.png" />					
-					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-				    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-					<!-- font awesome -->
-				    <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>SDP-IoT co2 Historics some minute ago</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="Yvon Benahita">
+		<link rel="icon" type="image/png" href="/img/datastore-logo.png" />					
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<!-- font awesome -->
+		<link rel="stylesheet" href="css/font-awesome/font-awesome.css">
 
-				     <link rel="stylesheet" href="/css/demo.css">
+			<link rel="stylesheet" href="/css/demo.css">
 
-				    <style>
-				    	body
-						{
-							padding-top: 100px;
-							padding-bottom: 100px
-						}
+		<style>
+			body
+				{
+					padding-top: 100px;
+					padding-bottom: 100px
+				}
 
-						#results
-						{
-							margin:auto !important;
-										width: 70% !important;
-										float: none !important;
-										box-shadow: 0 0 10px;
-										padding: 1px 25px 45px 25px;
-										border-radius: 10px;
-						}
+				#results
+				{
+					margin:auto !important;
+					width: 70% !important;
+					float: none !important;
+					box-shadow: 0 0 10px;
+					padding: 1px 25px 45px 25px;
+					border-radius: 10px;
+				}
 
-						.retourBtn
-						{
-							float: right;
-							/*margin-right: 15px;*/
-						}
+				.retourBtn
+				{
+					float: right;
+								/*margin-right: 15px;*/
+				}
 
-						@-webkit-keyframes spin {
-						  0% { -webkit-transform: rotate(0deg); }
-						  100% { -webkit-transform: rotate(360deg); }
-						}
+				@-webkit-keyframes spin {
+						0% { -webkit-transform: rotate(0deg); }
+						100% { -webkit-transform: rotate(360deg); }
+				}
 
-						@keyframes spin {
-						  0% { transform: rotate(0deg); }
-						  100% { transform: rotate(360deg); }
-						}
-					</style>
-				</head>
-				<body>
+				@keyframes spin {
+					 0% { transform: rotate(0deg); }
+						100% { transform: rotate(360deg); }
+				}
+		</style>
+	</head>
+	
+	<body>
 
-				<div class="container"> <!-- contenu de la page -->
+	<div class="container"> <!-- contenu de la page -->
 
-				            <div class="row">
-				                <div class="col-md-8" id="results">
-				                    <h2>Quantité de CO2 émis il y a <em><?php echo $_POST['aujourduiMinCo2'].' min';?></em></h2>
-				                    <div class="panel panel-default" style="background-color: #cdf;">
-				                        <div class="panel-body" style="text-align: center;">
+				         <div class="row">
+				             <div class="col-md-8" id="results">
+				                 <h2>Quantité de CO2 émis il y a <em><?php echo $_POST['aujourduiMinCo2'].' min';?></em></h2>
+				                 <div class="panel panel-default" style="background-color: #cdf;">
+				                     <div class="panel-body" style="text-align: center;">
 <?php
 // Inclusion pour notre lib // la classe
 require_once('../vendor/autoload.php');
