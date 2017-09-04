@@ -348,7 +348,7 @@
                 // =========fin appel de notre modèle
 
                // val ppm
-                if(isset($arr_posts)){$ppm_co2 = $arr_posts->co2;} 
+                // if(isset($arr_posts)){$ppm_co2 = $arr_posts->co2;} 
             }
             catch(\Exception $obj_ex)
                 {
@@ -380,7 +380,18 @@
                     var series = this.series[0];
                     setInterval(function () {
                         var x = (new Date()).getTime(), // heure actuelle
-                            y = <?php echo $ppm_co2 ; ?>; // les valeurs en ppm sur l'axe des ordonnées
+                            y = <?php 
+                            if(isset($arr_posts))
+                            {
+                                foreach($arr_posts as $obj_post)
+                                    {
+                                        // val ppm
+                                        $ppm_co2 = $obj_post->co2; 
+                                        echo $ppm_co2 ;
+                                    }
+                             }
+                            ?>; // les valeurs en ppm sur l'axe des ordonnées
+                            
                         series.addPoint([x, y], true, true);
                     }, 4000);
                 }
@@ -426,7 +437,17 @@
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 1000,
-                        y: <?php echo $ppm_co2 ; ?> // les valeurs en ppm sur l'axe des abscisses
+                        y:<?php 
+                            if(isset($arr_posts))
+                            {
+                                foreach($arr_posts as $obj_post)
+                                    {
+                                        // val ppm
+                                        $ppm_co2 = $obj_post->co2; 
+                                        echo $ppm_co2 ;
+                                    }
+                             }
+                            ?>; // les valeurs en ppm sur l'axe des abscisses
                     });
                 }
                 return data;
