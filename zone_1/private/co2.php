@@ -201,13 +201,13 @@
     }
     // end if(!$user)
 
-    // Pour notre lib
-    require_once('../vendor/autoload.php');
+    // // Pour notre lib
+    // require_once('../vendor/autoload.php');
 
-    // On crée un objet de type Repository.
-    $obj_repo = new \GDS\Demo\Repository();
-    // Chercher juste les dernières valeurs insérées.
-    $arr_posts = $obj_repo->getLatestRecentPost();
+    // // On crée un objet de type Repository.
+    // $obj_repo = new \GDS\Demo\Repository();
+    // // Chercher juste les dernières valeurs insérées.
+    // $arr_posts = $obj_repo->getLatestRecentPost();
 
 ?>
 
@@ -324,90 +324,135 @@
 <!-- le script de la courbe lui même -->
 
 <!-- tout d'abord on cherche les valeurs -->
-<?php
-    echo "<pre>";
-    print_r($arr_posts->co2);
-    echo "</pre>";
-            // val ppm     
-    if(isset($arr_posts))
-    {
-        $ppm_co2 = $arr_posts->co2;    
-    } 
-?>
+
 <script type="text/javascript">
-   $(document).ready(function () {
-    Highcharts.setOptions({
-        global: {
-            useUTC: false
-        }
+var chart; // global
+/**
+ * Request data from the server, add it to the graph and set a timeout 
+ * to request again
+ */
+function requestData() {
+    $.ajax({
+        url: '/zone_1/home/co2/data',
+        success: function(point) {
+            var series = chart.series[0],
+                shift = series.data.length > 20; // shift if the series is 
+                                                 // longer than 20
+
+            // add the point
+            chart.series[0].addPoint(point, true, shift);
+            
+            // call it again after one second
+            setTimeout(requestData, 1000);    
+        },
+        cache: false
     });
+}
 
-    Highcharts.chart('co2', {
+$(document).ready(function() {
+    chart = new Highcharts.Chart({
         chart: {
-            type: 'spline',
-            animation: Highcharts.svg, // Ne pas animer dans l'ancien IE
-            marginRight: 10,
+            renderTo: 'co2',
+            defaultSeriesType: 'spline',
             events: {
-                load: function () {
-
-                    // Configurer la mise à jour du graphique chaque 4 seconde
-                    var series = this.series[0];
-                    setInterval(function () {
-                        var x = (new Date()).getTime(), // heure actuelle
-                            y = <?php echo $ppm_co2 ; ?>; // les valeurs en ppm sur l'axe des ordonnées
-                        series.addPoint([x, y], true, true);
-                    }, 4000);
-                }
+                load: requestData
             }
         },
         title: {
-            text: 'Live co2 data'
+            text: 'Live random data'
         },
         xAxis: {
             type: 'datetime',
-            tickPixelInterval: 150
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
         },
         yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
             title: {
-                text: 'Value in ppm'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            formatter: function () {
-                return '<b>' + this.series.name + '</b><br/>' +
-                    Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
-                    Highcharts.numberFormat(this.y, 2);
+                text: 'Value',
+                margin: 80
             }
         },
-        legend: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
         series: [{
-            name: 'co2',
-            data: (function () {
-                var data = [],
-                    time = (new Date()).getTime(),
-                    i;
-
-                for (i = -19; i <= 0; i += 1) {
-                    data.push({
-                        x: time + i * 1000,
-                        y: <?php echo $ppm_co2 ; ?> // les valeurs en ppm sur l'axe des ordonnées
-                    });
-                }
-                return data;
-            }())
+            name: 'Random data',
+            data: []
         }]
-    });
+    });        
 });
+//    $(document).ready(function () {
+//     Highcharts.setOptions({
+//         global: {
+//             useUTC: false
+//         }
+//     });
+
+//     Highcharts.chart('co2', {
+//         chart: {
+//             type: 'spline',
+//             animation: Highcharts.svg, // Ne pas animer dans l'ancien IE
+//             marginRight: 10,
+//             events: {
+//                 load: function () {
+
+//                     // Configurer la mise à jour du graphique chaque 4 seconde
+//                     var series = this.series[0];
+//                     setInterval(function () {
+//                         var x = (new Date()).getTime(), // heure actuelle
+//                             y = <?php $ppm_co2 ; ?>; // les valeurs en ppm sur l'axe des ordonnées
+//                         series.addPoint([x, y], true, true);
+//                     }, 4000);
+//                 }
+//             }
+//         },
+//         title: {
+//             text: 'Live co2 data'
+//         },
+//         xAxis: {
+//             type: 'datetime',
+//             tickPixelInterval: 150
+//         },
+//         yAxis: {
+//             title: {
+//                 text: 'Value in ppm'
+//             },
+//             plotLines: [{
+//                 value: 0,
+//                 width: 1,
+//                 color: '#808080'
+//             }]
+//         },
+//         tooltip: {
+//             formatter: function () {
+//                 return '<b>' + this.series.name + '</b><br/>' +
+//                     Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+//                     Highcharts.numberFormat(this.y, 2);
+//             }
+//         },
+//         legend: {
+//             enabled: false
+//         },
+//         exporting: {
+//             enabled: false
+//         },
+//         series: [{
+//             name: 'co2',
+//             data: (function () {
+//                 var data = [],
+//                     time = (new Date()).getTime(),
+//                     i;
+
+//                 for (i = -19; i <= 0; i += 1) {
+//                     data.push({
+//                         x: time + i * 1000,
+//                         y: <?php $ppm_co2 ; ?> // les valeurs en ppm sur l'axe des ordonnées
+//                     });
+//                 }
+//                 return data;
+//             }())
+//         }]
+//     });
+// });
 </script>
 <!-- ===================================== fin script ================================ -->
 
@@ -431,10 +476,10 @@
                     </button></a></td>
                 <td><a href="/zone_1/home/co2/hier"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></a></td>
-                <td>Il y a <form method="POST" action="/zone_1/home/co2/histmin"><input type="time" name="aujourduiMinCo2" class="form-control" placeholder="mm" required>minute(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                <td>Il y a <form method="POST" action="/zone_1/home/co2/histmin"><input type="text" name="aujourduiMinCo2" class="form-control" placeholder="mm" required>minute(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
                     </button>
                     </form><br><br>
-                Il y a <form method="POST" action="/zone_1/home/co2/histheure"><input type="time" name="aujourduiHeurCo2" class="form-control" placeholder="hh" required> heure(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                Il y a <form method="POST" action="/zone_1/home/co2/histheure"><input type="text" name="aujourduiHeurCo2" class="form-control" placeholder="hh" required> heure(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></form>
                 </td>
                 <td><a href="/zone_1/home/co2/tous"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
