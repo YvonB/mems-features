@@ -27,7 +27,7 @@ require_once('../vendor/autoload.php');
 
 <head>
     <meta charset="utf-8">
-    <title>Détéction de pollution</title>
+    <title>SDPE - IoT Welcome</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -90,7 +90,7 @@ require_once('../vendor/autoload.php');
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand colortextnav" href="/"><b>SDP - IoT</b></a>
+              <a class="navbar-brand colortextnav" href="/"><b>SDPE - IoT</b></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -514,11 +514,28 @@ catch(\Exception $obj_ex)
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                    </button></a>
         </div> 
-    </div>    
-</div>
+    </div> 
+</div> <!-- end notiff mg/m3 -->
+<div>
+<h2 style="color: #337ab7 !important;">Legend</h2>
+    
+        <div class="float">
+        <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p class="fanazavana">Vous trouvez dans un endroit très aéré !!</p>
+        </div>
+    <br>
+        <div class="float" style="margin-top: 0px;
+                                  margin-right: 400px;">
+        <div class="carre" style="background-color:#e67e22;display: inline;"></div> <p class="fanazavana">L'endroit est presque invivable à cause des polluants !</p>
+        </div>
+    <br>
+        <div class="float">
+        <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p class="fanazavana">Vous devez aérez le lieu ou bien évacuez ! Ca devient invivable.</p>
+        </div>
+ </div>
+
 <!-- ========================== fin Tab Dèr=============================== -->
 
-<hr style="width: 50%; border-top: 1px solid #cacaca;">
+<!-- <hr style="width: 50%; border-top: 1px solid #cacaca;"> -->
 
  <!-- ========================== Espace connexion ============================== -->
             <div class="row">
