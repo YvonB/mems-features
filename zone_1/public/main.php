@@ -517,7 +517,7 @@ catch(\Exception $obj_ex)
     </div> 
 </div> <!-- end notiff mg/m3 -->
 
-<div style="margin-left: 160px;">
+<div>
 
     <script>
               // On attend que la page soit chargée 
