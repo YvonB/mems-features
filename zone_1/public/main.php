@@ -535,7 +535,7 @@ catch(\Exception $obj_ex)
     </script>
 
    
-    <h2 style="color: #337ab7 !important;" id="toggler"><i class="fa-list-alt" style="margin-right: 4px;">See The Legend</i></h2>
+    <h2 style="color: #337ab7 !important;" id="toggler"><i class="fa-list-alt" style="margin-right: 4px;"></i>See The Legend</h2>
 
     <div id="toggle" class="toggle_legend">   
             <div class="float">
