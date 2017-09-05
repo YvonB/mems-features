@@ -525,6 +525,18 @@ div.float {
     float: right;
     padding-left: 15px;
  }
+ .toggle_legend
+ {
+    display: block;
+    position: relative;
+    background-color: rgba(154, 156, 160, 0.15);
+    padding-top: 8px;
+    /* width: 87%; */
+    height: 145px;
+
+    border-radius: 4px;
+    box-shadow: 0 0 10px;
+ }
 /*end notif legend*/
 
 

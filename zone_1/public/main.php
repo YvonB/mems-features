@@ -536,7 +536,7 @@ catch(\Exception $obj_ex)
 
    
     <h2 style="color: #337ab7 !important;" id="toggler">See The Legend</h2>
-    <div id="toggle">   
+    <div id="toggle" class="toggle_legend">   
             <div class="float">
             <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #beeb9f" class="fanazavana">Vous trouvez dans un endroit très aéré !!</p>
             </div>
