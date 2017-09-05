@@ -538,16 +538,16 @@ catch(\Exception $obj_ex)
     <h2 style="color: #337ab7 !important;" id="toggler">See The Legend</h2>
     <div id="toggle" class="toggle_legend">   
             <div class="float">
-            <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #beeb9f" class="fanazavana">Vous trouvez dans un endroit très aéré !!</p>
+            <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #212121" class="fanazavana">Vous trouvez dans un endroit très aéré ! Vous pouvez être tranquile</p>
             </div>
         <br>
             <div class="float" style="margin-top: 0px;
                                       margin-right: 400px;">
-            <div class="carre" style="background-color:#e67e22;display: inline;"></div> <p style="color: #e67e22" class="fanazavana">L'endroit est presque invivable à cause des polluants !</p>
+            <div class="carre" style="background-color:#e67e22;display: inline;"></div> <p style="color: #e67e22" class="fanazavana">L'endroit est PRESQUE invivable à cause des polluants ! Prenez garde !!</p>
             </div>
         <br>
             <div class="float">
-            <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p style="color: #e74c3c" class="fanazavana">Vous devez aérez le lieu ou bien évacuez ! Ca devient invivable.</p>
+            <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p style="color: #e74c3c" class="fanazavana">Alert ! Alert ! Vous devez aérez le lieu ou bien évacuez !! Ca devient invivable.</p>
             </div>
     </div>
  </div>
