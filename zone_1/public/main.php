@@ -337,7 +337,7 @@ require_once('../vendor/autoload.php');
 <br><br>
 <hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
-<div class="brute" id="mg_m3" style="height: 500px;">
+<div class="brute" id="mg_m3" style="height: 412px;">
 <h2>Notifications</h2>
 
 <!-- Calculs -->
@@ -516,20 +516,20 @@ catch(\Exception $obj_ex)
         </div> 
     </div> 
 </div> <!-- end notiff mg/m3 -->
-<div>
+<div style="margin-left: 160px;">
 <h2 style="color: #337ab7 !important;">Legend</h2>
     
         <div class="float">
-        <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p class="fanazavana">Vous trouvez dans un endroit très aéré !!</p>
+        <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #beeb9f" class="fanazavana">Vous trouvez dans un endroit très aéré !!</p>
         </div>
     <br>
         <div class="float" style="margin-top: 0px;
                                   margin-right: 400px;">
-        <div class="carre" style="background-color:#e67e22;display: inline;"></div> <p class="fanazavana">L'endroit est presque invivable à cause des polluants !</p>
+        <div class="carre" style="background-color:#e67e22;display: inline;"></div> <p style="color: #e67e22" class="fanazavana">L'endroit est presque invivable à cause des polluants !</p>
         </div>
     <br>
         <div class="float">
-        <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p class="fanazavana">Vous devez aérez le lieu ou bien évacuez ! Ca devient invivable.</p>
+        <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p style="color: #e74c3c" class="fanazavana">Vous devez aérez le lieu ou bien évacuez ! Ca devient invivable.</p>
         </div>
  </div>
 
