@@ -535,10 +535,11 @@ catch(\Exception $obj_ex)
     </script>
 
    
-    <h2 style="color: #337ab7 !important;" id="toggler">See The Legend</h2>
+    <h2 style="color: #337ab7 !important;" id="toggler"><i class="fa-list-alt" style="margin-right: 4px;">See The Legend</i></h2>
+
     <div id="toggle" class="toggle_legend">   
             <div class="float">
-            <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #212121" class="fanazavana">Vous trouvez dans un endroit très aéré ! Vous pouvez être tranquile</p>
+            <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #212121" class="fanazavana">Vous trouvez dans un endroit très aéré ! Vous pouvez être tranquile.</p>
             </div>
         <br>
             <div class="float" style="margin-top: 0px;
