@@ -145,7 +145,8 @@ require_once('../vendor/autoload.php');
             <div class="row">
                 <!-- Définition -->
                 <div class="col-md-8">
-                    <h2>What is it ?</h2>
+                    <h2><i class="fa fa-info" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
+                        What is it ?</h2>
                     <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est purus, ultrices in porttitor
                     in, accumsan non quam. Nam consectetur porttitor rhoncus. Curabitur eu est et leo feugiat
                     auctor vel quis lorem.
@@ -154,7 +155,8 @@ require_once('../vendor/autoload.php');
                 </div>
                 <!-- Dadhboard -->
                 <div class="col-md-4" >
-                    <h3 align="center">Counter Of Gases not acceptable</h3>
+                    <h3 align="center"><i class="fa fa-tachometer" style="margin-right: 4px;" aria-hidden="true"></i>
+                    Counter Of Gases not acceptable</h3>
                     <div id="chart_div" style="width: 400px; height: 120px;">
 
                         <?php
@@ -306,7 +308,8 @@ require_once('../vendor/autoload.php');
 		<hr style="width: 50%; border-top: 1px solid #cacaca;">
         <!-- ============================== Le Map ==================================== -->
             <div>
-                <h2>Where are our sensors?</h2>
+                <h2><i class="fa fa-map-marker" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>
+                        Where are our sensors?</h2>
                 <div class="my_map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d963367.6427555117!2d46.800975397000194!3d-19.40571407254446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21fa8238a95a8965%3A0xe11f2e914a20ec99!2sEcole+Sup%C3%A9rieur+Polytechnique+d&#39;Antananarivo!5e0!3m2!1sfr!2sfr!4v1501594670727" width="675" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
@@ -338,7 +341,8 @@ require_once('../vendor/autoload.php');
 <hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
 <div class="brute" id="mg_m3" style="height: 420px;">
-<h2>Notifications</h2>
+<h2><i class="fa fa-envelope" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
+Notifications</h2>
 
 <!-- Calculs -->
 
@@ -535,7 +539,7 @@ catch(\Exception $obj_ex)
     </script>
 
    
-    <h2 style="color: #337ab7 !important;" id="toggler"><i class="fa-list-alt" style="margin-right: 4px;"></i>See The Legend</h2>
+    <h2 style="color: #337ab7 !important;" id="toggler"><i class="fa fa-bookmark" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>See The Legend</h2>
 
     <div id="toggle" class="toggle_legend">   
             <div class="float">
