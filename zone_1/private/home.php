@@ -23,7 +23,7 @@
     // Chercher TOUS 'All' les gazs insérées récemment.
     $arr_posts = $obj_repo->getAllRecentPost();
 
-    //global
+    //global mail
     $count_mail = 0;
     $notif_mail = 0;
 
@@ -81,6 +81,7 @@
           $headers = "From: sdpeiot@mems-6-3.appspotmail.com" . "\r\n";
                               
           mail($to,$subject,$txt,$headers);
+          $notif_mail++;
         }
       if ($pource_co > 50) 
         {
@@ -90,6 +91,7 @@
           $headers = "From: sdpeiot@mems-6-3.appspotmail.com" . "\r\n";
                               
           mail($to,$subject,$txt,$headers);
+          $notif_mail++;
         }
       if ($pource_nh3 > 50) 
           {
@@ -99,6 +101,7 @@
             $headers = "From: sdpeiot@mems-6-3.appspotmail.com" . "\r\n";
                               
             mail($to,$subject,$txt,$headers);
+            $notif_mail++;
           } 
             // fin envoye mail 
 
@@ -154,7 +157,7 @@
             <h3><?php echo  date('l jS \of F Y'); ?></h3>
           </div> <!-- end date -->
 
-          <br><img src="/img/gmail.png" id="gmail-logo" /><b><?php echo $notif_mail; ?></b>
+          <br><img src="/img/gmail.png" id="gmail-logo" /><b id="notif_mail"><?php echo $notif_mail; ?></b>
 
            <!-- affiche heure -->
           <script type="text/javascript">
