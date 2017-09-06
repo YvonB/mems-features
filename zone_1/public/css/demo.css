@@ -56,7 +56,7 @@ body
 
 .date_time
 {
-  height: 55px;
+  height: 85px;
   background-color: #fafafa;
 }
 
@@ -168,6 +168,14 @@ body
 {
     width: 42px;
     margin-right: 5px;
+}
+
+#gmail-logo
+{
+  width: 40px;
+  margin-right: 8px;
+  margin-left: 14px;
+  margin-top: 25px;
 }
 .logo_ban
 {
@@ -525,14 +533,15 @@ div.float {
     float: right;
     padding-left: 15px;
  }
+
  .toggle_legend
  {
     display: block;
     position: relative;
     background-color: rgba(154, 156, 160, 0.15);
-    padding-top: 8px;
+    padding-top: 10px;
     /* width: 87%; */
-    height: 145px;
+    height: 150px;
 
     border-radius: 4px;
     box-shadow: 0 0 10px;

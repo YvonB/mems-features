@@ -109,11 +109,15 @@ require_once('../vendor/autoload.php');
 
               <ul class="nav navbar-nav navbar-right colortextnav">
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Options</b><span class="caret" style="margin-left: 8px;"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" style="font-size: 18px;" aria-hidden="true"></i>
+                    <!-- <span class="caret" style="margin-left: 8px;"></span> --></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/zone_1/home/co2" style="text-transform: lowercase;">Voir l'état de CO2</a></li>
-                    <li><a href="/zone_1/home/co" style="text-transform: lowercase;">Voir l'état de CO</a></li>
-                    <li><a href="/zone_1/home/nh3" style="text-transform: lowercase;">Voir l'état de NH3</a></li>
+                    <li><a href="/zone_1/home/co2" style="text-transform: lowercase;">
+                        Voir l'état de CO2</a></li>
+                    <li><a href="/zone_1/home/co" style="text-transform: lowercase;">
+                        Voir l'état de CO</a></li>
+                    <li><a href="/zone_1/home/nh3" style="text-transform: lowercase;">
+                        Voir l'état de NH3</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="<?php 
                                     $login = "/zone_1/login";
@@ -341,7 +345,7 @@ require_once('../vendor/autoload.php');
 <hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
 <div class="brute" id="mg_m3" style="height: 420px;">
-<h2><i class="fa fa-envelope" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
+<h2><i class="fa fa-bell" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
 Notifications</h2>
 
 <!-- Calculs -->
@@ -521,7 +525,7 @@ catch(\Exception $obj_ex)
     </div> 
 </div> <!-- end notiff mg/m3 -->
 
-<div>
+<div style="margin-right: 80px;">
 
     <script>
               // On attend que la page soit chargée 
@@ -539,7 +543,7 @@ catch(\Exception $obj_ex)
     </script>
 
    
-    <h2 style="color: #337ab7 !important;" id="toggler"><i class="fa fa-bookmark" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>See The Legend</h2>
+    <h2 style="color: #337ab7 !important; font-size: 16px" id="toggler"><i class="fa fa-bookmark" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>See The Legend</h2>
 
     <div id="toggle" class="toggle_legend">   
             <div class="float">
@@ -565,7 +569,8 @@ catch(\Exception $obj_ex)
  <!-- ========================== Espace connexion ============================== -->
             <div class="row">
                 <div class="col-md-12">
-                    <h2>See more content</h2>
+                    <h2><i class="fa fa-plus" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>
+                        See more content</h2>
                 </div>
             </div>
             <div class="row">

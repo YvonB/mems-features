@@ -32,7 +32,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- CSS global -->
     <link rel="stylesheet" href="/css/demo.css">
     <!-- css du slide -->
@@ -67,6 +67,8 @@
             <h3><?php echo  date('l jS \of F Y'); ?></h3>
           </div> <!-- end date -->
 
+          <br><img src="/img/gmail.png" id="gmail-logo" /><b><?php 2 ?></b>
+
            <!-- affiche heure -->
           <script type="text/javascript">
               setInterval(function(){
@@ -83,7 +85,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand colortextnav" href="/zone_1"><b>SDP - IoT</b></a>
+              <a class="navbar-brand colortextnav" href="/zone_1"><b>SDPE - IoT</b></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -128,16 +130,17 @@
 <!-- =====================La définition et la Réssource===================== -->
             <div class="row">
                 <div class="col-md-8">
-                    <h2>Lorem Ipsum</h2>
+                    <h2><i class="fa fa-info" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>Lorem Ipsum</h2>
                     <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est purus ultrices in porttitor
                     in, accumsan non quam. Nam consectetur porttitor rhoncus.<br> Curabitur eu est et leo feugiat
                     auctor vel quis lorem.
                     Ut et ligula dolor, sit amet consequat lorem. Aliquam porta eros sed
                     velit imperdiet egestas.</dd>
+                    <?php echo htmlspecialchars($user->getEmail()); ?>
                 </div>
                 <!-- ============== -->
                 <div class="col-md-4">
-                    <h2 align="center">Gas not accepted</h2>
+                    <h2 align="center"><i class="fa fa-pie-chart" style="margin-right: 8px" aria-hidden="true"></i>Gas not accepted</h2>
                       <div id="container" style="width:100%;height: 400px"> <!-- div pour contenir le Pie -->
 
                       <?php
@@ -195,6 +198,27 @@
                                 $pource_nh3 = ($n_nh3*100)/$nbr;
                             }
 
+
+
+                            // envoyer un mail à l'utilisatuer courante
+                            while( $obj_post->co2 >= 396 OR $obj_post->co >= 3 OR $obj_post->nh3 >= 5)
+                              {
+                                if($obj_post->co2 >= 396)
+                                {
+                                  // the message
+                                  $msg = "Allert au Gaz carbique !";
+
+                                  // use wordwrap() if lines are longer than 70 characters
+                                  $msg = wordwrap($msg,70);
+
+                                  // send email
+                                  mail("<?php echo $user->getEmail(); ?>","My subject",$msg);
+                                }
+                                //end if co2 >= 396
+                                
+                              }
+                                
+                            // fin envoye mail 
                         ?>
 
                         <!-- // Tant que les données ne sont pas prêtes on affiche un loader   -->
@@ -295,7 +319,7 @@
             <!-- ============================= Slide des 03 courbes ======================== -->
                   <!-- 1)HTML -->
                   <div class="col-md-12">
-                  <h2>See all at once</h2>
+                  <h2><i class="fa fa-line-chart" style="margin-left: 3px;margin-right: 8px;" aria-hidden="true"></i>See all at once</h2>
                   </div>
                     <div class="mon_slide">
                         <div id="slider">
@@ -391,7 +415,8 @@
 <!-- ================= les 10 dernières valeurs insérées ================== -->
 <!-- jquery hide show toggle -->
 <div class="col-md-8">
-    <h2 id="toggler">See Quickly the last 10 inserted values</h2>
+    <h2 id="toggler"><i class="fa fa-history" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
+See Quickly the last 10 inserted values</h2>
 </div>
 <div class="row">
 
