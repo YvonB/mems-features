@@ -67,7 +67,7 @@
             <h3><?php echo  date('l jS \of F Y'); ?></h3>
           </div> <!-- end date -->
 
-          <br><img src="/img/gmail.png" id="gmail-logo" /><b><?php 2 ?></b>
+          <br><img src="/img/gmail.png" id="gmail-logo" /><b><?php echo "2"; ?></b>
 
            <!-- affiche heure -->
           <script type="text/javascript">
@@ -136,7 +136,7 @@
                     auctor vel quis lorem.
                     Ut et ligula dolor, sit amet consequat lorem. Aliquam porta eros sed
                     velit imperdiet egestas.</dd>
-                    <?php echo htmlspecialchars($user->getEmail()); ?>
+                    
                 </div>
                 <!-- ============== -->
                 <div class="col-md-4">
@@ -190,6 +190,8 @@
 
                         }
 
+
+
                         //calculs les %
                         if($nbr != 0) // on évite la division par zéro
                             {   
@@ -197,30 +199,49 @@
                                 $pource_co = ($n_co*100)/$nbr;
                                 $pource_nh3 = ($n_nh3*100)/$nbr;
                             }
+                        ?>
+                        
+                        <?php
 
+                           $curentUserMail = htmlspecialchars($user->getEmail()); 
 
+                           
+                        // envoyer un mail à l'utilisatuer courante
+                           
+                                if($pource_co2 > 50)
+                                  {
+                                    $to = $curentUserMail;
+                                    $subject = "Alert au Gaz carbonique";
+                                    $txt = "Le taux de Gaz carbonique non acceptable est de: ".$pource_co2."%.";
+                                    $headers = "From: sdpeiot@mems-6-2.appspotmail.com" . "\r\n";
+                              
+                                    mail($to,$subject,$txt,$headers);
+                                  }
+                                  elseif ($pource_co > 50) 
+                                    {
+                                      $to = $curentUserMail;
+                                      $subject = "Alert au Monoxyde de Carbone";
+                                      $txt = "Le taux de Monoxyde de Carbone non acceptable est de: ".$pource_co."%.";
+                                      $headers = "From: sdpeiot@mems-6-2.appspotmail.com" . "\r\n";
+                              
+                                      mail($to,$subject,$txt,$headers);
+                                    }
+                                    elseif ($pource_co > 50) 
+                                      {
+                                        $to = $curentUserMail;
+                                        $subject = "Alert à l' Ammoniaque";
+                                        $txt = "Le taux d'Amoniaque non acceptable est de: ".$pource_nh3."%.";
+                                        $headers = "From: sdpeiot@mems-6-2.appspotmail.com" . "\r\n";
+                              
+                                        mail($to,$subject,$txt,$headers);
+                                      }
+                                    
 
-                            // envoyer un mail à l'utilisatuer courante
-                            while( $obj_post->co2 >= 396 OR $obj_post->co >= 3 OR $obj_post->nh3 >= 5)
-                              {
-                                if($obj_post->co2 >= 396)
-                                {
-                                  // the message
-                                  $msg = "Allert au Gaz carbique !";
-
-                                  // use wordwrap() if lines are longer than 70 characters
-                                  $msg = wordwrap($msg,70);
-
-                                  // send email
-                                  mail("<?php echo $user->getEmail(); ?>","My subject",$msg);
-                                }
-                                //end if co2 >= 396
                                 
-                              }
+                              
                                 
                             // fin envoye mail 
-                        ?>
-
+                          ?>    
                         <!-- // Tant que les données ne sont pas prêtes on affiche un loader   -->
                          <?php 
                         
