@@ -157,7 +157,20 @@
             <h3><?php echo  date('l jS \of F Y'); ?></h3>
           </div> <!-- end date -->
 
-          <br><img src="/img/gmail.png" id="gmail-logo" /><b id="notif_mail"><?php echo $notif_mail; ?></b>
+          <br><img src="/img/gmail.png" id="gmail-logo" />
+
+          <?php if($notif_mail != 0)
+                  { 
+                    ?>
+                    <b id="notif_mail"><?php echo $notif_mail; ?></b> 
+                    <?php
+                  } 
+                  else
+                  {
+
+                  }
+
+          ?>
 
            <!-- affiche heure -->
           <script type="text/javascript">
