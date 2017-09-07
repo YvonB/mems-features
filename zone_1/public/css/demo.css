@@ -74,7 +74,7 @@ body
 {
   color:#757575;
   font-size: 40px;
-  padding-top: 20px;
+  padding-top: 35px;
   float: right;
   padding-right: 22px;
   cursor: pointer;
@@ -184,7 +184,24 @@ margin-left: -10px;
     margin-right: 5px;
 }
 
-#gmail-logo
+#gmail-with-notif
+{
+  width: 40px;
+  /*margin-right: 8px;*/
+  margin-left: 14px;
+  margin-top: 25px;
+  
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -o-transition: all 1s ease; /* IE 9 */
+  -ms-transition: all 1s ease; /* Opera */
+  transition: all 1s ease;
+  max-width: 100%;
+
+  cursor: pointer;
+}
+
+#gmail-no-notif
 {
   width: 40px;
   /*margin-right: 8px;*/
@@ -201,11 +218,12 @@ margin-left: -10px;
 
 #gmail-logo:hover
 {
+  margin-left: 14px;
   -webkit-transform:scale(1.25); /* Safari and Chrome */
--moz-transform:scale(1.25); /* Firefox */
--ms-transform:scale(1.25); /* IE 9 */
--o-transform:scale(1.25); /* Opera */
-transform:scale(1.25);
+  -moz-transform:scale(1.25); /* Firefox */
+  -ms-transform:scale(1.25); /* IE 9 */
+  -o-transform:scale(1.25); /* Opera */
+  transform:scale(1.25);
 }
 
 .logo_ban

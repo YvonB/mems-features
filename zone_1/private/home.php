@@ -78,7 +78,7 @@
           $to = $curentUserMail;
           $subject = "Alert au Gaz carbonique";
           $txt = "Le taux de Gaz carbonique non acceptable est de: ".$pource_co2."%.";
-          $headers = "From: sdpeiot@mems-6-3.appspotmail.com" . "\r\n";
+          $headers = "From: sdpeiot@mems-7-179205.appspotmail.com" . "\r\n";
                               
           mail($to,$subject,$txt,$headers);
           $notif_mail++;
@@ -88,7 +88,7 @@
           $to = $curentUserMail;
           $subject = "Alert au Monoxyde de Carbone";
           $txt = "Le taux de Monoxyde de Carbone non acceptable est de: ".$pource_co."%.";
-          $headers = "From: sdpeiot@mems-6-3.appspotmail.com" . "\r\n";
+          $headers = "From: sdpeiot@mems-7-179205.appspotmail.com" . "\r\n";
                               
           mail($to,$subject,$txt,$headers);
           $notif_mail++;
@@ -98,7 +98,7 @@
             $to = $curentUserMail;
             $subject = "Alert à l' Ammoniaque";
             $txt = "Le taux d'Amoniaque non acceptable est de: ".$pource_nh3."%.";
-            $headers = "From: sdpeiot@mems-6-3.appspotmail.com" . "\r\n";
+            $headers = "From: sdpeiot@mems-7-179205.appspotmail.com" . "\r\n";
                               
             mail($to,$subject,$txt,$headers);
             $notif_mail++;
@@ -157,17 +157,16 @@
             <h3><?php echo  date('l jS \of F Y'); ?></h3>
           </div> <!-- end date -->
 
-          <br><img src="/img/gmail.png" id="gmail-logo" />
-
           <?php if($notif_mail != 0)
                   { 
                     ?>
-                    <b id="notif_mail"><?php echo $notif_mail; ?></b> 
+                    <br><a href="https://mail.google.com/"><img src="/img/gmail-with-notif.png" id="gmail-with-notif" /></a><b id="notif_mail"><?php echo $notif_mail; ?></b> 
                     <?php
                   } 
                   else
-                  {
-
+                  {?>
+                    <br><img src="/img/gmail-no-notif.png" id="gmail-no-notif" />
+                    <?php
                   }
 
           ?>
@@ -207,7 +206,7 @@
                 <li><a href="/zone_1/home/co">Monoxyde de Carbone</a></li>
                 <li><a href="/zone_1/home/nh3">Amoniaque</a></li>
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 0px;"></i>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="font-size: 16px;margin-right: 2px;" aria-hidden="true"></i>
                     <b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="/zone_1/logout"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
