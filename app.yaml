@@ -61,19 +61,6 @@ handlers:
 - url: /zone_1/home/co2/tous
   script: zone_1/private/tousco2.php
 
-
-# données pour le dashboard du main
-- url: /zone_1/pourc-not-acceptable
-  script: zone_1/private/live-server-main-pourc-not-acceptable.php
-
-# données pour le tableau des valeurs brutes du main
-- url: /zone_1/brute-mgm3-notif
-  script: zone_1/private/live-server-main-brute-mgm3-notif.php
-
-#10 dernières valeurs dans home
-- url: /zone_1/home/tenlatest
-  script: zone_1/private/live-server-home-ten-latest-brute.php
-
 # données pour la courbe co2
 - url: /zone_1/home/co2/data
   script: zone_1/private/live-server-co2-data.php
