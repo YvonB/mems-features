@@ -11,105 +11,45 @@
         exit; // On arrête tout.
     }
 
-    // Pour notre lib
-    require_once('../vendor/autoload.php');
-
-    // pour cacher les notices au niveau des compteurs lorsque les valeures ne sont pas encore dispo
     ini_set("display_errors",0);error_reporting(0);
-    
-    $obj_repo = new \GDS\Demo\Repository();
-    // $arr_posts = $obj_repo->getRecentPosts();
+ 
+    $curentUserMail = htmlspecialchars($user->getEmail()); 
 
-    // Chercher TOUS 'All' les gazs insérées récemment.
-    $arr_posts = $obj_repo->getAllRecentPost();
-
-    //global mail
-    $count_mail = 0;
-    $notif_mail = 0;
-
-    // au début 
-    $nbr_co2_na = 0;
-    $n_co2 = 0;
-    $nbr_co_na = 0;
-    $n_co = 0;
-    $nbr_nh3_na = 0;
-    $n_nh3 = 0; 
-
-    // Compte tous les posts.
-    $nbr = count($arr_posts); // C'est le N dans le livre
-                        
-    foreach ($arr_posts as $obj_post) 
-    {
-        if($obj_post->co2 >= 396)// tous les co2 qui dépasse ou égale à 396ppm
-            {   
-                $nbr_co2_na += 1; // si on est ici c'est qu'il y a des co2 non acceptables, on icremente le nombre $nbr_co2_na alors !
-                $n_co2 = $nbr_co2_na;
-                // $co2_na = $obj_post->co2;
-            }
-        if($obj_post->co >= 3) // tous les co qui dépasse ou égale à 3ppm
-            {
-                // si on est ici c'est qu'il y a des co non acceptables, on icremente le nombre $nbr_co_na alors !
-                $nbr_co_na += 1;
-                $n_co = $nbr_co_na;
-                // $co_na = $obj_post->co;
-            }
-        if($obj_post->nh3 >= 5) // tous les nh3 qui dépasse ou égale à 5ppm
-                {   
-                    // si on est ici c'est qu'il y a des nh3 non acceptables, on icremente le nombre $nbr_nh3_na alors !
-                    $nbr_nh3_na += 1;
-                    $n_nh3 = $nbr_nh3_na;
-                }  
-      }
-
-      //calculs les %
-      if($nbr != 0) // on évite la division par zéro
-          {   
-              $pource_co2 = ($n_co2*100)/$nbr;
-              $pource_co = ($n_co*100)/$nbr;
-              $pource_nh3 = ($n_nh3*100)/$nbr;
-          }
-
-      $curentUserMail = htmlspecialchars($user->getEmail()); 
-
+      // Demander des données au serveur
+      require_once '../private/live-server-main-pourc-not-acceptable.php';
                            
       // envoyer un mail à l'utilisatuer courante                    
-      if($pource_co2 > 50)
+      if($res[0] > 50)
         {
           $to = $curentUserMail;
           $subject = "Alert au Gaz carbonique";
-          $txt = "Le taux de Gaz carbonique non acceptable est de: ".$pource_co2."%.";
-          $headers = "From: sdpeiot@mems-7-179205.appspotmail.com" . "\r\n";
+          $txt = "Le taux de Gaz carbonique non acceptable est de: ".$res[0]."%.";
+          $headers = "From: sdpeiot@mems-7-3-179211.appspotmail.com" . "\r\n";
                               
           mail($to,$subject,$txt,$headers);
           $notif_mail++;
         }
-      if ($pource_co > 50) 
+      if ($res[1] > 50) 
         {
           $to = $curentUserMail;
           $subject = "Alert au Monoxyde de Carbone";
-          $txt = "Le taux de Monoxyde de Carbone non acceptable est de: ".$pource_co."%.";
-          $headers = "From: sdpeiot@mems-7-179205.appspotmail.com" . "\r\n";
+          $txt = "Le taux de Monoxyde de Carbone non acceptable est de: ".$res[1]."%.";
+          $headers = "From: sdpeiot@mems-7-3-179211.appspotmail.com" . "\r\n";
                               
           mail($to,$subject,$txt,$headers);
           $notif_mail++;
         }
-      if ($pource_nh3 > 50) 
+      if ($res[2] > 50) 
           {
             $to = $curentUserMail;
             $subject = "Alert à l' Ammoniaque";
-            $txt = "Le taux d'Amoniaque non acceptable est de: ".$pource_nh3."%.";
-            $headers = "From: sdpeiot@mems-7-179205.appspotmail.com" . "\r\n";
+            $txt = "Le taux d'Amoniaque non acceptable est de: ".$res[2]."%.";
+            $headers = "From: sdpeiot@mems-7-3-179211.appspotmail.com" . "\r\n";
                               
             mail($to,$subject,$txt,$headers);
             $notif_mail++;
           } 
             // fin envoye mail 
-
-            function NbrMail()
-              {
-                return $notif_mail;
-              }
-
 ?>
 
 <!DOCTYPE html>
@@ -248,7 +188,7 @@
                         <!-- // Tant que les données ne sont pas prêtes on affiche un loader   -->
                          <?php 
                         
-                        if($pource_co2 == null AND $pource_co == null AND $pource_nh3 == null)
+                        if($res[0] == null AND $res[1] == null AND $res[2] == null)
                         {
                             ?>
                             <p style="text-align: center;">En attente des <strong>données</strong>...</p>
@@ -290,11 +230,11 @@
                                   type: 'pie',
                                   name: 'Not acceptable',
                                   data: [
-                                      ['co2', <?php echo $pource_co2; ?>],
-                                      ['co', <?php echo $pource_co; ?>],
+                                      ['co2', <?php echo htmlspecialchars($res[0]); ?>],
+                                      ['co', <?php echo htmlspecialchars($res[1]); ?>],
                                       {
                                           name: 'nh3',
-                                          y: <?php echo $pource_nh3; ?>,
+                                          y: <?php echo htmlspecialchars($res[2]); ?>,
                                           sliced: true,
                                           selected: true
                                       } 
@@ -305,26 +245,6 @@
                         </script>
                         <!-- end script Pie -->
 
-                        <!-- actu auto du div du Pie -->
-                          <script type="text/javascript">
-                            $(document).ready(function()
-                                {   
-                                    $('#container').load('home.php');
-                                    refresh();
-                                });
-
-                            function refresh() 
-                                {   
-                                    setTimeout(
-                                                function()
-                                                    {
-                                                       $('#container').load('home.php');
-                                                       refresh();     
-                                                    }, 1000        // l'actualisation se fait chaque sec 
-                                              );
-                                }
-                            </script>
-                        <!-- end actu auto -->
                    </div> <!-- fin div Pie -->
                 </div> <!-- end coll md 4 -->
             </div> <!-- end row -->
@@ -455,62 +375,7 @@ See Quickly the last 10 inserted values</h2>
                         <div class="panel-body">
 
                             <?php
-                                try 
-                                    {   
-                                        // On crée un objet de type Repository.
-                                        $obj_repo = new \GDS\Demo\Repository();
-                                        // Chercher les 10 dernières valeurs insérées
-                                        $arr_posts = $obj_repo->getRecentPosts();
-
-                                        // Les afficher
-                                        foreach ($arr_posts as $obj_post) 
-                                        {
-
-                                            // Effectuez une belle chaîne d'affichage de date et heure
-                                            $int_posted_date = strtotime($obj_post->posted);
-                                            $int_date_diff = time() - $int_posted_date;
-
-                                            if ($int_date_diff < 3600) 
-                                            {
-                                                $str_date_display = round($int_date_diff / 60) . ' minute(s)';
-                                            } 
-                                            else if ($int_date_diff < (3600 * 24)) 
-                                            {
-                                                $str_date_display = round($int_date_diff / 3600) . ' heure(s)';
-                                            } 
-                                            else 
-                                            {
-                                                $str_date_display = date('\a\t jS M Y, H:i', $int_posted_date);
-                                            }
-
-                                            echo "<pre>";
-                                            echo '<div class="post">';
-                                            if(isset($obj_post->co2) AND !empty($obj_post->co2))
-                                                {
-                                                    echo '<div class="gas">Taux de CO2: <strong>', htmlspecialchars($obj_post->co2),'</strong><em>cm³/m³</em>    ', '</div>';
-                                                }
-                                            if(isset($obj_post->co) AND !empty($obj_post->co))
-                                                {
-                                                    echo '<div class="gas"> Taux de CO: <strong>', htmlspecialchars($obj_post->co),'</strong><em>cm³/m³</em>    ', '</div>';
-                                                }
-                                            if(isset($obj_post->nh3) AND !empty($obj_post->nh3))
-                                                {
-                                                    echo '<div class="gas"> Taux de NH3: <strong>', htmlspecialchars($obj_post->nh3), '</strong><em>cm³/m³</em>    ', '<br><span class="time">', $str_date_display, '</span></div>';
-                                                }
-                                            echo '</div>';
-                                            echo "</pre>";
-                                        }
-
-                                        $int_posts = count($arr_posts);
-
-                                        echo '<div class="post"><em>Showing last ', $int_posts, '</em></div>';
-
-                                    } 
-                                catch (\Exception $obj_ex)
-                                {
-                                    syslog(LOG_ERR, $obj_ex->getMessage());
-                                    echo '<em>Whoops, something went wrong!</em>';
-                                }
+                              require_once 'zone_1/private/live-server-home-ten-latest-brute.php';
                             ?>
                         </div>
                     </div>

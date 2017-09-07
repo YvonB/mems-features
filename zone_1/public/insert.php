@@ -21,5 +21,5 @@ syslog(LOG_DEBUG, 'Proceeding... ' . print_r($_SERVER, TRUE) . "\n\n" . print_r(
 $obj_repo = new Repository(); // On crée une nouvelle instance de cette classe
 $obj_repo->createPost($str_co2, $str_co, $str_nh3); // Pour crée une entité avec les valeurs des params d'url, ie les 3 gazs polluants.
 
-header("Location: /zone_1/home/co2");
+header("Location: /zone_1");
 

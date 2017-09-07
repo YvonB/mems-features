@@ -6,7 +6,7 @@ define('GDS_KEY_FILE', dirname(__FILE__) . '/key.p12');
 define('MASSE_MOLAIRE_CO2', 44);
 define('MASSE_MOLAIRE_CO', 28);
 define('MASSE_MOLAIRE_NH3', 17);
-define('VOLUME_MOLAIRE', 22.4); // une mole de gaz occupe toujours le même volume dans les CNTP
+define('VOLUME_MOLAIRE', 22.4); 
 
 use google\appengine\api\users\User;
 use google\appengine\api\users\UserService;
@@ -104,7 +104,7 @@ ini_set("display_errors",0);error_reporting(0);
 
               <ul class="nav navbar-nav navbar-right colortextnav">
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" style="font-size: 18px;" aria-hidden="true"></i>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" style="font-size: 17px;" aria-hidden="true"></i>
                     <!-- <span class="caret" style="margin-left: 8px;"></span> --></a>
                   <ul class="dropdown-menu">
                     <li><a href="/zone_1/home/co2" style="text-transform: lowercase;">
@@ -214,27 +214,7 @@ ini_set("display_errors",0);error_reporting(0);
                                 }                    
                     </script>
                     <!-- ================= Fin script affich ===================== % -->
-                            
-                    <!-- actualisation automatique,SEULEMENT le div des compteurs-->
-                    <script type="text/javascript">
-                        $(document).ready(function()
-                                {   
-                                    $('#chart_div').load('main.php');
-                                    refresh();
-                                });
 
-                        function refresh() 
-                                {   
-                                    setTimeout(
-                                                function()
-                                                    {
-                                                       $('#chart_div').load('main.php');
-                                                       refresh();     
-                                                    }, 1000        // l'actualisation se fait chaque sec 
-                                              );
-                                }
-                    </script>
-                        <!-- ======================= fin actu auto ===================== -->
                     </div> <!-- fin div compteurs -->
                 </div> <!-- fin col md 4 -->
             </div> <!-- fin row -->
@@ -250,28 +230,6 @@ ini_set("display_errors",0);error_reporting(0);
                 </div>
             </div>
         <!-- =============================== Fin Map ================================== -->
-
-
-        <!-- ====== actualisation automatique,SEULEMENT le div des valeurs en mg/m3  ============ -->
-                            <script type="text/javascript">
-                            $(document).ready(function()
-                                {   
-                                    $('#mg_m3').load('main.php');
-                                    refresh();
-                                });
-
-                            function refresh() 
-                                {   
-                                    setTimeout(
-                                                function()
-                                                    {
-                                                       $('#mg_m3').load('main.php');
-                                                       refresh();     
-                                                    }, 1000        // l'actualisation se fait chaque seconde 
-                                              );
-                                }
-                            </script>
-<!-- ======================= fin actu auto ===================== --> 
 <br><br>
 <hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
@@ -428,21 +386,20 @@ Notifications</h2>
 <div style="margin-right: 80px;"> <!-- Legend -->
 
     <script>
-              // On attend que la page soit chargée 
-              jQuery(document).ready(function()
-              {
-              // On cache la zone de texte
-              jQuery('#toggle').hide();
-              // toggle() lorsque le lien avec l'ID #toggler est cliqué
-              jQuery('h2#toggler').click(function()
-              {
-              jQuery('#toggle').toggle(400);
-              return false;
-              });
-              });
+        // On attend que la page soit chargée 
+        jQuery(document).ready(function()
+        {
+        // On cache la zone de texte
+        jQuery('#toggle').hide();
+        // toggle() lorsque le lien avec l'ID #toggler est cliqué
+        jQuery('h2#toggler').click(function()
+        {
+        jQuery('#toggle').toggle(400);
+        return false;
+        });
+        });
     </script>
 
-   
     <h2 style="color: #337ab7 !important; font-size: 16px" id="toggler"><i class="fa fa-bookmark" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>See The Legend</h2>
 
     <div id="toggle" class="toggle_legend">   
