@@ -14,12 +14,7 @@ use google\appengine\api\users\UserService;
 # Looks for current Google account session
 $user = UserService::getCurrentUser();
 
-// pour cacher les notices au niveau des compteurs lorsque les valeures ne sont pas encore dispo
 ini_set("display_errors",0);error_reporting(0);
-
-// Inclusion pour notre lib
-require_once('../vendor/autoload.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -161,81 +156,27 @@ require_once('../vendor/autoload.php');
                 <div class="col-md-4" >
                     <h3 align="center"><i class="fa fa-tachometer" style="margin-right: 4px;" aria-hidden="true"></i>
                     Counter Of Gases not acceptable</h3>
+
                     <div id="chart_div" style="width: 400px; height: 120px;">
-
-                        <?php
-
-                        try
-                        {
-                        // On crée un objet de type Repository.
-                        $obj_repo = new \GDS\Demo\Repository();
-                        // Chercher TOUS 'All' les gazs insérées récemment.
-                        $arr_posts = $obj_repo->getAllRecentPost();
-
-                        // au début 
-                        $nbr_co2_na = 0;
-                        $n_co2 = 0;
-                        $nbr_co_na = 0;
-                        $n_co = 0;
-                        $nbr_nh3_na = 0;
-                        $n_nh3 = 0;
-
-                        // Compte tous les posts.
-                        $nbr = count($arr_posts); // C'est le N dans le livre
-                        
-                        foreach ($arr_posts as $obj_post) 
-                        {
-                            if($obj_post->co2 >= 396)// tous les co2 qui dépasse ou égale à 396ppm
-                                {   
-                                    $nbr_co2_na += 1; // si on est ici c'est qu'il y a des co2 non acceptables, on icremente le nombre $nbr_co2_na alors !
-                                    $n_co2 = $nbr_co2_na;
-                                    // $co2_na = $obj_post->co2;
-                                }
-                            if($obj_post->co >= 3) // tous les co qui dépasse ou égale à 3ppm
-                                {
-                                    // si on est ici c'est qu'il y a des co non acceptables, on icremente le nombre $nbr_co_na alors !
-                                    $nbr_co_na += 1;
-                                    $n_co = $nbr_co_na;
-                                    // $co_na = $obj_post->co;
-                                }
-                            if($obj_post->nh3 >= 5) // tous les nh3 qui dépasse ou égale à 5ppm
-                                    {   
-                                        // si on est ici c'est qu'il y a des nh3 non acceptables, on icremente le nombre $nbr_nh3_na alors !
-                                        $nbr_nh3_na += 1;
-                                        $n_nh3 = $nbr_nh3_na;
-                                    }  
-                            ?>
-                        
-                        <?php 
-
-                        }
-
-                        //calculs les %
-                        if($nbr != 0) // on évite la division par zéro
-                            {   
-                                $pource_co2 = ($n_co2*100)/$nbr;
-                                $pource_co = ($n_co*100)/$nbr;
-                                $pource_nh3 = ($n_nh3*100)/$nbr;
-                            }
-
+                    
+                     <?php 
+                    // Demander des données au serveur
+                     require_once '../private/live-server-main-pourc-not-acceptable.php';               
+                     // Tant que les données ne sont pas prêtes on affiche un loder                        
+                     if($res[0] == null AND $res[1] == null AND $res[2]== null)
+                     {
                         ?>
-                          <!-- // Tant que les données ne sont pas prêtes on affiche un loder   -->
-                         <?php 
-                        
-                        if($pource_co2 == null AND $pource_co == null AND $pource_nh3 == null)
-                        {
-                            ?>
-                            <p>En attente des <strong>données</strong> provenant des <strong>capteurs</strong>...</p>
-                            <div class="loader_compteurs"></div>
-                            <?php
-                        }
-                         ?>
-                         <!-- fin affichage loader -->
+                         <p>En attente des <strong>données</strong> provenant des <strong>capteurs</strong>...</p>
+                         <div class="loader_compteurs"></div>
+                        <?php
+                     }
+                        ?>
+                    <!-- fin affichage loader -->
 
-                <!-- script pour afficher les pourcentages de gazs non acceptable sur les compteurs -->
-                            <script type="text/javascript">
-                                google.charts.load('current', {'packages':['gauge']});
-                                google.charts.setOnLoadCallback(drawChart);
+                    <!-- afficher les pourcentages de gazs non acceptable sur les compteurs -->
+                    <script type="text/javascript">
+                    google.charts.load('current', {'packages':['gauge']});
+                    google.charts.setOnLoadCallback(drawChart);
 
                                 function drawChart() 
                                 {
@@ -259,30 +200,30 @@ require_once('../vendor/autoload.php');
                                     chart.draw(data, options);
 
                                     setInterval(function() {
-                                      data.setValue(0, 1, 0 + <?php echo $pource_co2; ?>);
+                                      data.setValue(0, 1, 0 + <?php echo htmlspecialchars($res[0]); ?>);
                                       chart.draw(data, options);
                                     }, 4000);
                                     setInterval(function() {
-                                      data.setValue(1, 1, 0 + <?php echo $pource_co; ?>);
+                                      data.setValue(1, 1, 0 + <?php echo htmlspecialchars($res[1]); ?>);
                                       chart.draw(data, options);
                                     }, 4000);
                                     setInterval(function() {
-                                      data.setValue(2, 1, 0 + <?php echo $pource_nh3; ?>);
+                                      data.setValue(2, 1, 0 + <?php echo htmlspecialchars($res[2]); ?>);
                                       chart.draw(data, options);
                                     }, 4000);
                                 }                    
-                            </script>
+                    </script>
                     <!-- ================= Fin script affich ===================== % -->
                             
                     <!-- actualisation automatique,SEULEMENT le div des compteurs-->
-                            <script type="text/javascript">
-                            $(document).ready(function()
+                    <script type="text/javascript">
+                        $(document).ready(function()
                                 {   
                                     $('#chart_div').load('main.php');
                                     refresh();
                                 });
 
-                            function refresh() 
+                        function refresh() 
                                 {   
                                     setTimeout(
                                                 function()
@@ -292,18 +233,8 @@ require_once('../vendor/autoload.php');
                                                     }, 1000        // l'actualisation se fait chaque sec 
                                               );
                                 }
-                            </script>
+                    </script>
                         <!-- ======================= fin actu auto ===================== -->
-
-                            <?php
-                        }
-                        catch(\Exception $obj_ex)
-                        {
-                            syslog(LOG_ERR, $obj_ex->getMessage());
-                            echo '<em>Whoops, something went wrong!</em>';
-                        }
-
-                            ?>
                     </div> <!-- fin div compteurs -->
                 </div> <!-- fin col md 4 -->
             </div> <!-- fin row -->
@@ -321,7 +252,7 @@ require_once('../vendor/autoload.php');
         <!-- =============================== Fin Map ================================== -->
 
 
-<!-- ====== actualisation automatique,SEULEMENT le div des valeurs en mg/m3  ============ -->
+        <!-- ====== actualisation automatique,SEULEMENT le div des valeurs en mg/m3  ============ -->
                             <script type="text/javascript">
                             $(document).ready(function()
                                 {   
@@ -347,43 +278,12 @@ require_once('../vendor/autoload.php');
 <div class="brute" id="mg_m3" style="height: 420px;">
 <h2><i class="fa fa-bell" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
 Notifications</h2>
+    <?php 
+        // Demander des données au serveur
+        require_once '../private/live-server-main-brute-mgm3-notif.php'; 
+    ?>
 
-<!-- Calculs -->
-
-<?php
-try
-{   
-    // ========Appel de notre modèle
-
-    // On crée un objet de type Repository.
-    $obj_repo = new \GDS\Demo\Repository();
-    // Chercher juste les dernières valeurs insérées récemment.
-    $arr_posts = $obj_repo->getLatestRecentPost();
-
-    // =========fin appel de notre modèle
-
-   // val ppm
-    if(isset($arr_posts->co2) AND isset($arr_posts->co) AND isset($arr_posts->nh3))
-       {
-        $ppm_co2 = $arr_posts->co2;
-        $ppm_co = $arr_posts->co;
-        $ppm_nh3 = $arr_posts->nh3;
-
-        // masse masseVolumique_co2 avec 3 après la virgule comme précision
-        $masseVolumique_co2 = round(($ppm_co2 * (MASSE_MOLAIRE_CO2/VOLUME_MOLAIRE)), 3, PHP_ROUND_HALF_UP);
-        $masseVolumique_co = round(($ppm_co * (MASSE_MOLAIRE_CO/VOLUME_MOLAIRE)), 3, PHP_ROUND_HALF_UP);
-        $masseVolumique_nh3 = round(($ppm_nh3 * (MASSE_MOLAIRE_NH3/VOLUME_MOLAIRE)), 3, PHP_ROUND_HALF_UP);
-       }    
-}
-catch(\Exception $obj_ex)
-{
-    syslog(LOG_ERR, $obj_ex->getMessage());
-    echo '<em>Whoops, something went wrong!</em>';
-}
-?>
-<!-- fin claculs -->
-
-    <div class="promos">  
+   <div class="promos">  
         <div class="promo">
           <div class="deal">
             <span style="padding-bottom: 15px;padding-top: 5px;">CO2</span>
@@ -410,7 +310,7 @@ catch(\Exception $obj_ex)
 
 
                                                         ?>"><?php 
-                                                        if(isset($masseVolumique_co2)) echo $masseVolumique_co2." ".'<em>mg/m3</em>'; 
+                                                        if(isset($masseVolumique_co2)) echo htmlspecialchars($masseVolumique_co2)." ".'<em>mg/m3</em>'; 
                                                         else 
                                                             {
                                                                 ?>
@@ -456,7 +356,7 @@ catch(\Exception $obj_ex)
 
                                                         ?>"><?php 
                                                         if(isset($masseVolumique_co)) 
-                                                            echo $masseVolumique_co." ".'<em>mg/m3</em>';
+                                                            echo htmlspecialchars($masseVolumique_co)." ".'<em>mg/m3</em>';
                                                         else 
                                                         {
                                                             ?>
@@ -502,7 +402,7 @@ catch(\Exception $obj_ex)
 
                                                         ?>"><?php 
                                                         if(isset($masseVolumique_nh3)) 
-                                                            echo $masseVolumique_nh3." ".'<em>mg/m3</em>'; 
+                                                            echo htmlspecialchars($masseVolumique_nh3)." ".'<em>mg/m3</em>'; 
                                                         else 
                                                            {
                                                                 ?>
@@ -525,7 +425,7 @@ catch(\Exception $obj_ex)
     </div> 
 </div> <!-- end notiff mg/m3 -->
 
-<div style="margin-right: 80px;">
+<div style="margin-right: 80px;"> <!-- Legend -->
 
     <script>
               // On attend que la page soit chargée 
@@ -559,12 +459,9 @@ catch(\Exception $obj_ex)
             <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p style="color: #e74c3c" class="fanazavana">Alert ! Alert ! Vous devez aérez le lieu ou bien évacuez !! Ca devient invivable.</p>
             </div>
     </div>
- </div>
-
+ </div> <!-- end legend -->
 
 <!-- ========================== fin Tab Dèr=============================== -->
-
-<!-- <hr style="width: 50%; border-top: 1px solid #cacaca;"> -->
 
  <!-- ========================== Espace connexion ============================== -->
             <div class="row">
@@ -591,7 +488,7 @@ catch(\Exception $obj_ex)
             </div>
         <!-- ====================== Fin Espace Connexion ============================== -->
 
-    </div> <!-- fin de container de la page --> 
+</div> <!-- fin de container de la page --> 
        
     <!-- ********************************* Footer ***************************************** -->
    <footer>
