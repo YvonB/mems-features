@@ -1,12 +1,6 @@
 <?php
-
-use google\appengine\api\users\User;
-use google\appengine\api\users\UserService;
-
-# Looks for current Google account session
-$user = UserService::getCurrentUser();
-
-ini_set("display_errors",0);error_reporting(0);
+require_once '../resources/configs/calcul-masse-molaire.php';
+require_once '../resources/includes/session-in-main.php';
 ?>
 
 <!DOCTYPE html>
@@ -48,19 +42,15 @@ ini_set("display_errors",0);error_reporting(0);
             <h3 class="sub_title_ban"><img src="/img/datastore-logo.png"  class="logo_ban" />Detecteur - Analyseur Web des Gaz polluants SDP - IoT</h3>
             <h1>Know what really exists in the air you breathe</h1>
             <h3 class="sub_title_ban" style="padding-bottom: 20px;">Follow your health closely</h3>
-             <a href="<?php 
-                                    $home = "/zone_1/home";
-                                    $login = "/zone_1/login";
-                                    echo(isset($user) ? $home : $login);
-                                ?>">
-                                <button type="submit" class="btn btn-primary">
-                                    <?php 
-                                        if(isset($user)) 
-                                            {echo "Go Home<i class='fa fa-arrow-right' style='margin-left: 15px;'></i>";}
-                                        else 
-                                            {echo "See More Content";}
-                                    ?>
-                                </button>
+            <a href="<?php require_once '../resources/includes/href-home-or-login.php'; ?>">
+            <button type="submit" class="btn btn-primary">
+              <?php 
+                if(isset($user)) 
+                  {echo "Go Home<i class='fa fa-arrow-right' style='margin-left: 15px;'></i>";}
+                else 
+                  {echo "See More Content";}
+              ?>
+            </button></a>
         </div>
     </div>
 
@@ -106,11 +96,7 @@ ini_set("display_errors",0);error_reporting(0);
                     <li><a href="/zone_1/home/nh3" style="text-transform: lowercase;">
                         Voir l'état de NH3</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="<?php 
-                                    $login = "/zone_1/login";
-                                    $logout = "/zone_1/logout";
-                                    echo(isset($user) ? $logout : $login );
-                                ?>">
+                    <li><a href="<?php require_once '../resources/includes/href-login-or-logout.php'; ?>">
                     <button type="submit" class="btn btn-primary" align="center"><?php echo (isset($user) ? "Deconnexion" : "Se Connecter"); ?></button></a></li>
                   </ul>
                 </li>
@@ -240,25 +226,7 @@ Notifications</h2>
             <span>Lorem ipsum lorem ipsum</span>
           </div>
           <span class="price" style="background-color: <?php
-                                                            if(!isset($ppm_co2)) 
-                                                                {
-                                                                    echo "#95a5a6";//on n'a pas encore de valeur //default
-                                                                }
-                                                            elseif($ppm_co2 <= 396)
-                                                                {
-                                                                    echo '#beeb9f'; // vert //Info
-                                                                }
-                                                            elseif($ppm_co2 > 396 AND $ppm_co2 <= 496)
-                                                                {
-                                                                    echo '#e67e22'; // jaune orange //warning
-                                                                }
-                                                            elseif($ppm_co2 > 496) 
-                                                                {
-                                                                   echo '#e74c3c'; // rouge //danger
-                                                                }
-                                                                
-
-
+                                                            require_once '../resources/includes/mg_m3-bg-co2.php';
                                                         ?>"><?php 
                                                         if(isset($masseVolumique_co2)) echo htmlspecialchars($masseVolumique_co2)." ".'<em>mg/m3</em>'; 
                                                         else 
@@ -274,9 +242,7 @@ Notifications</h2>
             <li class="li_brute">Lorem ipsum...</li>   
           </ul>
           <a href="<?php 
-                                    $login = "/zone_1/login";
-                                    $logout = "/zone_1/logout";
-                                    echo(isset($user) ? $logout : $login );
+                                    require_once '../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                     </button></a>
         </div>
@@ -286,24 +252,7 @@ Notifications</h2>
             <span>Lorem ipsum lorem ipsum</span>
           </div>
           <span class="price" style="background-color: <?php
-                                                            if(!isset($ppm_co)) 
-                                                                {
-                                                                    echo "#95a5a6";//on n'a pas encore de valeur //default
-                                                                }
-                                                            elseif($ppm_co <= 3)
-                                                                {
-                                                                    echo '#beeb9f'; // vert
-                                                                }
-                                                            elseif($ppm_co > 3 AND $ppm_co <= 4 )
-                                                                {
-                                                                    echo '#e67e22'; // jaune orange
-                                                                }
-                                                            elseif($ppm_co > 5) 
-                                                                {
-                                                                   echo '#e74c3c'; // rouge == danger
-                                                                }
-
-
+                                                          require_once '../resources/includes/mg_m3-bg-co.php';                                                            
                                                         ?>"><?php 
                                                         if(isset($masseVolumique_co)) 
                                                             echo htmlspecialchars($masseVolumique_co)." ".'<em>mg/m3</em>';
@@ -320,9 +269,7 @@ Notifications</h2>
             <li class="li_brute">Lorem ipsum...</li>   
           </ul>
           <a href="<?php 
-                                    $login = "/zone_1/login";
-                                    $logout = "/zone_1/logout";
-                                    echo(isset($user) ? $logout : $login );
+                                    require_once '../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                    </button></a>
         </div>
@@ -332,25 +279,8 @@ Notifications</h2>
             <span>Lorem ipsum lorem ipsum</span>
           </div>
           <span class="price" style="background-color: <?php
-                                                            if(!isset($ppm_nh3)) 
-                                                                {
-                                                                    echo "#95a5a6";//on n'a pas encore de valeur //default
-                                                                }
-                                                            elseif($ppm_nh3 <= 5)
-                                                                {
-                                                                    echo '#beeb9f'; // vert
-                                                                }
-                                                            elseif($ppm_nh3 > 5 AND $ppm_nh3 <= 6)
-                                                                {
-                                                                    echo '#e67e22'; // jaune orange
-                                                                }
-                                                            elseif($ppm_nh3 > 6) 
-                                                                {
-                                                                    echo '#e74c3c'; // rouge == danger
-                                                                }
-
-
-                                                        ?>"><?php 
+                                                          require_once '../resources/includes/mg_m3-bg-nh3.php';
+                                                       ?>"><?php 
                                                         if(isset($masseVolumique_nh3)) 
                                                             echo htmlspecialchars($masseVolumique_nh3)." ".'<em>mg/m3</em>'; 
                                                         else 
@@ -366,9 +296,7 @@ Notifications</h2>
             <li class="li_brute">Lorem ipsem...</li>   
           </ul>
           <a href="<?php 
-                                    $login = "/zone_1/login";
-                                    $logout = "/zone_1/logout";
-                                    echo(isset($user) ? $logout : $login );
+                                    require_once '../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                    </button></a>
         </div> 
@@ -439,64 +367,7 @@ Notifications</h2>
 
 </div> <!-- fin de container de la page --> 
        
-    <!-- ********************************* Footer ***************************************** -->
-   <footer>
-    <div class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3> Contact </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3> Important Links </h3>
-                    <ul>
-                        <li> <a href="#"> Admission </a> </li>
-                        <li> <a href="#"> Academic </a> </li>
-                        <li> <a href="#"> Career </a> </li>
-                        <li> <a href="#"> Administration </a> </li>
-                        <li> <a href="#"> Notice </a> </li>
-                        <li> <a href="#"> Tender </a> </li>
-                        <li> <a href="login.php"> Teacher Login </a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3> Location </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
-                </div>
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
-    </div>
-    <!--/.footer-->
-
-    <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> Copyright © 2017, JKKNIU. All rights reserved.</p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                    <li><i class="fa fa-cc-visa"></i></li>
-                    <li><i class="fa fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-cc-amex"></i></li>
-                    <li><i class="fa fa-cc-paypal"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.footer-bottom-->
-</footer>
-<!--*********************************** Fin footer **************************************** -->
+<?php require_once '../resources/includes/footer.php' ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
