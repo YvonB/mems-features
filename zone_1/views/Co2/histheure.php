@@ -2,7 +2,7 @@
 			<html lang="en">
 			<head>
 				<meta charset="UTF-8">
-				<title>SDP-IoT Co2 Historics one hours ago</title>
+				<title>SDPE - IoT Co2 Historics one hours ago</title>
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<meta name="author" content="Yvon Benahita">
 				<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
@@ -60,8 +60,6 @@
 
 
 <?php
-// Inclusion pour notre lib // la classe
-require_once('../vendor/autoload.php');
 
 // on veriff que l'utilisateur entre un ENTIER dans le champ heure
 if(is_numeric($_POST['aujourduiHeurCo2']))
@@ -73,11 +71,8 @@ if(is_numeric($_POST['aujourduiHeurCo2']))
 			
 				<?php
 			try
-			{
-				// On crée un objet de type Repository.
-			    $obj_repo = new \GDS\Demo\Repository();
-			    // Chercher TOUS  les champs D'ABORD
-			    $arr_posts = $obj_repo->getAllRecentPost();
+			{	// appelle controlleur
+				require_once '../../controllers/Co2/getAllRecentValues.php';
 
 			    if(empty($arr_posts))
 			    	{	

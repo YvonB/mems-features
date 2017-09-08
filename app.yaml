@@ -10,7 +10,7 @@ handlers:
 #===================================== /zone_1/Premier Zone =============================
 #Accueil Premier zone
 - url: /zone_1
-  script: zone_1/views/main.php
+  script: zone_1/views/Main/main.php
 
 #Les ressources statiques
 - url: /css
@@ -36,27 +36,27 @@ handlers:
 
 #Home Page
 - url: /zone_1/home
-  script: zone_1/controllers/Home/home.php
+  script: zone_1/views/Home/home.php
 
 # les pages CO2, CO and NH3 
 - url: /zone_1/home/co2
-  script: zone_1/controllers/Co2/co2.php
+  script: zone_1/views/Co2/co2.php
 - url: /zone_1/home/co
-  script: zone_1/controllers/Co/co.php
+  script: zone_1/views/Co/co.php
 - url: /zone_1/home/nh3
-  script: zone_1/controllers/Nh3/nh3.php
+  script: zone_1/views/Nh3/nh3.php
 
 # pour les historiques
 - url: /zone_1/home/co2/histmin
-  script: zone_1/controllers/Co2/histmin.php
+  script: zone_1/views/Co2/histmin.php
 - url: /zone_1/home/co2/histheure
-  script: zone_1/controllers/Co2/histheure.php
+  script: zone_1/views/Co2/histheure.php
 - url: /zone_1/home/co2/deuxjours
-  script: zone_1/controllers/Co2/deuxjours.php
+  script: zone_1/views/Co2/deuxjours.php
 - url: /zone_1/home/co2/hier
-  script: zone_1/controllers/Co2/hier.php
+  script: zone_1/views/Co2/hier.php
 - url: /zone_1/home/co2/tous
-  script: zone_1/controllers/Co2/tous.php
+  script: zone_1/views/Co2/tous.php
 
 # données pour la courbe co2
 - url: /zone_1/home/co2/data

@@ -1,6 +1,6 @@
 <?php
-require_once '../resources/configs/calcul-masse-molaire.php';
-require_once '../resources/includes/session-in-main.php';
+require_once '../../resources/configs/calcul-masse-molaire.php';
+require_once '../../controllers/Main/getSession.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +31,9 @@ require_once '../resources/includes/session-in-main.php';
 <!-- end head -->
 
 <body>
-      <?php require_once '../resources/includes/header-main.php'; ?>
+      <?php require_once '../../resources/includes/header-main.php'; ?>
         
-        <div class="container" id="contenu_main">  <!-- ========= Pour tout le contenu de notre site======== -->
+        <div class="container" id="contenu_main"><!-- ========= Pour tout le contenu de notre site======== -->
 
             <!-- =========================== Le logo et le titre ============================ -->
             <div class="row">
@@ -63,8 +63,9 @@ require_once '../resources/includes/session-in-main.php';
                     <div id="chart_div" style="width: 400px; height: 120px;">
                     
                      <?php 
-                    // Demander des données au serveur
-                     require_once '../private/live-server-main-pourc-not-acceptable.php';               
+                     // Appelle controlleur
+                     require_once '../../controllers/Main/getPourcNotAcceptable.php';  
+
                      // Tant que les données ne sont pas prêtes on affiche un loder                        
                      if($res[0] == null AND $res[1] == null AND $res[2]== null)
                      {
@@ -140,8 +141,8 @@ require_once '../resources/includes/session-in-main.php';
 <h2><i class="fa fa-bell" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
 Notifications</h2>
     <?php 
-        // Demander des données au serveur
-        require_once '../private/live-server-main-brute-mgm3-notif.php'; 
+        // Appelle controlleur
+        require_once '../../controllers/Main/getValueInMgM3.php'; 
     ?>
 
    <div class="promos">  
@@ -151,7 +152,7 @@ Notifications</h2>
             <span>Lorem ipsum lorem ipsum</span>
           </div>
           <span class="price" style="background-color: <?php
-                                                            require_once '../resources/includes/mg_m3-bg-co2.php';
+                                                            require_once '../../resources/includes/mg_m3-bg-co2.php';
                                                         ?>"><?php 
                                                         if(isset($masseVolumique_co2)) echo htmlspecialchars($masseVolumique_co2)." ".'<em>mg/m3</em>'; 
                                                         else 
@@ -167,7 +168,7 @@ Notifications</h2>
             <li class="li_brute">Lorem ipsum...</li>   
           </ul>
           <a href="<?php 
-                                    require_once '../resources/includes/href-home-or-login.php';
+                                    require_once '../../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                     </button></a>
         </div>
@@ -177,7 +178,7 @@ Notifications</h2>
             <span>Lorem ipsum lorem ipsum</span>
           </div>
           <span class="price" style="background-color: <?php
-                                                          require_once '../resources/includes/mg_m3-bg-co.php';                                                            
+                                                          require_once '../../resources/includes/mg_m3-bg-co.php';                                                            
                                                         ?>"><?php 
                                                         if(isset($masseVolumique_co)) 
                                                             echo htmlspecialchars($masseVolumique_co)." ".'<em>mg/m3</em>';
@@ -194,7 +195,7 @@ Notifications</h2>
             <li class="li_brute">Lorem ipsum...</li>   
           </ul>
           <a href="<?php 
-                                    require_once '../resources/includes/href-home-or-login.php';
+                                    require_once '../../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                    </button></a>
         </div>
@@ -204,7 +205,7 @@ Notifications</h2>
             <span>Lorem ipsum lorem ipsum</span>
           </div>
           <span class="price" style="background-color: <?php
-                                                          require_once '../resources/includes/mg_m3-bg-nh3.php';
+                                                          require_once '../../resources/includes/mg_m3-bg-nh3.php';
                                                        ?>"><?php 
                                                         if(isset($masseVolumique_nh3)) 
                                                             echo htmlspecialchars($masseVolumique_nh3)." ".'<em>mg/m3</em>'; 
@@ -221,7 +222,7 @@ Notifications</h2>
             <li class="li_brute">Lorem ipsem...</li>   
           </ul>
           <a href="<?php 
-                                    require_once '../resources/includes/href-home-or-login.php';
+                                    require_once '../../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                    </button></a>
         </div> 
@@ -292,7 +293,7 @@ Notifications</h2>
 
 </div> <!-- fin de container de la page --> 
        
-<?php require_once '../resources/includes/footer.php'; ?>
+<?php require_once '../../resources/includes/footer.php'; ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

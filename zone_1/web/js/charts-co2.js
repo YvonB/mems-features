@@ -1,30 +1,4 @@
-<?php    
-    // Pour notre lib
-    require_once('../vendor/autoload.php');
-
-    // On crée un objet de type Repository.
-    $obj_repo = new \GDS\Demo\Repository();
-    // Chercher juste les dernières valeurs insérées.
-    $arr_posts = $obj_repo->getLatestRecentPost();
-
-?>
-<html>
-<head>
-	<!-- script pour la courbe -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-	<!-- ********************** -->
-</head>	
-</html>
-<div align="center">  
-        <h4>Gaz carbonique</h4>
-        <div id="co2" style="height: 400px; min-width: 310px"></div> <!-- div qui va contenir de la courbe -->
-</div>
-
-<!-- ===================== le script de la courbe lui même ================ -->
-<script type="text/javascript">
-   var chart; // global
+var chart; // global
 
 /**
  * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
@@ -79,5 +53,3 @@ $(document).ready(function() {
         }]
     });        
 });
-</script>
-<!-- ================================================================ -->

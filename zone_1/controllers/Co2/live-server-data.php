@@ -1,6 +1,6 @@
 <?php
 	// Pour notre lib
-    require_once('../vendor/autoload.php');
+    require_once('../../vendor/autoload.php');
     
     // Définir l'en-tête JSON
 	header("Content-type: text/json");

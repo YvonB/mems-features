@@ -2,7 +2,7 @@
 							<html lang="fr">
 							<head>
 								<meta charset="UTF-8">
-								<title>SDP-IoT All Co2 Historics</title>
+								<title>SDPE - IoT All Co2 Historics</title>
 								<meta http-equiv="X-UA-Compatible" content="IE=edge">
 								<meta name="author" content="Yvon Benahita">
 								<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
@@ -59,13 +59,9 @@
 							                        <div class="panel-body">
 
 <?php
-// Inclusion pour notre lib
-require_once('../vendor/autoload.php');
 
-// On crée un objet de type Repository.
-$obj_repo = new \GDS\Demo\Repository();
-// Chercher les 10 dernières valeurs insérées
-$arr_posts = $obj_repo->getAllRecentPost();
+
+require_once '../../controllers/Co2/getAllRecentValues.php';
 
 if(empty($arr_posts))
 {
@@ -95,15 +91,7 @@ if(empty($arr_posts))
 else
 {
 	foreach ($arr_posts as $obj_post) 
-			{			
-
-
-						// On crée un objet de type Repository.
-                        $obj_repo = new \GDS\Demo\Repository();
-                                        // Chercher les 10 dernières valeurs insérées
-                        $arr_posts = $obj_repo->getAllRecentPost();
-
-                                       
+			{			           
                             // Effectuez une belle chaîne d'affichage de date et heure
                             $int_posted_date = strtotime($obj_post->posted);
                             $int_date_diff = time() - $int_posted_date;

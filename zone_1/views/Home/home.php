@@ -1,19 +1,7 @@
 <?php
-    use google\appengine\api\users\User;
-    use google\appengine\api\users\UserService;
-    // On crée une session, pour pouvoir utiliser les sessions. De sorte à ce connecter au session.  
-    $user = UserService::getCurrentUser();
-
-    // on a pas le droit de voir index si on était pas connecter au préalable.
-    if(!$user)
-    {   
-        header("Location: /zone_1"); // on rédirige vers l'accueil et 
-        exit; // On arrête tout.
-    }
-
-    ini_set("display_errors",0);error_reporting(0);
- 
-    require_once 'sendmail.php';
+  require_once '../../controllers/Home/getSession.php';
+  require_once '../../controllers/Home/authentification.php';    
+  require_once '../../controllers/Home/sendmail.php';
 ?>
 
 <!DOCTYPE html>
@@ -48,79 +36,7 @@
 
 <body>
     <!--************************ Début Navigation ************************************-->
-    <header>
-
-        <nav class="navbar navbar-default navbar-fixed-top colornav">
-        <div class="date_time">
-          <h3 style="display: none;">Follow your healf closely</h3>
-
-          <div id="afficherheure">
-          </div> 
-
-          <div class="date">
-            <h3><?php echo  date('l jS \of F Y'); ?></h3>
-          </div> <!-- end date -->
-
-          <?php if($notif_mail != 0)
-                  { 
-                    ?>
-                    <br><a href="https://mail.google.com/"><img src="/img/gmail-with-notif.png" id="gmail-with-notif" /></a><b id="notif_mail"><?php echo $notif_mail; ?></b> 
-                    <?php
-                  } 
-                  else
-                  {?>
-                    <br><img src="/img/gmail-no-notif.png" id="gmail-no-notif" />
-                    <?php
-                  }
-
-          ?>
-
-           <!-- affiche heure -->
-          <script type="text/javascript">
-              setInterval(function(){
-                document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
-                      }, 1000);
-          </script><!-- end heure -->
-        </div>
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand colortextnav" href="/zone_1"><b>SDPE - IoT</b></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="active colortextnav"><a href=""><b><i class="fa fa-home" style="margin-right: 4px;color:#fafafa !important;"></i>Home</b><span class="sr-only">(current)</span></a></li>
-              </ul>
-              <form class="navbar-form navbar-left" style="margin-left: 150px;">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search" style="width: 370px;display: none;">
-                </div>
-                <button type="submit" class="btn btn-default" style="display: none;"><b>Chercher</b></button>
-              </form>
-              <ul class="nav navbar-nav navbar-right colortextnav">
-                <li><a href="/zone_1/home/co2">Gaz Carbonique</a></li>
-                <li><a href="/zone_1/home/co">Monoxyde de Carbone</a></li>
-                <li><a href="/zone_1/home/nh3">Amoniaque</a></li>
-                <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="font-size: 16px;margin-right: 2px;" aria-hidden="true"></i>
-                    <b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="/zone_1/logout"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-    </header>
+    <?php require_once '../../resources/includes/header-home.php'; ?>
     <!--****************************** Fin Navigation *****************************-->
         
 <div class="container" id="contenu">  <!-- Pour tout le contenu de notre site -->
@@ -148,7 +64,10 @@
                 <div class="col-md-4">
                     <h2 align="center"><i class="fa fa-pie-chart" style="margin-right: 8px" aria-hidden="true"></i>Gas not accepted</h2>
                       <div id="container" style="width:100%;height: 400px"> <!-- div pour contenir le Pie -->
-
+                        <?php 
+                            // Appelle controlleur
+                            require_once '../../controllers/Home/getPourcNotAcceptable.php'; 
+                        ?>
                         <!-- // Tant que les données ne sont pas prêtes on affiche un loader   -->
                          <?php 
                         
@@ -222,9 +141,9 @@
                     <div class="mon_slide">
                         <div id="slider">
                           <ul id="slideWrap"> 
-                            <li><?php include("div_co2.php") ?></li>
-                            <li><?php include("div_co.php") ?></li>
-                            <li><?php include("div_nh3.php") ?></li>
+                            <li><?php include("../../resources/includes/div_co2.php") ?></li>
+                            <li><?php include("../../resources/includes/div_co.php") ?></li>
+                            <li><?php include("../../resources/includes/div_nh3.php") ?></li>
                           </ul>
                           <a id="prev" href="#">&#8810;</a>
                           <a id="next" href="#">&#8811;</a>
@@ -339,7 +258,8 @@ See Quickly the last 10 inserted values</h2>
                         <div class="panel-body">
 
                             <?php
-                              require_once 'zone_1/private/live-server-home-ten-latest-brute.php';
+                             // Appelle au controlleur
+                              require_once '../../controllers/Home/getTenLatestValues.php';
                             ?>
                         </div>
                     </div>
@@ -350,62 +270,7 @@ See Quickly the last 10 inserted values</h2>
 </div> <!-- fin de container de la page --> 
 
    <!-- ********************************* Footer ***************************************** -->
-    <footer>
-    <div class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3> Contact </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3> Important Links </h3>
-                    <ul>
-                        <li> <a href="#"> Admission </a> </li>
-                        <li> <a href="#"> Academic </a> </li>
-                        <li> <a href="#"> Career </a> </li>
-                        <li> <a href="#"> Administration </a> </li>
-                        <li> <a href="#"> Notice </a> </li>
-                        <li> <a href="#"> Tender </a> </li>
-                        <li> <a href="login.php"> Teacher Login </a> </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3> Location </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
-                </div>
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
-    </div>
-    <!--/.footer-->
-
-    <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> Copyright © 2017, JKKNIU. All rights reserved.</p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                    <li><i class="fa fa-cc-visa"></i></li>
-                    <li><i class="fa fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-cc-amex"></i></li>
-                    <li><i class="fa fa-cc-paypal"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.footer-bottom-->
-</footer>
+    <?php require_once '../../resources/includes/footer.php' ?>
 <!--*********************************** Fin footer **************************************** -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

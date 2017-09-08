@@ -1,6 +1,4 @@
 <?php 
-	// Pour notre lib
-    require_once('../vendor/autoload.php');
     
 try 
                                     {   

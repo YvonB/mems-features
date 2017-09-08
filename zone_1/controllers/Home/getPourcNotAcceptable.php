@@ -1,10 +1,10 @@
 <?php 
 
-// Inclusion pour notre lib
-require_once('../vendor/autoload.php');
 
 
-                      
+
+                        require_once('../../vendor/autoload.php');  // pour notre lib
+                        
                         // On crée un objet de type Repository.
                         $obj_repo = new \GDS\Demo\Repository();
                         // Chercher TOUS 'All' les gazs insérées récemment.

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-	<html lang="en">
+	<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<title>SDP-IoT co2 Historics some minute ago</title>
+		<title>SDPE - IoT co2 Historics some minute ago</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="author" content="Yvon Benahita">
 		<link rel="icon" type="image/png" href="/img/datastore-logo.png" />					
@@ -54,12 +54,10 @@
 
 				         <div class="row">
 				             <div class="col-md-8" id="results">
-				                 <h2>Quantité de CO2 émis il y a <em><?php echo $_POST['aujourduiMinCo2'].' min';?></em></h2>
+				                 <h2>Liste(s)Quantité de CO2 émis il y a <em><?php echo $_POST['aujourduiMinCo2'].' min';?></em></h2>
 				                 <div class="panel panel-default" style="background-color: #cdf;">
 				                     <div class="panel-body" style="text-align: center;">
 <?php
-// Inclusion pour notre lib // la classe
-require_once('../vendor/autoload.php');
 
 //on verifie que l'utilisateur entre un ENTIER dans le champ minute 
 if(is_numeric($_POST['aujourduiMinCo2']))
@@ -72,10 +70,7 @@ if(is_numeric($_POST['aujourduiMinCo2']))
 					<?php
 				try
 				{
-					// On crée un objet de type Repository.
-				    $obj_repo = new \GDS\Demo\Repository();
-				    // Chercher TOUS  les champs D'ABORD
-				    $arr_posts = $obj_repo->getAllRecentPost();
+					require_once '../../controllers/Co2/getAllRecentValues.php';
 
 				    if(empty($arr_posts))
 				    	{	
