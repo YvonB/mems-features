@@ -18,5 +18,3 @@
 <script src="/js/charts-co2.js"></script> <!--le script de la courbe lui même -->
 </body>
 </html>
-
-

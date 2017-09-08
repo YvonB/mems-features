@@ -11,7 +11,7 @@
 	// par 1000.
 	$x = time()*1000;
 
-	function getDataCo2()
+	function getDataNh3()
 				{
 					// On crée un objet de type Repository.
 				    $obj_repo = new \GDS\Demo\Repository();
@@ -22,14 +22,14 @@
 				    // val ppm  
 				    if(isset($arr_posts))
 				    {
-				        $ppm_co2 = (float)$arr_posts->co2; 
-				        return $ppm_co2;
+				        $ppm_nh3 = (float)$arr_posts->nh3; 
+				        return $ppm_nh3;
 				    } 
 
 				};
 
     //La valeur y 
-	$y= getDataCo2();
+	$y= getDataNh3();
 		
 	// Créer un tableau PHP et l'écho comme JSON
 	$ret = array($x, $y);

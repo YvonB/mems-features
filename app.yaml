@@ -61,6 +61,14 @@ handlers:
 # données pour la courbe co2
 - url: /zone_1/home/co2/data
   script: zone_1/controllers/Co2/live-server-data.php
+
+# données pour la courbe co
+- url: /zone_1/home/co/data
+  script: zone_1/controllers/Co/live-server-data.php
+
+# données pour la courbe nh3
+- url: /zone_1/home/nh3/data
+  script: zone_1/controllers/Nh3/live-server-data.php
  # ======================= end Premier Zone ===================================
 
 
