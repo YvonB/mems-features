@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="/css/demo.css">
 	<link rel="stylesheet" href="/css/index.css">
 	<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
-
 </head>
+
 <body>
 <div class="container"> <!-- contenu de la page -->
 	<div class="global">
