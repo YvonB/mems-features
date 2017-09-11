@@ -1,7 +1,8 @@
 <?php
+  $notif_mail=0; 
   require_once '../../controllers/Home/getSession.php';
   require_once '../../controllers/Home/authentification.php';    
-  require_once '../../controllers/Home/sendmail.php';
+  
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +43,7 @@
 
 <body>
     <!--************************ Début Navigation ************************************-->
+    <?php require_once '../../controllers/Home/sendmail.php' ?>; 
     <?php require_once '../../resources/includes/header-home.php'; ?>
     <!--****************************** Fin Navigation *****************************-->
         
@@ -69,7 +71,7 @@
                 <!-- ============== -->
                 <div class="col-md-4">
                     <h2 align="center"><i class="fa fa-pie-chart" style="margin-right: 8px" aria-hidden="true"></i>Gas not accepted</h2>
-                      <div id="container" style="width:100%;height: 400px"> <!-- div pour contenir le Pie -->
+                      <div id="container" style="width:100%;height: 400px"> </div><!-- div pour contenir le Pie -->
                         <?php 
                             // Appelle controlleur
                             require_once '../../controllers/Home/getPourcNotAcceptable.php'; 
@@ -84,57 +86,67 @@
                             <div class="loader_compteurs"></div>
                             <?php
                         }
+
                          ?>
                          <!-- fin affichage loader -->
 
                         <!-- script pour afficher le Pie -->
                         <script type="text/javascript">
-                        Highcharts.chart('container', {
-                              chart: {
-                                  type: 'pie',
-                                  options3d: {
-                                      enabled: true,
-                                      alpha: 45,
-                                      beta: 0
-                                  }
-                              },
-                              title: {
-                                  text: 'Know where you find is livable or not'
-                              },
-                              tooltip: {
-                                  pointFormat: '{series.name}: <b>{point.percentage:.3f}%</b>'
-                              },
-                              plotOptions: {
-                                  pie: {
-                                      allowPointSelect: true,
-                                      cursor: 'pointer',
-                                      depth: 35,
-                                      dataLabels: {
-                                          enabled: true,
-                                          format: '{point.name}'
-                                      }
-                                  }
-                              },
-                              series: [{
-                                  type: 'pie',
-                                  name: 'Not acceptable',
-                                  data: [
-                                      ['co2', <?php echo htmlspecialchars($res[0]); ?>],
-                                      ['co', <?php echo htmlspecialchars($res[1]); ?>],
-                                      {
-                                          name: 'nh3',
-                                          y: <?php echo htmlspecialchars($res[2]); ?>,
-                                          sliced: true,
-                                          selected: true
-                                      } 
-              
-                                  ]
-                              }]
-                        });
+                          Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Know where you find is livable or not'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: [
+            'A l\'instant'
+            
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Percentage (ppm)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.3f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'co2',
+        data: [<?php echo htmlspecialchars($res[0]); ?>]
+
+    }, {
+        name: 'co',
+        data: [<?php echo htmlspecialchars($res[1]); ?>]
+
+    }, {
+        name: 'nh3',
+        data: [<?php echo htmlspecialchars($res[2]); ?>]
+
+    }]
+});
                         </script>
                         <!-- end script Pie -->
 
-                   </div> <!-- fin div Pie -->
+                    <!-- fin div Pie -->
                 </div> <!-- end coll md 4 -->
             </div> <!-- end row -->
             <!-- =========================================================================== -->
@@ -181,7 +193,7 @@ $(document).ready(function() {
             defaultSeriesType: 'spline',
             events: {
                 load: requestDataCO2
-            }
+            },
         },
         title: {
             text: 'Gaz Carbonique'
@@ -205,6 +217,7 @@ $(document).ready(function() {
         }]
     });        
 });
+
                               </script>
                             </div> <!-- div 1 --> 
                            

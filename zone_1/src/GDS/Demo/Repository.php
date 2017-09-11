@@ -104,7 +104,7 @@ class Repository
     {
         $obj_store = $this->getStore();
 
-        $arr_posts = $obj_store->query("SELECT * FROM Gas ORDER BY posted DESC")->fetchPage(POST_LIMIT);
+        $arr_posts = $obj_store->query("SELECT * FROM Gas ORDER BY posted DESC")->fetchPage(10);
 
         $this->getCache()->set('recent', $arr_posts);
 

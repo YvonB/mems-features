@@ -589,11 +589,10 @@ div.float {
     position: relative;
     background-color: rgba(154, 156, 160, 0.15);
     padding-top: 10px;
-    /* width: 87%; */
     height: 150px;
 
     border-radius: 4px;
-    box-shadow: 0 0 10px;
+   
  }
 /*end notif legend*/
 
@@ -601,7 +600,7 @@ div.float {
 /*toogle homme 10 latest brute*/
 #toggler
 {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 #toggler:hover
 {
