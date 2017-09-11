@@ -9,7 +9,7 @@
 
 	// La valeur x est le temps de JavaScript actuel, qui est le temps de Unix multiplié 
 	// par 1000.
-	$x = time()*1000;
+	$x = (time()+10800)*1000; // 3h = 10800sec
 
 	function getDataCo2()
 				{

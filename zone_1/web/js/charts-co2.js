@@ -1,38 +1,38 @@
-var chart; // global
+var chart_co2; // global
 
 /**
  * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
  * demander à nouveau
  */
-function requestData() {
+function requestDataCO2() {
     $.ajax({
         url: '/zone_1/home/co2/data',
         success: function(point) {
-            var series = chart.series[0],
+            var series = chart_co2.series[0],
                 shift = series.data.length > 20; // décalage si la série est
                                                  // plus de 20
 
             // ajouter le point
-            chart.series[0].addPoint(point, true, shift);
+            chart_co2.series[0].addPoint(point, true, shift);
             
             // l'appeler à nouveau après une seconde
-            setTimeout(requestData, 1000);    
+            setTimeout(requestDataCO2, 1000);    
         },
         cache: false
     });
 }
 
 $(document).ready(function() {
-    chart = new Highcharts.Chart({
+    chart_co2 = new Highcharts.Chart({
         chart: {
             renderTo: 'co2',
             defaultSeriesType: 'spline',
             events: {
-                load: requestData
+                load: requestDataCO2
             }
         },
         title: {
-            text: ''
+            text: 'Live co2 data'
         },
         xAxis: {
             type: 'datetime',

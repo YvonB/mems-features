@@ -8,4 +8,6 @@ define('GDS_KEY_FILE', dirname(__FILE__) . '/key.p12');
 define('MASSE_MOLAIRE_CO2', 44);
 define('MASSE_MOLAIRE_CO', 28);
 define('MASSE_MOLAIRE_NH3', 17);
-define('VOLUME_MOLAIRE', 22.4); 
+define('VOLUME_MOLAIRE', 22.4);
+
+define('POST_LIMIT', 10);

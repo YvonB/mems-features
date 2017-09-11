@@ -102,7 +102,7 @@
                                   text: 'Know where you find is livable or not'
                               },
                               tooltip: {
-                                  pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                  pointFormat: '{series.name}: <b>{point.percentage:.3f}%</b>'
                               },
                               plotOptions: {
                                   pie: {
@@ -145,9 +145,9 @@
                   <h2><i class="fa fa-line-chart" style="margin-left: 3px;margin-right: 8px;" aria-hidden="true"></i>See all at once</h2>
                   </div>
 
-                    <div class="w3-content w3-section" style="max-width:500px"> 
+<div  style="max-height: 444px;margin-bottom: 50px;margin-top: 100px;box-shadow: 0 0 30px #888;"> 
                             <div align="center" class="mySlides">  
-                              <h4>Gaz Carbonique</h4>
+                              <!-- <h4>Gaz Carbonique</h4> -->
                               <div id="co2" style="height: 400px; min-width: 310px"></div>
                               <script type="text/javascript">
                                 var chart_co2; // global
@@ -184,7 +184,7 @@ $(document).ready(function() {
             }
         },
         title: {
-            text: ''
+            text: 'Gaz Carbonique'
         },
         xAxis: {
             type: 'datetime',
@@ -207,8 +207,9 @@ $(document).ready(function() {
 });
                               </script>
                             </div> <!-- div 1 --> 
+                           
                             <div align="center" class="mySlides">  
-                              <h4>Monoxyde de Carbone</h4>
+                              <!-- <h4>Monoxyde de Carbone</h4> -->
                               <div id="co" style="height: 400px; min-width: 310px"></div>
                               <script type="text/javascript">
                                 var chart_co; // global
@@ -245,7 +246,7 @@ $(document).ready(function() {
             }
         },
         title: {
-            text: ''
+            text: 'Monoxyde De Carbone'
         },
         xAxis: {
             type: 'datetime',
@@ -268,8 +269,9 @@ $(document).ready(function() {
 });
                               </script> 
                             </div> <!-- div 2 -->
+
                             <div align="center" class="mySlides">  
-                              <h4>Ammoniaque</h4>
+                              <!-- <h4>Ammoniaque</h4> -->
                               <div id="nh3" style="height: 400px; min-width: 310px"></div>
                               <script type="text/javascript">
                                 var chart_nh3; // global
@@ -306,7 +308,7 @@ $(document).ready(function() {
             }
         },
         title: {
-            text: ''
+            text: 'Ammoniaque'
         },
         xAxis: {
             type: 'datetime',
@@ -329,8 +331,8 @@ $(document).ready(function() {
 });
                               </script>
                             </div> <!-- div 3 -->
-                     </div>
-                    
+                     
+</div>                   
                     <!-- 3) JS -->
                     
                     
@@ -349,7 +351,7 @@ $(document).ready(function() {
                           myIndex++;
                           if (myIndex > x.length) {myIndex = 1}    
                           x[myIndex-1].style.display = "block";  
-                          setTimeout(carousel, 2000); // Change image every 2 seconds
+                          setTimeout(carousel, 3000); // Change image every 2 seconds
                       }
                     </script>
 
