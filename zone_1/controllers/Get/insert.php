@@ -4,7 +4,7 @@
  *
  * @author Yvon Benahita
  */
-require_once('../vendor/autoload.php');
+require_once('../../vendor/autoload.php');
 // Définitions des constantes modèles pour l'accès au datatore
 define('GDS_ACCOUNT', ' !! your service account name here !! ');
 define('GDS_KEY_FILE', dirname(__FILE__) . '/key.p12');
@@ -21,5 +21,5 @@ syslog(LOG_DEBUG, 'Proceeding... ' . print_r($_SERVER, TRUE) . "\n\n" . print_r(
 $obj_repo = new Repository(); // On crée une nouvelle instance de cette classe
 $obj_repo->createPost($str_co2, $str_co, $str_nh3); // Pour crée une entité avec les valeurs des params d'url, ie les 3 gazs polluants.
 
-header("Location: /zone_1");
+header("Location: /zone_1/home");
 

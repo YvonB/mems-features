@@ -4,7 +4,7 @@ var chart; // global
  * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
  * demander à nouveau
  */
-function requestData() {
+function requestDataNh3() {
     $.ajax({
         url: '/zone_1/home/nh3/data',
         success: function(point) {
@@ -16,7 +16,7 @@ function requestData() {
             chart.series[0].addPoint(point, true, shift);
             
             // l'appeler à nouveau après une seconde
-            setTimeout(requestData, 1000);    
+            setTimeout(requestDataNh3, 1000);    
         },
         cache: false
     });
@@ -28,7 +28,7 @@ $(document).ready(function() {
             renderTo: 'nh3',
             defaultSeriesType: 'spline',
             events: {
-                load: requestData
+                load: requestDataNh3
             }
         },
         title: {

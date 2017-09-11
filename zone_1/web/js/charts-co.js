@@ -4,7 +4,7 @@ var chart; // global
  * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
  * demander à nouveau
  */
-function requestData() {
+function Co() {
     $.ajax({
         url: '/zone_1/home/co/data',
         success: function(point) {
@@ -16,7 +16,7 @@ function requestData() {
             chart.series[0].addPoint(point, true, shift);
             
             // l'appeler à nouveau après une seconde
-            setTimeout(requestData, 1000);    
+            setTimeout(requestDataCo, 1000);    
         },
         cache: false
     });
@@ -28,7 +28,7 @@ $(document).ready(function() {
             renderTo: 'co',
             defaultSeriesType: 'spline',
             events: {
-                load: requestData
+                load: requestDataCo
             }
         },
         title: {

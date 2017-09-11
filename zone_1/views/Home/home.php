@@ -18,7 +18,7 @@
     <!-- CSS global -->
     <link rel="stylesheet" href="/css/demo.css">
     <!-- css du slide -->
-    <link rel="stylesheet" href="/css/slide.css">
+    <!-- <link rel="stylesheet" href="/css/slide.css"> -->
     <!-- fin css slide -->
     <meta name="author" content="Yvon Benahita">
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
@@ -30,7 +30,13 @@
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+      <!-- script pour la courbe -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </head>
 <!-- end head -->
 
@@ -138,93 +144,213 @@
                   <div class="col-md-12">
                   <h2><i class="fa fa-line-chart" style="margin-left: 3px;margin-right: 8px;" aria-hidden="true"></i>See all at once</h2>
                   </div>
-                    <div class="mon_slide">
-                        <div id="slider">
-                          <ul id="slideWrap"> 
-                            <li><?php include '../../resources/includes/div_co2.php'; ?></li>
-                            <li><?php include '../../resources/includes/div_co.php'; ?></li>
-                            <li><?php include '../../resources/includes/div_nh3.php'; ?></li>
-                          </ul>
-                          <a id="prev" href="#">&#8810;</a>
-                          <a id="next" href="#">&#8811;</a>
-                        </div>
-                    </div>
 
-                    <!-- 2) CSS : slide.css-->
+                    <div class="w3-content w3-section" style="max-width:500px"> 
+                            <div align="center" class="mySlides">  
+                              <h4>Gaz Carbonique</h4>
+                              <div id="co2" style="height: 400px; min-width: 310px"></div>
+                              <script type="text/javascript">
+                                var chart_co2; // global
 
+/**
+ * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
+ * demander à nouveau
+ */
+function requestDataCO2() {
+    $.ajax({
+        url: '/zone_1/home/co2/data',
+        success: function(point) {
+            var series = chart_co2.series[0],
+                shift = series.data.length > 20; // décalage si la série est
+                                                 // plus de 20
+
+            // ajouter le point
+            chart_co2.series[0].addPoint(point, true, shift);
+            
+            // l'appeler à nouveau après une seconde
+            setTimeout(requestDataCO2, 1000);    
+        },
+        cache: false
+    });
+}
+
+$(document).ready(function() {
+    chart_co2 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'co2',
+            defaultSeriesType: 'spline',
+            events: {
+                load: requestDataCO2
+            }
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
+        },
+        yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
+            title: {
+                text: 'Value in ppm',
+                margin: 80
+            }
+        },
+        series: [{
+            name: 'co2',
+            data: []
+        }]
+    });        
+});
+                              </script>
+                            </div> <!-- div 1 --> 
+                            <div align="center" class="mySlides">  
+                              <h4>Monoxyde de Carbone</h4>
+                              <div id="co" style="height: 400px; min-width: 310px"></div>
+                              <script type="text/javascript">
+                                var chart_co; // global
+
+/**
+ * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
+ * demander à nouveau
+ */
+function requestDataCo() {
+    $.ajax({
+        url: '/zone_1/home/co/data',
+        success: function(point) {
+            var series = chart_co.series[0],
+                shift = series.data.length > 20; // décalage si la série est
+                                                 // plus de 20
+
+            // ajouter le point
+            chart_co.series[0].addPoint(point, true, shift);
+            
+            // l'appeler à nouveau après une seconde
+            setTimeout(requestDataCo, 1000);    
+        },
+        cache: false
+    });
+}
+
+$(document).ready(function() {
+    chart_co = new Highcharts.Chart({
+        chart: {
+            renderTo: 'co',
+            defaultSeriesType: 'spline',
+            events: {
+                load: requestDataCo
+            }
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
+        },
+        yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
+            title: {
+                text: 'Value in ppm',
+                margin: 80
+            }
+        },
+        series: [{
+            name: 'co',
+            data: []
+        }]
+    });        
+});
+                              </script> 
+                            </div> <!-- div 2 -->
+                            <div align="center" class="mySlides">  
+                              <h4>Ammoniaque</h4>
+                              <div id="nh3" style="height: 400px; min-width: 310px"></div>
+                              <script type="text/javascript">
+                                var chart_nh3; // global
+
+/**
+ * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
+ * demander à nouveau
+ */
+function requestDataNh3() {
+    $.ajax({
+        url: '/zone_1/home/nh3/data',
+        success: function(point) {
+            var series = chart_nh3.series[0],
+                shift = series.data.length > 20; // décalage si la série est
+                                                 // plus de 20
+
+            // ajouter le point
+            chart_nh3.series[0].addPoint(point, true, shift);
+            
+            // l'appeler à nouveau après une seconde
+            setTimeout(requestDataNh3, 1000);    
+        },
+        cache: false
+    });
+}
+
+$(document).ready(function() {
+    chart_nh3 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'nh3',
+            defaultSeriesType: 'spline',
+            events: {
+                load: requestDataNh3
+            }
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
+        },
+        yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
+            title: {
+                text: 'Value in ppm',
+                margin: 80
+            }
+        },
+        series: [{
+            name: 'nh3',
+            data: []
+        }]
+    });        
+});
+                              </script>
+                            </div> <!-- div 3 -->
+                     </div>
+                    
                     <!-- 3) JS -->
-                    <script type="text/javascript">
+                    
+                    
+                    
 
-                      var responsiveSlider = function() 
-                      {
-                          var slider = document.getElementById("slider");
-                          var sliderWidth = slider.offsetWidth;
-                          var slideList = document.getElementById("slideWrap");
-                          var count = 1;
-                          var items = slideList.querySelectorAll("li").length;
-                          var prev = document.getElementById("prev");
-                          var next = document.getElementById("next");
+                    <script>
+                      var myIndex = 0;
+                      carousel();
 
-                          window.addEventListener('resize', function() 
-                                                              {
-                                                                sliderWidth = slider.offsetWidth;
-                                                              }
-                                                  );
-
-                          var prevSlide = function() 
-                                              {
-                                                if(count > 1) 
-                                                    {
-                                                      count = count - 2;
-                                                      slideList.style.left = "-" + count * sliderWidth + "px";
-                                                      count++;
-                                                    }
-                                                else if(count = 1) 
-                                                    {
-                                                      count = items - 1;
-                                                      slideList.style.left = "-" + count * sliderWidth + "px";
-                                                      count++;
-                                                    }
-                                              };
-
-                          var nextSlide = function() 
-                                              {
-                                                if(count < items) 
-                                                    {
-                                                      slideList.style.left = "-" + count * sliderWidth + "px";
-                                                      count++;
-                                                    }
-                                                else if(count = items) 
-                                                    {
-                                                      slideList.style.left = "0px";
-                                                      count = 1;
-                                                    }
-                                              };
-                          
-                          next.addEventListener("click", function() 
-                                                              {
-                                                                nextSlide();
-                                                              }
-                                               );
-
-                          prev.addEventListener("click", function() 
-                                                              {
-                                                                prevSlide();
-                                                              }
-                                                );
-                          
-                          setInterval(function() 
-                                          {
-                                            nextSlide()
-                                          }, 8000
-                                     );
-
-                    };
-
-                    window.onload = function()
-                     {
-                      responsiveSlider();  
-                     }
+                      function carousel() {
+                          var i;
+                          var x = document.getElementsByClassName("mySlides");
+                          for (i = 0; i < x.length; i++) {
+                             x[i].style.display = "none";  
+                          }
+                          myIndex++;
+                          if (myIndex > x.length) {myIndex = 1}    
+                          x[myIndex-1].style.display = "block";  
+                          setTimeout(carousel, 2000); // Change image every 2 seconds
+                      }
                     </script>
 
 <!-- ================ Fin slide de 3 courbes ============================ -->
