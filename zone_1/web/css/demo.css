@@ -92,7 +92,7 @@ body
 .date h3
 {
   display: inline;
-  margin-top: 10px !important;
+  margin-top: 25px !important;
   padding-left: 15px;
   color:#757575;
   position: absolute;
@@ -186,34 +186,34 @@ margin-left: -10px;
 
 #gmail-with-notif
 {
-  width: 40px;
-  /*margin-right: 8px;*/
-  margin-left: 14px;
-  margin-top: 25px;
-  
-  -webkit-transition: all 1s ease; /* Safari and Chrome */
-  -moz-transition: all 1s ease; /* Firefox */
-  -o-transition: all 1s ease; /* IE 9 */
-  -ms-transition: all 1s ease; /* Opera */
-  transition: all 1s ease;
-  max-width: 100%;
+    width: 40px;
+    margin-right: 15px;
+    /* margin-left: 14px; */
+    margin-top: 8px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    float: right;
+    transition: all 1s ease;
+    max-width: 100%;
 
   cursor: pointer;
 }
 
 #gmail-no-notif
 {
-  width: 40px;
-  /*margin-right: 8px;*/
-  margin-left: 14px;
-  margin-top: 25px;
-  
-  -webkit-transition: all 1s ease; /* Safari and Chrome */
-  -moz-transition: all 1s ease; /* Firefox */
-  -o-transition: all 1s ease; /* IE 9 */
-  -ms-transition: all 1s ease; /* Opera */
-  transition: all 1s ease;
-  max-width: 100%;
+    width: 40px;
+    margin-right: 15px;
+    /* margin-left: 14px; */
+    margin-top: 8px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    float: right;
+    transition: all 1s ease;
+    max-width: 100%;
 }
 
 #gmail-logo:hover
@@ -262,7 +262,7 @@ margin-left: -10px;
 .inner-banner
 {
     position:absolute;
-    top: 40%;
+    top: 150px;
     width: 100%;
     text-align: center;
 }
@@ -366,7 +366,8 @@ margin-left: -10px;
 }
 
 .colornav
-{
+{ 
+  margin-top: -4px;
   background: rgb(59, 120, 231);
   border-right: rgb(59, 120, 231);
   border-bottom: 0px solid rgb(59, 120, 231);
@@ -614,6 +615,17 @@ div.float {
 
 /*footer*/
 
+.highcharts-container
+{
+    position: relative;
+    overflow: hidden;
+    width: 1140px;
+    height: 400px;
+    text-align: left;
+    line-height: normal;
+    z-index: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 .footer {
   background: #263238;
@@ -693,6 +705,14 @@ div.float {
     {
         width: 70px;
         margin-right: 8px;
+    }
+
+}
+@media (max-width: 770px) 
+{
+    .inner-banner 
+    {
+        display: none;
     }
 
 }

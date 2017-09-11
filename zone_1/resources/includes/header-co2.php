@@ -43,11 +43,11 @@
                 <button type="submit" class="btn btn-default" style="display: none;"><b>Chercher</b></button>
               </form>
               <ul class="nav navbar-nav navbar-right colortextnav">
-                <li><a href="/zone_1/home"><b><i class="fa fa-home" style="margin-right: 4px;"></i>Back Home</b></a></li>
+                <li><a href="/zone_1/home"><b><i class="fa fa-home" style="margin-right: 4px;font-size: 18px;"></i>Back Home</b></a></li>
                 <li><a href="/zone_1/home/co">Monoxyde de Carbone</a></li>
                 <li><a href="/zone_1/home/nh3">Amoniaque</a></li>
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;font-size: 16px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="/zone_1/login"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
                   </ul>

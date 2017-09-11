@@ -93,56 +93,56 @@
                         <!-- script pour afficher le Pie -->
                         <script type="text/javascript">
                           Highcharts.chart('container', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Know where you find is livable or not'
-    },
-    subtitle: {
-        text: ''
-    },
-    xAxis: {
-        categories: [
-            'A l\'instant'
-            
-        ],
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Percentage (ppm)'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.3f} mm</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
-    },
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    series: [{
-        name: 'co2',
-        data: [<?php echo htmlspecialchars($res[0]); ?>]
+                              chart: {
+                                  type: 'column',
+                              },
+                              title: {
+                                  text: 'Know where you find is livable or not'
+                              },
+                              subtitle: {
+                                  text: ''
+                              },
+                              xAxis: {
+                                  categories: [
+                                      'A l\'instant'
+                                      
+                                  ],
+                                  crosshair: true
+                              },
+                              yAxis: {
+                                  min: 0,
+                                  title: {
+                                      text: 'Percentage (ppm)'
+                                  }
+                              },
+                              tooltip: {
+                                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                      '<td style="padding:0"><b>{point.y:.3f} %</b></td></tr>',
+                                  footerFormat: '</table>',
+                                  shared: true,
+                                  useHTML: true
+                              },
+                              plotOptions: {
+                                  column: {
+                                      pointPadding: 0.2,
+                                      borderWidth: 0
+                                  }
+                              },
+                              series: [{
+                                  name: 'co2',
+                                  data: [<?php echo htmlspecialchars($res[0]); ?>]
 
-    }, {
-        name: 'co',
-        data: [<?php echo htmlspecialchars($res[1]); ?>]
+                              }, {
+                                  name: 'co',
+                                  data: [<?php echo htmlspecialchars($res[1]); ?>]
 
-    }, {
-        name: 'nh3',
-        data: [<?php echo htmlspecialchars($res[2]); ?>]
+                              }, {
+                                  name: 'nh3',
+                                  data: [<?php echo htmlspecialchars($res[2]); ?>]
 
-    }]
-});
+                              }]
+                          });
                         </script>
                         <!-- end script Pie -->
 
