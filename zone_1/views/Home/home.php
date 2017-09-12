@@ -1,8 +1,7 @@
 <?php
-  $notif_mail=0; 
+  $notif_mail = 0; 
   require_once '../../controllers/Home/getSession.php';
   require_once '../../controllers/Home/authentification.php';    
-  
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +17,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- CSS global -->
     <link rel="stylesheet" href="/css/demo.css">
-    <!-- css du slide -->
-    <!-- <link rel="stylesheet" href="/css/slide.css"> -->
     <!-- fin css slide -->
     <meta name="author" content="Yvon Benahita">
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
@@ -43,6 +40,7 @@
 
 <body>
     <!--************************ Début Navigation ************************************-->
+    <?php require_once '../../controllers/Home/getPourcNotAcceptable.php';?>
     <?php require_once '../../controllers/Home/sendmail.php' ?>; 
     <?php require_once '../../resources/includes/header-home.php'; ?>
     <!--****************************** Fin Navigation *****************************-->
@@ -72,10 +70,7 @@
                 <div class="col-md-4">
                     <h2 align="center"><i class="fa fa-pie-chart" style="margin-right: 8px" aria-hidden="true"></i>Gas not accepted</h2>
                       <div id="container" style="width:100%;height: 400px"> </div><!-- div pour contenir le Pie -->
-                        <?php 
-                            // Appelle controlleur
-                            require_once '../../controllers/Home/getPourcNotAcceptable.php'; 
-                        ?>
+                       
                         <!-- // Tant que les données ne sont pas prêtes on affiche un loader   -->
                          <?php 
                         
@@ -157,7 +152,7 @@
                   <h2><i class="fa fa-line-chart" style="margin-left: 3px;margin-right: 8px;" aria-hidden="true"></i>See all at once</h2>
                   </div>
 
-<div  style="max-height: 444px;margin-bottom: 50px;margin-top: 100px;box-shadow: 0 0 30px #888;"> 
+<div  class ="histoco2" style="max-height: 444px;margin-bottom: 50px;margin-top: 100px;box-shadow: 0 0 30px #888;"> 
                             <div align="center" class="mySlides">  
                               <!-- <h4>Gaz Carbonique</h4> -->
                               <div id="co2" style="height: 400px; min-width: 310px"></div>
@@ -395,8 +390,8 @@ See Quickly the last 10 inserted values</h2>
 
                 <div class="col-md-8" id="toggle">
                     <!-- <h2>Results</h2> -->
-                    <div class="panel panel-default" style="background-color: #cdf;box-shadow: 0 0 10px;margin-bottom: 50px;width: 1000px;margin-left: 40px;">
-                        <div class="panel-body">
+                    <div class="panel panel-default" style="background-color: #cdf;margin-bottom: 50px;width: 1000px;margin-left: 40px;">
+                        <div class="panel-body histoco2">
 
                             <?php
                              // Appelle au controlleur

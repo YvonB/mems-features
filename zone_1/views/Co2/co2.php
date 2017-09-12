@@ -21,7 +21,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="/css/demo.css">
-    <link rel="stylesheet" href="/css/slide.css">  <!-- pour l'utilisation de #slider ect -->
     <link rel="stylesheet" href="/css/historiqueCo2.css">
     <meta name="author" content="Yvon Benahita">
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
@@ -55,7 +54,7 @@
 
 	<!-- div permettant de visualiser la courbe -->
     <div align="center">  
-        <h4>Gaz carbonique</h4>
+        <h4 style="float: left;margin-bottom: 30px;">Instantaneous values</h4>
         <div class="mon_slide">
             <div id="slider">
             	<div id="co2" style="min-width: 310px; height: 400px;"></div><!-- div qui va contenir la courbe -->
@@ -68,10 +67,10 @@
 
 <!-- ============================ Historiques ====================================== -->
 <div class="col-md-8">
-    <h2>Historics</h2>
+    <h2 style="margin-bottom: 30px;margin-left: -15px;">Historics</h2>
 </div>
 <div class="histCo2Tab">
-    <table class="table stats caps">
+    <table class="table stats caps histoco2">
         <thead class="titresHistCo2Tab">
             <tr>
                 <td>Il y a 2 jours</td>

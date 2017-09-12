@@ -46,19 +46,19 @@ thead
     /*Column Section Titles*/
     .stats td:nth-of-type(1):before 
     {
-        content: "Superhero: ";
+        content: "Il y a 2jours  ";
     }
     .stats td:nth-of-type(2):before 
     {
-        content: "Alter Ego: ";
+        content: "Hiere ";
     }
     .stats td:nth-of-type(3):before 
     {
-        content: "Sidekick: ";
+        content: "";
     }
     .stats td:nth-of-type(4):before 
     {
-        content: "Vehicle: ";
+        content: "Tous";
     }
     
     .spacing td:before 
