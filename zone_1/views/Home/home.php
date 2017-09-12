@@ -22,6 +22,7 @@
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
     <!-- font -->
     <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
 
     <!-- script pour le Pie -->
      <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -72,8 +73,7 @@
                       <div id="container" style="width:100%;height: 400px"> </div><!-- div pour contenir le Pie -->
                        
                         <!-- // Tant que les données ne sont pas prêtes on affiche un loader   -->
-                         <?php 
-                        
+                        <?php 
                         if($res[0] == null AND $res[1] == null AND $res[2] == null)
                         {
                             ?>
@@ -81,11 +81,8 @@
                             <div class="loader_compteurs"></div>
                             <?php
                         }
-
-                         ?>
-                         <!-- fin affichage loader -->
-
-                        <!-- script pour afficher le Pie -->
+                         ?>       
+                        <!-- sinon-->
                         <script type="text/javascript">
                           Highcharts.chart('container', {
                               chart: {

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/css/historiqueCo2.css">
     <meta name="author" content="Yvon Benahita">
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
+    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
 
 	<!-- script pour la courbe -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

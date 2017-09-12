@@ -14,7 +14,7 @@
           <?php if($notif_mail != 0)
                   { 
                     ?>
-                    <br><a href="https://mail.google.com/"><img src="/img/gmail-with-notif.png" id="gmail-with-notif" /></a><b id="notif_mail"><?php echo $notif_mail; ?></b> 
+                    <br><a href="https://mail.google.com/"><img src="/img/gmail-with-notif.png" id="gmail-with-notif" class="shake-rotate" /></a><b id="notif_mail"><?php echo $notif_mail; ?></b> 
                     <?php
                   } 
                   else
