@@ -42,7 +42,7 @@
 <body>
     <!--************************ Début Navigation ************************************-->
     <?php require_once '../../controllers/Home/getPourcNotAcceptable.php';?>
-    <?php require_once '../../controllers/Home/sendmail.php' ?>; 
+    <?php require_once '../../controllers/Home/sendmail.php'; ?> 
     <?php require_once '../../resources/includes/header-home.php'; ?>
     <!--****************************** Fin Navigation *****************************-->
         
@@ -70,7 +70,7 @@
                 <!-- ============== -->
                 <div class="col-md-4">
                     <h2 align="center"><i class="fa fa-pie-chart" style="margin-right: 8px" aria-hidden="true"></i>Gas not accepted</h2>
-                      <div id="container" style="width:100%;height: 400px"> </div><!-- div pour contenir le Pie -->
+                      <div id="container" style="width:100%;height: 400px"> 
                        
                         <!-- // Tant que les données ne sont pas prêtes on affiche un loader   -->
                         <?php 
@@ -81,7 +81,10 @@
                             <div class="loader_compteurs"></div>
                             <?php
                         }
+                        else
+                        {
                          ?>       
+                        
                         <!-- sinon-->
                         <script type="text/javascript">
                           Highcharts.chart('container', {
@@ -137,8 +140,10 @@
                           });
                         </script>
                         <!-- end script Pie -->
-
-                    <!-- fin div Pie -->
+                      <?php
+                          }
+                      ?>
+                    </div><!-- fin div Pie -->
                 </div> <!-- end coll md 4 -->
             </div> <!-- end row -->
             <!-- =========================================================================== -->

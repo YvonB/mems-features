@@ -5,7 +5,7 @@
     // on a pas le droit de voir index si on était pas connecter au préalable.
     if(!$user)
     {   
-         require_once 'modal.php';
+         require 'modal.php';
     }
 
 ?>

@@ -1,6 +1,6 @@
 <header>
-
         <nav class="navbar navbar-default navbar-fixed-top colornav">
+
         <div class="date_time">
           <h3 style="display: none;">Follow your healf closely</h3>
 
@@ -24,7 +24,6 @@
                   }
 
           ?>
-
            <!-- affiche heure -->
           <script type="text/javascript">
               setInterval(function(){
@@ -32,6 +31,7 @@
                       }, 1000);
           </script><!-- end heure -->
         </div>
+
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -41,13 +41,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand colortextnav" href="/zone_1"><b>SDPE - IoT</b><span id="span_accueil" style="text-transform: lowercase;">Acueil du site</span></a>
+              <a class="navbar-brand colortextnav" href="/zone_1"><b>SDP - IoT</b></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active colortextnav"><a href=""><b><i class="fa fa-home" style="margin-right: 4px;color:#fafafa !important;font-size: 18px;"></i>Home</b><span class="sr-only">(current)</span><span style="text-transform: lowercase;">Retour vers le home</span></a></li>
+                <li class="active colortextnav"><a href="" style="color:#fafafa !important;"><b>CO</b><span class="sr-only">(current)</span></a></li>
               </ul>
               <form class="navbar-form navbar-left" style="margin-left: 150px;">
                 <div class="form-group">
@@ -56,14 +56,13 @@
                 <button type="submit" class="btn btn-default" style="display: none;"><b>Chercher</b></button>
               </form>
               <ul class="nav navbar-nav navbar-right colortextnav">
-                <li><a href="/zone_1/home/co2">Gaz Carbonique<span style="text-transform: lowercase;">Courbe de co2</span></a></li>
-                <li><a href="/zone_1/home/co">Monoxyde de Carbone<span style="text-transform: lowercase;">Courbe de co</span></a></li>
-                <li><a href="/zone_1/home/nh3">Amoniaque<span style="text-transform: lowercase;">Courbe de nh3</span></a></li>
+                <li><a href="/zone_1/home"><b><i class="fa fa-home" style="margin-right: 4px;font-size: 18px;"></i>Back Home</b></a></li>
+                <li><a href="/zone_1/home/co2">Gaz Carbonique</a></li>
+                <li><a href="/zone_1/home/nh3">Amoniaque</a></li>
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="font-size: 16px;margin-right: 2px;" aria-hidden="true"></i>
-                    <b><?php echo htmlspecialchars($user->getNickname());?></b><p class="caret karoty"></p></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;font-size: 16px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/zone_1/logout"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
+                    <li><a href="/zone_1/login"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
                   </ul>
                 </li>
               </ul>

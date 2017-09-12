@@ -248,7 +248,7 @@ Notifications</h2>
 
     <h2 style="color: #337ab7 !important; font-size: 16px" id="toggler"><i class="fa fa-bookmark" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>See The Legend</h2>
 
-    <div id="toggle" class="toggle_legend">   
+    <div id="toggle" class="toggle_legend histoco2">   
             <div class="float">
             <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #212121" class="fanazavana">Vous trouvez dans un endroit très aéré ! Vous pouvez être tranquile.</p>
             </div>

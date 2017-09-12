@@ -79,16 +79,46 @@ body
   padding-right: 22px;
   cursor: pointer;
 }
-/*.date_time h3
+
+a span
 {
-  display: inline;
-  margin-top: 10px !important;
-  position: absolute;
-  padding-left: 15px;
-  color: #757575;
-  cursor: pointer;
-  transition: 1.0s;
-}*/
+    position: absolute;
+    margin-top: 40px;
+    margin-left: -170px;
+    color: #fafafa;
+    background: rgba(80, 78, 78, 0.9);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    transform: scale(0) rotate(-12deg);
+    transition: all .25s;
+    opacity: 0;
+    width: auto;
+}
+
+a:hover span, a:focus span{
+     transform:scale(1) rotate(0); 
+
+     /*effet*/
+     opacity:1;
+}
+
+.karoty
+{
+  margin-top: 7px !important;
+  margin-left: 5px !important;
+  margin-bottom: 7px !important;
+}
+#span_accueil
+{
+    text-transform: lowercase;
+    font-size: 14px;
+    margin-left: -110px;
+}
+
 .date h3
 {
   display: inline;
@@ -202,9 +232,9 @@ z-index: 1;
 
 #gmail-no-notif
 {
-    width: 40px;
-    margin-right: 15px;
-    /* margin-left: 14px; */
+ width: 40px;
+    margin-right: 20px;
+     margin-left: -10px; 
     margin-top: 8px;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
@@ -646,6 +676,11 @@ div.float {
 {
   box-shadow: 0 0 8px !important;
   transition: 1.0s;
+}
+
+.histoco2:focusout
+{
+   transition: 1.0s; 
 }
 
 /*footer*/

@@ -46,7 +46,7 @@ handlers:
 - url: /zone_1/home/nh3
   script: zone_1/views/Nh3/nh3.php
 
-# pour les historiques
+# pour les historiques de co2
 - url: /zone_1/home/co2/histmin
   script: zone_1/views/Co2/histmin.php
 - url: /zone_1/home/co2/histheure
@@ -57,6 +57,18 @@ handlers:
   script: zone_1/views/Co2/hier.php
 - url: /zone_1/home/co2/tous
   script: zone_1/views/Co2/tous.php
+
+# pour les historiques de co
+- url: /zone_1/home/co/histmin
+  script: zone_1/views/Co/histmin.php
+- url: /zone_1/home/co/histheure
+  script: zone_1/views/Co/histheure.php
+- url: /zone_1/home/co/deuxjours
+  script: zone_1/views/Co/deuxjours.php
+- url: /zone_1/home/co/hier
+  script: zone_1/views/Co/hier.php
+- url: /zone_1/home/co/tous
+  script: zone_1/views/Co/tous.php
 
 # données pour la courbe co2
 - url: /zone_1/home/co2/data
