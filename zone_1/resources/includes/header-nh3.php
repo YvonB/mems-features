@@ -41,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand colortextnav" href="/zone_1"><b>SDPE - IoT</b></a>
+              <a class="navbar-brand colortextnav" href="/zone_1"><b>SDPE - IoT</b><span id="span_accueil" style="text-transform: lowercase;">Retour à l'accueil</span></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,11 +56,11 @@
                 <button type="submit" class="btn btn-default" style="display: none;"><b>Chercher</b></button>
               </form>
               <ul class="nav navbar-nav navbar-right colortextnav">
-                <li><a href="/zone_1/home"><b><i class="fa fa-home" style="margin-right: 4px;font-size: 18px;"></i>Back Home</b></a></li>
-                <li><a href="/zone_1/home/co">Monoxyde de Carbone</a></li>
-                <li><a href="/zone_1/home/co2">Gaz Carbonique</a></li>
+                <li><a href="/zone_1/home"><b><i class="fa fa-home" style="margin-right: 4px;font-size: 18px;"></i>Back Home</b><span style="text-transform: lowercase;">Retour vers le home</span></a></li>
+                <li><a href="/zone_1/home/co">Monoxyde de Carbone<span style="text-transform: lowercase;">Courbe de co</span></a></li>
+                <li><a href="/zone_1/home/co2">Gaz Carbonique<span style="text-transform: lowercase;">Courbe de co2</span></a></li>
                 <li class="dropdown colortextnav">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;font-size: 16px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;font-size: 16px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><p class="caret karoty"></p></a>
                   <ul class="dropdown-menu">
                     <li><a href="/zone_1/login"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
                   </ul>
