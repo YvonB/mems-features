@@ -70,6 +70,18 @@ handlers:
 - url: /zone_1/home/co/tous
   script: zone_1/views/Co/tous.php
 
+# pour les historiques de nh3
+- url: /zone_1/home/nh3/histmin
+  script: zone_1/views/Nh3/histmin.php
+- url: /zone_1/home/nh3/histheure
+  script: zone_1/views/Nh3/histheure.php
+- url: /zone_1/home/nh3/deuxjours
+  script: zone_1/views/Nh3/deuxjours.php
+- url: /zone_1/home/nh3/hier
+  script: zone_1/views/Nh3/hier.php
+- url: /zone_1/home/nh3/tous
+  script: zone_1/views/Nh3/tous.php
+
 # données pour la courbe co2
 - url: /zone_1/home/co2/data
   script: zone_1/controllers/Co2/live-server-data.php

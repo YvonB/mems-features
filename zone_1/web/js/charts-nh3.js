@@ -1,38 +1,38 @@
-var chart; // global
+var chart_nh3; // global
 
 /**
  * Demandez des données du serveur, ajoutez-le au graphique et définissez un délai d'attente 
  * demander à nouveau
  */
-function requestDataNh3() {
+function requestDataNH3() {
     $.ajax({
         url: '/zone_1/home/nh3/data',
         success: function(point) {
-            var series = chart.series[0],
+            var series = chart_nh3.series[0],
                 shift = series.data.length > 20; // décalage si la série est
                                                  // plus de 20
 
             // ajouter le point
-            chart.series[0].addPoint(point, true, shift);
+            chart_nh3.series[0].addPoint(point, true, shift);
             
             // l'appeler à nouveau après une seconde
-            setTimeout(requestDataNh3, 1000);    
+            setTimeout(requestDataNH3, 1000);    
         },
         cache: false
     });
 }
 
 $(document).ready(function() {
-    chart = new Highcharts.Chart({
+    chart_nh3 = new Highcharts.Chart({
         chart: {
             renderTo: 'nh3',
             defaultSeriesType: 'spline',
             events: {
-                load: requestDataNh3
+                load: requestDataNH3
             }
         },
         title: {
-            text: ''
+            text: 'Live nh3 data'
         },
         xAxis: {
             type: 'datetime',
