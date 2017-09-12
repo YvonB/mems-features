@@ -12,7 +12,7 @@
 <body>
 <div class="container"> <!-- contenu de la page -->
 	<div class="global">
-		<div class="zone_1"> <!-- div de gauche -->
+		<div class="zone_1 histoco2"> <!-- div de gauche -->
 	        
 	        <div id="map"></div>
 
@@ -35,7 +35,7 @@
 		    <h3 class="titre_zones"><a href="/zone_1">Zone 1</a></h3>
 	    </div> <!-- fin div de gauche -->
 
-	    <div class="zone_2"> <!-- div de droite -->
+	    <div class="zone_2 histoco2"> <!-- div de droite -->
 	       
 	         <div id="map"></div>
 

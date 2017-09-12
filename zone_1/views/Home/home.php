@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" href="/img/datastore-logo.png" />
     <!-- font -->
     <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
 
     <!-- script pour le Pie -->
      <script src="https://code.highcharts.com/highcharts.js"></script>
