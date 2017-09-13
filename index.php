@@ -55,7 +55,7 @@
 		    <script async defer
 		    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDYv6GZEKyU1Kj9Sp0hP7RYfChScPuciM8&callback=initMap">
 		    </script> 
-		     <h3 class="titre_zones"><a href="">Zone 2</a></h3>         
+		     <h3 class="titre_zones"><a href="/zone_2">Zone 2</a></h3>         
 	    </div> <!-- fin div de droite -->
 	</div> <!-- fin div global -->
 
