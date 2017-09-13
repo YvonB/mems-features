@@ -95,7 +95,6 @@ class Repository
             }
     }
 
-
     /**
      * Mettre à jour le cache de Datastore (pour l'affichage brute des 10 dernières valeurs)
      *
@@ -105,7 +104,7 @@ class Repository
     {
         $obj_store = $this->getStore();
 
-        $arr_posts = $obj_store->query("SELECT * FROM Gas ORDER BY posted DESC")->fetchPage(10);
+        $arr_posts = $obj_store->query("SELECT * FROM zone_2 ORDER BY posted DESC")->fetchPage(10);
 
         $this->getCache()->set('recent', $arr_posts);
 
@@ -121,7 +120,7 @@ class Repository
     {
         $obj_store = $this->getStore();
 
-        $arr_posts = $obj_store->query("SELECT * FROM Gas ORDER BY posted DESC")->fetchOne();
+        $arr_posts = $obj_store->query("SELECT * FROM zone_2 ORDER BY posted DESC")->fetchOne();
 
         $this->getCache()->set('last', $arr_posts);
 
@@ -138,7 +137,7 @@ class Repository
     {
         $obj_store = $this->getStore();
 
-        $arr_posts = $obj_store->query("SELECT * FROM Gas")->fetchAll();
+        $arr_posts = $obj_store->query("SELECT * FROM zone_2")->fetchAll();
 
         $this->getCache()->set('recent',$arr_posts);
 
@@ -191,7 +190,7 @@ class Repository
      */
     private function makeSchema()
     {
-        return (new Schema('Gas'))
+        return (new Schema('zone_2'))
             ->addDatetime('posted')
             ->addString('co2', FALSE)
             ->addString('co', FALSE)
