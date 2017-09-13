@@ -7,7 +7,7 @@ handlers:
 - url: /
   script: index.php
 
-#===================================== /zone_1/Premier Zone =============================
+#================== Premier Zone ==================
 #Accueil Premier zone
 - url: /zone_1
   script: zone_1/views/Main/main.php
@@ -93,10 +93,10 @@ handlers:
 # données pour la courbe nh3
 - url: /zone_1/home/nh3/data
   script: zone_1/controllers/Nh3/live-server-data.php
- # ======================= end Premier Zone ===================================
+ # ================= end Premier Zone ===========
 
 
-#Second Zone
+#=================== Second Zone ======================
 - url: /zone_2
   script: /zone_2/public/main.php
 
