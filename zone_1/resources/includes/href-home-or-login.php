@@ -1,4 +1,4 @@
 <?php
-$home = "/zone_1/home";
-$login = "/zone_1/login";
+$home = "/home";
+$login = "/login";
 echo(isset($user) ? $home : $login);

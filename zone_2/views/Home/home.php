@@ -167,7 +167,7 @@
  */
 function requestDataCO2() {
     $.ajax({
-        url: '/zone_2/home/co2/data',
+        url: '/home/co2/data',
         success: function(point) {
             var series = chart_co2.series[0],
                 shift = series.data.length > 20; // décalage si la série est
@@ -230,7 +230,7 @@ $(document).ready(function() {
  */
 function requestDataCo() {
     $.ajax({
-        url: '/zone_2/home/co/data',
+        url: '/home/co/data',
         success: function(point) {
             var series = chart_co.series[0],
                 shift = series.data.length > 20; // décalage si la série est
@@ -292,7 +292,7 @@ $(document).ready(function() {
  */
 function requestDataNh3() {
     $.ajax({
-        url: '/zone_2/home/nh3/data',
+        url: '/home/nh3/data',
         success: function(point) {
             var series = chart_nh3.series[0],
                 shift = series.data.length > 20; // décalage si la série est

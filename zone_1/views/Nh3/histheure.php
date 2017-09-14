@@ -127,7 +127,7 @@ if(is_numeric($_POST['aujourduiHeurNh3']))
 										<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
 										</div> <!-- end panel body -->
 										</div> <!-- end panel default -->
-										<a href="/zone_1/home/nh3"><button class="btn btn-primary retourBtn" style="margin-top: 15px"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+										<a href="/home/nh3"><button class="btn btn-primary retourBtn" style="margin-top: 15px"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 										Retour</button></a>	
 									</div> <!-- end col md 8 -->
 								</div> <!-- end row -->
@@ -150,7 +150,7 @@ if(is_numeric($_POST['aujourduiHeurNh3']))
 			?>
 			</div> <!-- end panel body -->
 						</div> <!-- end panel default -->
-						<a href="/zone_1/home/nh3"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+						<a href="/home/nh3"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 						Retour</button></a>	
 					</div> <!-- end col md 8 -->
 				</div> <!-- end row -->
@@ -171,7 +171,7 @@ if(is_numeric($_POST['aujourduiHeurNh3']))
 			    <h2 style="color:green">Un nombre entier entre 1 et 23</h2>
 			    </div> <!-- end panel body -->
 				</div> <!-- end panel default -->
-			    <a href="/zone_1/home/nh3"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+			    <a href="/home/nh3"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 				Retour</button></a>	
 		    </div>
 		</div>
@@ -191,7 +191,7 @@ else
 			    <h2 style="color:green">Un nombre entier entre 1 et 23</h2>
 			    </div> <!-- end panel body -->
 				</div> <!-- end panel default -->
-			    <a href="/zone_1/home/nh3"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+			    <a href="/home/nh3"><button class="btn btn-primary retourBtn" style="margin-top: 15px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 				Retour</button></a>	
 		    </div>
 		</div>

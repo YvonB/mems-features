@@ -3,12 +3,8 @@ api_version: 1
 
 handlers:
 
-# # Accueil global
-# - url: /
-#   script: index.php
 
-#================== Premier Zone ==================
-#Accueil Premiere zone
+#Accueil Seconde zone
 - url: /
   script: views/Main/main.php
 
@@ -93,7 +89,7 @@ handlers:
 # données pour la courbe nh3
 - url: /home/nh3/data
   script: controllers/Nh3/live-server-data.php
- # ================= end Premiere Zone ===========
+ # ================= end Seconde Zone ===========
 
 
 # #=================== Seconde Zone ======================

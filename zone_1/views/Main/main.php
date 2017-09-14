@@ -276,7 +276,7 @@ Notifications</h2>
             <div class="row">
                 <div class="col-md-4" id="login_btn">
                     <div class="well btn_main_connect">
-                        <form method="POST" action="<?php if(isset($user)) {echo '/zone_1/home';} else {echo '/zone_1/login';} ?>">
+                        <form method="POST" action="<?php if(isset($user)) {echo '/home';} else {echo '/login';} ?>">
                             <button type="submit" class="btn btn-primary" align="center">
                                 <?php 
                                     if(isset($user)) 

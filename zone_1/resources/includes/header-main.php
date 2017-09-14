@@ -55,11 +55,11 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" style="font-size: 17px;" aria-hidden="true"></i>
                     <!-- <span class="caret" style="margin-left: 8px;"></span> --></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/zone_1/home/co2" style="text-transform: lowercase;">
+                    <li><a href="/home/co2" style="text-transform: lowercase;">
                         Voir l'état de CO2</a></li>
-                    <li><a href="/zone_1/home/co" style="text-transform: lowercase;">
+                    <li><a href="/home/co" style="text-transform: lowercase;">
                         Voir l'état de CO</a></li>
-                    <li><a href="/zone_1/home/nh3" style="text-transform: lowercase;">
+                    <li><a href="/home/nh3" style="text-transform: lowercase;">
                         Voir l'état de NH3</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="<?php require_once 'href-login-or-logout.php'; ?>">

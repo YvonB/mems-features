@@ -2,6 +2,6 @@
     // on a pas le droit de voir index si on était pas connecter au préalable.
     if(!$user)
     {   
-        header("Location: /zone_1"); // on rédirige vers l'accueil et 
+        header("Location: /"); // on rédirige vers l'accueil et 
         exit; // On arrête tout.
     }

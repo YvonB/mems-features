@@ -74,7 +74,7 @@ if(empty($arr_posts))
 											<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est insérée dans la Base De Données <em>Datastore </em>! </p>
 										</div> <!-- end panel body -->
 									</div> <!-- end panel default -->
-									<a href="/zone_1/home/nh3"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+									<a href="/home/nh3"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 									Retour</button></a>	
 								</div> <!-- end col md 8  -->
 							</div> <!-- end row -->
@@ -134,7 +134,7 @@ else
 			 </div> <!-- end panel body -->
 												</div> <!-- end panel default -->
 
-									<a href="/zone_1/home/nh3"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
+									<a href="/home/nh3"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>
 									Retour</button></a>	
 								</div> <!-- end col md 8 et results -->
 							</div> <!-- end row -->

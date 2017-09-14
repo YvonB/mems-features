@@ -9,7 +9,7 @@ $user = UserService::getCurrentUser();
 if ($user) 
 {
     // echo 'Hello, ' . htmlspecialchars($user->getNickname());
-    header('Location: /zone_1/home');
+    header('Location: /home');
 }
 // [END ifuser]
 // [START elseuser]

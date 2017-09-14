@@ -70,7 +70,7 @@ if(empty($arr_posts))
 		<p align="center">Pour l'instant, <strong>aucune donnée </strong> n'est insérée dans la Base De Données <em>Datastore </em>! </p>
 	</div> <!-- end panel body -->
  </div> <!-- end panel default -->
-<a href="/zone_2/home/co"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>Retour</button></a>	
+<a href="/home/co"><button class="btn btn-primary retourBtn"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>Retour</button></a>	
 </div> <!-- end col md 8  -->
 </div> <!-- end row -->
 </div> <!-- end container -->
@@ -125,7 +125,7 @@ else
 					<p style="text-align: center">Aucune correspondance n'a été trouvée ! Désolé.</p>
 				</div> <!-- end panel body -->
 			</div> <!-- end panel default -->
-			<a href="/zone_2/home/co"><button class="btn btn-primary retourBtn" style="margin-top: 15px"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>Retour</button></a>	
+			<a href="/home/co"><button class="btn btn-primary retourBtn" style="margin-top: 15px"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-right: 4px"></i>Retour</button></a>	
 		</div> <!-- end col md 8 -->
 	</div> <!-- end row -->
 </div> <!-- end container -->

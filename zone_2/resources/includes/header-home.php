@@ -26,11 +26,7 @@
           ?>
 
            <!-- affiche heure -->
-          <script type="text/javascript">
-              setInterval(function(){
-                document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
-                      }, 1000);
-          </script><!-- end heure -->
+          <script type="text/javascript" src="/js/affiche-heure.js"></script>
         </div>
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -41,7 +37,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand colortextnav" href="/zone_2"><b>SDPE - IoT</b><span id="span_accueil" style="text-transform: lowercase;">Acueil du site</span></a>
+              <a class="navbar-brand colortextnav" href="/"><b>SDPE - IoT</b><span id="span_accueil" style="text-transform: lowercase;">Acueil du site</span></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,14 +52,14 @@
                 <button type="submit" class="btn btn-default" style="display: none;"><b>Chercher</b></button>
               </form>
               <ul class="nav navbar-nav navbar-right colortextnav">
-                <li><a href="/zone_2/home/co2">Gaz Carbonique<span style="text-transform: lowercase;">Courbe de co2</span></a></li>
-                <li><a href="/zone_2/home/co">Monoxyde de Carbone<span style="text-transform: lowercase;">Courbe de co</span></a></li>
-                <li><a href="/zone_2/home/nh3">Amoniaque<span style="text-transform: lowercase;">Courbe de nh3</span></a></li>
+                <li><a href="/home/co2">Gaz Carbonique<span style="text-transform: lowercase;">Courbe de co2</span></a></li>
+                <li><a href="/home/co">Monoxyde de Carbone<span style="text-transform: lowercase;">Courbe de co</span></a></li>
+                <li><a href="/home/nh3">Amoniaque<span style="text-transform: lowercase;">Courbe de nh3</span></a></li>
                 <li class="dropdown colortextnav">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="font-size: 16px;margin-right: 2px;" aria-hidden="true"></i>
                     <b><?php echo htmlspecialchars($user->getNickname());?></b><p class="caret karoty"></p></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/zone_2/logout"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
+                    <li><a href="/logout"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
                   </ul>
                 </li>
               </ul>
