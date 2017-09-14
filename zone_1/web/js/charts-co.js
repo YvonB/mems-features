@@ -6,7 +6,7 @@ var chart_co; // global
  */
 function requestDataCO() {
     $.ajax({
-        url: '/zone_1/home/co/data',
+        url: '/home/co/data',
         success: function(point) {
             var series = chart_co.series[0],
                 shift = series.data.length > 20; // décalage si la série est

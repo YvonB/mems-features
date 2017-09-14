@@ -6,7 +6,7 @@ var chart_nh3; // global
  */
 function requestDataNH3() {
     $.ajax({
-        url: '/zone_1/home/nh3/data',
+        url: '/home/nh3/data',
         success: function(point) {
             var series = chart_nh3.series[0],
                 shift = series.data.length > 20; // décalage si la série est

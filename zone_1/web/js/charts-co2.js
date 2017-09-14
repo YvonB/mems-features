@@ -6,7 +6,7 @@ var chart_co2; // global
  */
 function requestDataCO2() {
     $.ajax({
-        url: '/zone_1/home/co2/data',
+        url: '/home/co2/data',
         success: function(point) {
             var series = chart_co2.series[0],
                 shift = series.data.length > 20; // décalage si la série est
