@@ -82,17 +82,17 @@
         </thead>
         <tbody>
             <tr style=""; border-radius:6px;"><!--Adjust bg and font colors inline-->
-                <td><a href="/zone_1/home/nh3/deuxjours"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
+                <td><a href="/home/nh3/deuxjours"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></a></td>
-                <td><a href="/zone_1/home/nh3/hier"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
+                <td><a href="/home/nh3/hier"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></a></td>
-                <td>Il y a <form method="POST" action="/zone_1/home/nh3/histmin"><input type="text" name="aujourduiMinNh3" class="form-control" placeholder="mm" required>minute(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                <td>Il y a <form method="POST" action="/home/nh3/histmin"><input type="text" name="aujourduiMinNh3" class="form-control" placeholder="mm" required>minute(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
                     </button>
                     </form><br><br>
-                Il y a <form method="POST" action="/zone_1/home/nh3/histheure"><input type="text" name="aujourduiHeurNh3" class="form-control" placeholder="hh" required> heure(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
+                Il y a <form method="POST" action="/home/nh3/histheure"><input type="text" name="aujourduiHeurNh3" class="form-control" placeholder="hh" required> heure(s)<button type="submit" class="btn btn-primary" id="voirHistCo2Btn" style="margin-bottom: 3px; margin-left: 4px;"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></form>
                 </td>
-                <td><a href="/zone_1/home/nh3/tous"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
+                <td><a href="/home/nh3/tous"><button class="btn btn-primary" id="voirHistCo2Btn"><i class="fa fa-history" aria-hidden="true"></i>
                     </button></a></td>
             </tr>
             <!--Spacer-->

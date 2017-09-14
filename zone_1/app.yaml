@@ -3,11 +3,6 @@ api_version: 1
 
 handlers:
 
-# # Accueil global
-# - url: /
-#   script: index.php
-
-#================== Premier Zone ==================
 #Accueil Premiere zone
 - url: /
   script: views/Main/main.php

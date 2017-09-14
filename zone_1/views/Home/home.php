@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- head -->
 <head>
     <meta charset="utf-8">
     <title>SDPE - IoT Home</title>
@@ -37,26 +36,23 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 </head>
-<!-- end head -->
 
 <body>
-    <!--************************ Début Navigation ************************************-->
+    
     <?php require_once '../../controllers/Home/getPourcNotAcceptable.php';?>
     <?php require_once '../../controllers/Home/sendmail.php'; ?> 
     <?php require_once '../../resources/includes/header-home.php'; ?>
-    <!--****************************** Fin Navigation *****************************-->
+    
         
 <div class="container" id="contenu">  <!-- Pour tout le contenu de notre site -->
 
-<!-- ===========================Le logo et le titre============================ -->
+
     <div class="row">
         <div class="col-md-12">
             <h1><img src="/img/datastore-logo.png" id="gds-logo" /> PHP & <span class="hidden-xs">Google</span> Cloud Datastore</h1>
         </div>
     </div>
-<!-- ====================================================================== -->
 
-<!-- =====================La définition et la Réssource===================== -->
             <div class="row">
                 <div class="col-md-8">
                     <h2><i class="fa fa-info" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>Lorem Ipsum</h2>
@@ -67,7 +63,7 @@
                     velit imperdiet egestas.</dd>
                     
                 </div>
-                <!-- ============== -->
+               
                 <div class="col-md-4">
                     <h2 align="center"><i class="fa fa-pie-chart" style="margin-right: 8px" aria-hidden="true"></i>Gas not accepted</h2>
                       <div id="container" style="width:100%;height: 400px"> 
@@ -146,10 +142,8 @@
                     </div><!-- fin div Pie -->
                 </div> <!-- end coll md 4 -->
             </div> <!-- end row -->
-            <!-- =========================================================================== -->
-
-            <!-- ============================= Slide des 03 courbes ======================== -->
-                  <!-- 1)HTML -->
+          
+               <!-- 1)HTML -->
                   <div class="col-md-12">
                   <h2><i class="fa fa-line-chart" style="margin-left: 3px;margin-right: 8px;" aria-hidden="true"></i>See all at once</h2>
                   </div>
@@ -167,7 +161,7 @@
  */
 function requestDataCO2() {
     $.ajax({
-        url: '/zone_1/home/co2/data',
+        url: '/home/co2/data',
         success: function(point) {
             var series = chart_co2.series[0],
                 shift = series.data.length > 20; // décalage si la série est
@@ -230,7 +224,7 @@ $(document).ready(function() {
  */
 function requestDataCo() {
     $.ajax({
-        url: '/zone_1/home/co/data',
+        url: '/home/co/data',
         success: function(point) {
             var series = chart_co.series[0],
                 shift = series.data.length > 20; // décalage si la série est
@@ -292,7 +286,7 @@ $(document).ready(function() {
  */
 function requestDataNh3() {
     $.ajax({
-        url: '/zone_1/home/nh3/data',
+        url: '/home/nh3/data',
         success: function(point) {
             var series = chart_nh3.series[0],
                 shift = series.data.length > 20; // décalage si la série est
@@ -365,9 +359,6 @@ $(document).ready(function() {
                       }
                     </script>
 
-<!-- ================ Fin slide de 3 courbes ============================ -->
-
-<!-- ================= les 10 dernières valeurs insérées ================== -->
 <!-- jquery hide show toggle -->
 <div class="col-md-8">
     <h2 id="toggler"><i class="fa fa-history" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
@@ -403,13 +394,11 @@ See Quickly the last 10 inserted values</h2>
                     </div>
                 </div>
             </div>
-<!-- ================ fin 10 dernières valeurs insérées =================== -->
+
 
 </div> <!-- fin de container de la page --> 
-
-   <!-- ********************************* Footer ***************************************** -->
+  
     <?php require_once '../../resources/includes/footer.php' ?>
-<!--*********************************** Fin footer **************************************** -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
