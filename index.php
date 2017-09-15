@@ -3,62 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SDPE - IoT Choix de zones</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/demo.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+   crossorigin=""/>
 	<link rel="stylesheet" href="/css/index.css">
 	<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
+
 </head>
 
 <body>
-<div class="container"> <!-- contenu de la page -->
-	<div class="global">
-		<div class="zone_1 histoco2"> <!-- div de gauche -->
-	        
-	        <div id="map"></div>
+        
+	<div id="map"></div>
 
-	        <script>
-		      function initMap() {
-		        var uluru = {lat: -25.363, lng: 131.044};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 4,
-		          center: uluru
-		        });
-		        var marker = new google.maps.Marker({
-		          position: uluru,
-		          map: map
-		        });
-		      }
-    		</script>
-		    <script async defer
-		    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDYv6GZEKyU1Kj9Sp0hP7RYfChScPuciM8&callback=initMap">
-		    </script>
-		    <h3 class="titre_zones"><a href="https://zone-1-179812.appspot.com">Zone 1</a></h3>
-	    </div> <!-- fin div de gauche -->
-
-	    <div class="zone_2 histoco2"> <!-- div de droite -->
-	       
-	         <div id="map"></div>
-
-	        <script>
-		      function initMap() {
-		        var uluru = {lat: -18.9703576, lng: 47.42391939999993};
-		        var map = new google.maps.Map(document.getElementById('map'), {
-		          zoom: 4,
-		          center: uluru
-		        });
-		        var marker = new google.maps.Marker({
-		          position: uluru,
-		          map: map
-		        });
-		      }
-    		</script>
-		    <script async defer
-		    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDYv6GZEKyU1Kj9Sp0hP7RYfChScPuciM8&callback=initMap">
-		    </script> 
-		     <h3 class="titre_zones"><a href="https://zone-2-179812.appspot.com">Zone 2</a></h3>         
-	    </div> <!-- fin div de droite -->
-	</div> <!-- fin div global -->
-
-</div> <!-- end contenu -->
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+   integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+   crossorigin=""></script>
+<script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>

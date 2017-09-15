@@ -14,15 +14,12 @@ handlers:
 
 #Les ressources statiques
 - url: /css
-  static_dir: zone_1/web/css
+  static_dir: web/css
 - url: /js
-  static_dir: zone_1/web/js
+  static_dir: web/js
 - url: /img
-  static_dir: zone_1/web/img
-- url: /fonts
-  static_dir: zone_1/web/fonts
-- url: /medias
-  static_dir: zone_1/web/medias
+  static_dir: web/img
+
 
 # #Insertion
 # - url: /zone_1/insert
