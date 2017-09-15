@@ -1,7 +1,8 @@
 		body, html
 		{
-			padding:0;
-			margin:0;
+			height: 100%;
+  margin: 0;
+  padding: 0;
 		}
 
 		.global .zone_1 
@@ -21,8 +22,7 @@
 
 		#map 
 			{
-		        width: 100%;
-		        height: 100vh;
+		        height: 100%;
      	 	}
 
      	.titre_zones
