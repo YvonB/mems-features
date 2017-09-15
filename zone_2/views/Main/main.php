@@ -60,7 +60,7 @@ require_once '../../controllers/Main/getSession.php';
                     <h3 align="center"><i class="fa fa-tachometer" style="margin-right: 4px;" aria-hidden="true"></i>
                     Counter Of Gases not acceptable</h3>
 
-                    <div id="chart_div" style="width: 400px; height: 120px;">
+                    <div id="chart_div" style="width: 400px; height: 120px;margin:auto;">
                     
                      <?php 
                      // Appelle controlleur

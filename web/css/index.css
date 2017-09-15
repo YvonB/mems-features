@@ -1,42 +1,20 @@
-		body, html
-		{
-			height: 100%;
-  			margin: 0;
-  			padding: 0;
-		}
+body, html
+	{
+		height: 100%;
+  		margin: 0;
+  		padding: 0;
 
-		.global .zone_1 
-			{
-	    		float:left;
-	    		width:45%;
+  		font-family: 'Roboto',sans-serif;
+		letter-spacing: .01em;
+	}
 
-	    		
-			}
-		.global .zone_2 
-			{
-    			float:right; 
-    			width:45%;
+#map 
+	{
+		height: 100%;
+    }
 
-    			box-shadow: 0 0 10px;
-			}
-
-		#map 
-			{
-		        height: 100%;
-     	 	}
-
-     	.titre_zones
-     	{
-     		text-align: center;
-     	}
-
-		a
-		{
-			color: #039be5 !important;
-		}
-
-        a:hover
-     	{
-     		color: #337ab7 !important;
-     		text-decoration: none !important;
-     	}
+.titre, .sous_titre
+{
+	text-align: center;
+	color: #757575;
+}

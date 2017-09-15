@@ -3,9 +3,9 @@
 
 	
 	  var map = new google.maps.Map(document.getElementById('map'), {
-	    zoom: 12,
+	    zoom: 13,
 	    center: {lat: -18.9413966, lng: 47.46252389999995}, // Ambodiafontsy
-	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	    mapTypeId: google.maps.MapTypeId.TERRAIN
 	  });
 
 	  // premier marqueur == première zone
@@ -18,7 +18,7 @@
 	 });
 
 	 //info sur lui
-	var content_cur = '<h1>Cur Vontovorona</h1><br><h2>Première zone</h2>';
+	var content_cur = '<h1 class="titre">Cur Vontovorona</h1><h2 class="sous_titre">Première zone</h2>';
 	var info_cur = new google.maps.InfoWindow({
 		content:content_cur
 	});
@@ -26,7 +26,6 @@
 	function popUpCur(){
 		info_cur.open(map, cur);
 	}
-
 	 // lorsqu'on clique dessus
 	 google.maps.event.addListener(cur, 'click', function() {
 	  window.location.href = cur.url;
@@ -41,7 +40,7 @@
 	  });
 
 	 //info sur lui
-	var content_tunnel = '<h1>Tunnel Ambanidia</h1><br><h2>Seconde zone</h2>';
+	var content_tunnel = '<h1 class="titre">Tunnel Ambanidia</h1><h2 class="sous_titre">Seconde zone</h2>';
 	var info_tunnel = new google.maps.InfoWindow({
 		content:content_tunnel
 	});
