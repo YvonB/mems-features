@@ -32,7 +32,7 @@
 		}
 	cur.addListener('onload', toggleBounceCur);
 	 //info sur lui
-	var content_cur = '<h1 class="titre">Cur Vontovorona</h1><h2 class="sous_titre">Première zone</h2>';
+	var content_cur = '<h2 class="sous_titre">Cur Vontovorona</h2>';
 	var info_cur = new google.maps.InfoWindow({
 		content:content_cur
 	});
@@ -68,7 +68,7 @@
 		}
 	tunnel.addListener('onload', toggleBounceTunnel);
 	 //info sur lui
-	var content_tunnel = '<h1 class="titre">Tunnel Ambanidia</h1><h2 class="sous_titre">Seconde zone</h2>';
+	var content_tunnel = '<h2 class="sous_titre">Tunnel Ambanidia</h2>';
 	var info_tunnel = new google.maps.InfoWindow({
 		content:content_tunnel
 	});
