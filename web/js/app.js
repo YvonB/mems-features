@@ -114,5 +114,5 @@
 	// ============= end modal
 
 	setTimeout(afficheModal, 5000);
-	setTimeout(cacheModal, 10000);
+	setTimeout(cacheModal, 12000);
 })();	
