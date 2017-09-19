@@ -8,7 +8,7 @@
             <h3 class="sub_title_ban"><img src="/img/datastore-logo.png"  class="logo_ban" />Detecteur - Analyseur Web des Gaz polluants SDP - IoT</h3>
             <h1>Know what really exists in the air you breathe</h1>
             <h3 class="sub_title_ban" style="padding-bottom: 20px;">Follow your health closely</h3>
-            <a href="<?php require_once 'href-home-or-login.php'; ?>">
+            <a href="<?php require 'href-home-or-login.php'; ?>">
             <button type="submit" class="btn btn-primary">
               <?php 
                 if(isset($user)) 

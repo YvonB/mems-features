@@ -1,34 +1,27 @@
 <?php
 use google\appengine\api\users\User;
 use google\appengine\api\users\UserService;
-// [START user]
-# Looks for current Google account session
+
 $user = UserService::getCurrentUser();
-// [END user]
-// [START ifuser]
+
 if ($user) 
-{
-    // echo 'Hello, ' . htmlspecialchars($user->getNickname());
-    header('Location: /home');
-}
-// [END ifuser]
-// [START elseuser]
+    {
+        header('Location: /home');
+    }
 else 
 {	
-
-	// header('Location: ' . UserService::createLoginURL($_SERVER['REQUEST_URI']));
-
 	?>	
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>Login-SDP</title>
+    <title>Login-SDPE</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- CSS global -->
     <link rel="stylesheet" href="/css/demo.css">
+
 <style>
 /*body*/
 body
@@ -124,38 +117,20 @@ body
 	margin-right: 15px;
 }
 
-/*.mark_ok 
-{
-	background-color: yellow;
-}*/
-
-/*.okbtn:hover
-{
-	background-color: yellow;
-}*/
-
 .cancelbtn
 {
 	float: right;
 }
 
-/*.mark_cancel 
-{
-	background-color: #e74c3c;
-}*/
-
-/*.cancelbtn:hover
-{
-	background-color: #e74c3c;
-}
-*/
 .modal-footer {
     padding: 2px 16px;
     background-color: rgb(59, 120, 231);
     color: #c8c8c8;
 }
 </style>
+
 </head>
+
 <body>
 
 <!-- The Modal -->
@@ -181,7 +156,9 @@ body
   </div>
 
 </div>
+
 <a href="<?php echo UserService::createLoginURL($_SERVER['REQUEST_URI']) ?>" id="lien"></a>
+
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');

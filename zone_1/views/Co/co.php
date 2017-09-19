@@ -2,11 +2,11 @@
     $notif_mail = 0;
     require_once '../../controllers/Co/getSession.php';
 
-    // on a pas le droit de voir index si on était pas connecter au préalable.
+    // on a pas le droit de voir co.php si on était pas connecter au préalable.
     if(!$user)
-    {   
-         require 'modal.php';
-    }
+        {   
+            header('Location:'.'/login');
+        }
 
 ?>
 

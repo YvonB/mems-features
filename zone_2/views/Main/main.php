@@ -49,11 +49,10 @@ require_once '../../controllers/Main/getSession.php';
                 <div class="col-md-8">
                     <h2><i class="fa fa-info" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
                         What is it ?</h2>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est purus, ultrices in porttitor
-                    in, accumsan non quam. Nam consectetur porttitor rhoncus. Curabitur eu est et leo feugiat
-                    auctor vel quis lorem.
-                    Ut et ligula dolor, sit amet consequat lorem. Aliquam porta eros sed
-                    velit imperdiet egestas.</dd>
+                    <dd>Etes vous stricte à l’air que vous respirez ? Il est important pour vous de savoir le taux des polluants vous entour pour respirer tranquille ? Ce site et le système que nous avons conçue est faite pour vous. 
+                    Ici vous pouvez visualisez en temps réelle et même recevoir des notifications lorsque le taux des polluants dépasse leur seuil acceptable.
+                    En plus, ce sont les trois polluants qui sont très répandu et dangereux voire mortel que notre système détecte pour vous alerter et vous pouvez prendre une décision appropriée. Ce sont premièrement le dioxyde de carbone ou gaz carbonique provenant du secteur des transports de l’industrie, de l’habitat et aussi lors de la respiration des animaux et de la photosynthèse des végétaux. Ensuite le monoxyde de carbone issu de la combustion incomplète des combustibles et des carburants (la combustion complète produisant du CO2). Et enfin l’ammoniaque qui provient de rejets organiques de l’élevage, épandage de fertilisants.
+                    </dd>
                 </div>
                 <!-- Dadhboard -->
                 <div class="col-md-4" >
@@ -129,17 +128,20 @@ require_once '../../controllers/Main/getSession.php';
             <div>
                 <h2><i class="fa fa-map-marker" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>
                         Where are our sensors?</h2>
+                        <dd>C'est l'endroit où est installé le capteur en ce moment même.</dd>
                 <div class="my_map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d963367.6427555117!2d46.800975397000194!3d-19.40571407254446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21fa8238a95a8965%3A0xe11f2e914a20ec99!2sEcole+Sup%C3%A9rieur+Polytechnique+d&#39;Antananarivo!5e0!3m2!1sfr!2sfr!4v1501594670727" width="675" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.373973254404!2d47.529468015323786!3d-18.914833987180533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f07de34d65ea03%3A0xea472922cda706d5!2sTunnel+Ambanidia%2C+Antananarivo%2C+Madagascar!5e0!3m2!1sfr!2sfr!4v1505731330036" width="675" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>
         <!-- =============================== Fin Map ================================== -->
 <br><br>
 <hr style="width: 50%; border-top: 1px solid #cacaca;">
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
-<div class="brute" id="mg_m3" style="height: 420px;">
 <h2><i class="fa fa-bell" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
 Notifications</h2>
+<dd>Les valeurs ci-desous(dans le cas où elles existent)sont en milligramme par mètre cube. On l'obtient multipliant le poid moléculaire en gramme du polluant par sa valeur en partie par million retournée par le capteur et en divisant le résultat par le volume molaire d'un gaz à temperature et pression ambiantes normales.</dd>
+<div class="brute" id="mg_m3" style="height: 420px;">
+
     <?php 
         // Appelle controlleur
         require_once '../../controllers/Main/getValueInMgM3.php'; 
@@ -149,7 +151,7 @@ Notifications</h2>
         <div class="promo">
           <div class="deal">
             <span style="padding-bottom: 15px;padding-top: 5px;">CO2</span>
-            <span>Lorem ipsum lorem ipsum</span>
+            <span>Quantité de dioxyde de carbone</span>
           </div>
           <span class="price" style="background-color: <?php
                                                             require_once '../../resources/includes/mg_m3-bg-co2.php';
@@ -163,12 +165,12 @@ Notifications</h2>
                                                             }
                                                         ?></span>
           <ul class="features">
-            <li class="li_brute">Lorem Ipsum ipsum</li>
-            <li class="li_brute">Another lorem ipsum</li>
-            <li class="li_brute">Lorem ipsum...</li>   
+            <li class="li_brute">Naturellement produit par tous les organismes</li>
+            <li class="li_brute">lors de la respiration des animaux</li>
+            <li class="li_brute">et de la photosynthèse des végétaux.</li>   
           </ul>
           <a href="<?php 
-                                    require_once '../../resources/includes/href-home-or-login.php';
+                                    require '../../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                     </button></a>
         </div>
@@ -190,19 +192,19 @@ Notifications</h2>
                                                         }
                                                         ?></span>
           <ul class="features">
-            <li class="li_brute">Lorem Ipsum ipsum</li>
-            <li class="li_brute">Another lorem ipsum</li>
-            <li class="li_brute">Lorem ipsum...</li>   
+            <li class="li_brute">Issu de la combustion incomplète</li>
+            <li class="li_brute">d'un combustible carboné comme</li>
+            <li class="li_brute">le bois, le charbon, les chauffages.</li>   
           </ul>
           <a href="<?php 
-                                    require_once '../../resources/includes/href-home-or-login.php';
+                                    require '../../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                    </button></a>
         </div>
         <div class="promo">
           <div class= "deal">
             <span style="padding-bottom: 15px;padding-top: 5px;">NH3</span>
-            <span>Lorem ipsum lorem ipsum</span>
+            <span>L'ammoniaque</span>
           </div>
           <span class="price" style="background-color: <?php
                                                           require_once '../../resources/includes/mg_m3-bg-nh3.php';
@@ -217,12 +219,12 @@ Notifications</h2>
                                                            }
                                                         ?></span>
           <ul class="features">
-            <li class="li_brute">Choose the lorem ipsum</li>
-            <li class="li_brute">We need lorem ipsum</li>
-            <li class="li_brute">Lorem ipsem...</li>   
+            <li class="li_brute">Issu de la fermentation</li>
+            <li class="li_brute">de la décomposition des substances organiques</li>
+            <li class="li_brute">par des microorganismes en milieu anaérobie.</li>   
           </ul>
           <a href="<?php 
-                                    require_once '../../resources/includes/href-home-or-login.php';
+                                    require '../../resources/includes/href-home-or-login.php';
                                 ?>"><button type="submit" class="btn btn-primary sign_up">See More
                    </button></a>
         </div> 
@@ -238,7 +240,7 @@ Notifications</h2>
         // On cache la zone de texte
         jQuery('#toggle').hide();
         // toggle() lorsque le lien avec l'ID #toggler est cliqué
-        jQuery('h2#toggler').click(function()
+        jQuery('h2#toggler_legend').click(function()
         {
         jQuery('#toggle').toggle(400);
         return false;
@@ -246,38 +248,36 @@ Notifications</h2>
         });
     </script>
 
-    <h2 style="color: #337ab7 !important; font-size: 16px" id="toggler"><i class="fa fa-bookmark" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>See The Legend</h2>
+    <h2 id="toggler_legend"><i class="fa fa-bookmark" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>See The Legend</h2>
 
-    <div id="toggle" class="toggle_legend histoco2">   
+    <div id="toggle">   
             <div class="float">
-            <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #212121" class="fanazavana">Vous trouvez dans un endroit très aéré ! Vous pouvez être tranquile.</p>
+            <div class="carre" style="background-color:#beeb9f;display: inline;"></div> <p style="color: #212121" class="fanazavana">Vous trouvez dans un endroit très aéré ! Vous pouvez être tranquille.</p>
             </div>
         <br>
             <div class="float" style="margin-top: 0px;
                                       margin-right: 400px;">
-            <div class="carre" style="background-color:#e67e22;display: inline;"></div> <p style="color: #e67e22" class="fanazavana">L'endroit est PRESQUE invivable à cause des polluants ! Prenez garde !!</p>
+            <div class="carre" style="background-color:#e67e22;display: inline;"></div> <p style="color: #e67e22" class="fanazavana">L'endroit est PRESQUE invivable à cause des polluants ! Prenez bien garde !!</p>
             </div>
         <br>
             <div class="float">
-            <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p style="color: #e74c3c" class="fanazavana">Alert ! Alert ! Vous devez aérez le lieu ou bien évacuez !! Ca devient invivable.</p>
+            <div class="carre" style="background-color:#e74c3c;display: inline;"></div> <p style="color: #e74c3c" class="fanazavana">Alerte ! Alerte ! Vous devez aérez le lieu ou bien évacuez !! Ça devient invivable.</p>
             </div>
     </div>
- </div> <!-- end legend -->
+ </div> <!-- end legend <--><br>
 
 <!-- ========================== fin Tab Dèr=============================== -->
 
  <!-- ========================== Espace connexion ============================== -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2><i class="fa fa-plus" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>
-                        See more content</h2>
-                </div>
-            </div>
+            
+  <h2 style="margin-top: 100px;"><i class="fa fa-plus" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>
+  See more content</h2>
+            
             <div class="row">
                 <div class="col-md-4" id="login_btn">
                     <div class="well btn_main_connect">
                         <form method="POST" action="<?php if(isset($user)) {echo '/home';} else {echo '/login';} ?>">
-                            <button type="submit" class="btn btn-primary" align="center">
+                            <button type="submit" class="btn btn-primary" align="center" style="margin-left: -30px;">
                                 <?php 
                                     if(isset($user)) 
                                         {echo "Go Home<i class='fa fa-arrow-right' style='margin-left: 15px;'></i>";}
