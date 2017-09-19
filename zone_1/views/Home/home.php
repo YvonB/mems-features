@@ -56,11 +56,8 @@
             <div class="row">
                 <div class="col-md-8">
                     <h2><i class="fa fa-info" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>Lorem Ipsum</h2>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla est purus ultrices in porttitor
-                    in, accumsan non quam. Nam consectetur porttitor rhoncus.<br> Curabitur eu est et leo feugiat
-                    auctor vel quis lorem.
-                    Ut et ligula dolor, sit amet consequat lorem. Aliquam porta eros sed
-                    velit imperdiet egestas.</dd>
+                    <dd>Merci de vous inscrire et connecter à notre site. Vous ne serez pas déçue ;) .<br>Premièrement, comme vous pouvez toute de suite le voir, il y a une petite enveloppe en haut à droite de notre bar de navigation. Il représente votre boite mail afin de pouvoir vous alerter. Ici, juste à droite, une courbe montrant les pourcentages des polluants non acceptables. Plus bas un slide montrant l’évolution des trois polluants co2, co et nh3 en temps réelle. Et enfin vous pouvez aussi voir juste les 10 dernières valeurs insérées si vous voulez ! 
+                    </dd>
                     
                 </div>
                
@@ -146,9 +143,10 @@
                <!-- 1)HTML -->
                   <div class="col-md-12">
                   <h2><i class="fa fa-line-chart" style="margin-left: 3px;margin-right: 8px;" aria-hidden="true"></i>See all at once</h2>
+                  <dd>D'un seule coup d'œil, visualisez la courbe de chacun des polluants. Ceci en temps réel !</dd>
                   </div>
 
-<div  class ="histoco2" style="max-height: 444px;margin-bottom: 50px;margin-top: 100px;box-shadow: 0 0 30px #888;"> 
+<div  class ="histoco2" style="max-height: 444px;margin-bottom: 50px;margin-top: 120px;box-shadow: 0 0 30px #888;"> 
                             <div align="center" class="mySlides">  
                               <!-- <h4>Gaz Carbonique</h4> -->
                               <div id="co2" style="height: 400px; min-width: 310px"></div>
@@ -363,6 +361,7 @@ $(document).ready(function() {
 <div class="col-md-8">
     <h2 id="toggler"><i class="fa fa-history" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
 See Quickly the last 10 inserted values</h2>
+<dd>Seulement les 10 dernières valeurs isérées dernièrement vous intéresse ? Clique le titre pour les voir ;) .</dd>
 </div>
 <div class="row">
 

@@ -712,7 +712,7 @@ div.float {
 /*toogle homme 10 latest brute*/
 #toggler
 {
-  margin-bottom: 70px;
+  margin-bottom: 0px;
 }
 #toggler:hover, #toggler_legend:hover
 {
