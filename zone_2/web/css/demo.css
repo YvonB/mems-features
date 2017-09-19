@@ -826,6 +826,10 @@ div.float {
 .footer-bottom p.pull-left {
   padding-top: 6px;
 }
+.payments
+{
+  display: none;
+}
 /*fin footer*/
 @media (max-width: 992px) 
 {
