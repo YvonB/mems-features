@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>SDPE - IoT Choix de zones</title>
+	<title>SDPE - IoT Choix De Zones</title>
 	
 	<link rel="stylesheet" href="/css/index.css">
 	<link rel="icon" type="image/png" href="/img/datastore-logo.png" />
