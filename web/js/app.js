@@ -13,6 +13,7 @@
 	    position: {lat: -18.9703576 , lng: 47.42391939999993},
 	 
 	 	map: map,
+	 	title: "Cliquer pour voir ce qui se passe au Cur Vontovorona",
 	 	url: 'https://vontovorna.appspot.com',
 	 	draggable: true,
 	 	animation: google.maps.Animation.DROP
@@ -50,6 +51,7 @@
 	    position: {lat: -18.914834, lng: 47.531656699999985},
 	 
 	    map: map,
+	    title: "Cliquer pour voir ce qui se passe au Tunnel d'Ambanidia",
 	  	url: 'https://zone-two.appspot.com',
 	  	draggable: true,
 	 	animation: google.maps.Animation.DROP
