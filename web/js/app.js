@@ -123,7 +123,7 @@
 
 	var explode = function(){
 			setTimeout(afficheModal, 5000);
-			setTimeout(cacheModal, 12000);
+			setTimeout(cacheModal, 8000);
 	};
 
 	setInterval(explode, 15000);
