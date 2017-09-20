@@ -19,7 +19,7 @@
 	 	map: map,
 	 	icon: image,
 	 	title: "Cliquer pour voir ce qui se passe au Cur Vontovorona",
-	 	url: 'https://vontovorna.appspot.com',
+	 	url: 'https://cur-vontovorona.appspot.com',
 	 	draggable: true,
 	 	animation: google.maps.Animation.DROP
 	 
@@ -58,7 +58,7 @@
 	    map: map,
 	    icon: image,
 	    title: "Cliquer pour voir ce qui se passe au Tunnel d'Ambanidia",
-	  	url: 'https://zone-two.appspot.com',
+	  	url: 'https://tunnel-ambanidia.appspot.com',
 	  	draggable: true,
 	 	animation: google.maps.Animation.DROP
 	  });
