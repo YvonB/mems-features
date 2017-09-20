@@ -15,8 +15,8 @@ function requestDataNH3() {
             // ajouter le point
             chart_nh3.series[0].addPoint(point, true, shift);
             
-            // l'appeler à nouveau après une seconde
-            setTimeout(requestDataNH3, 1000);    
+            // l'appeler à nouveau après 4 secondes
+            setTimeout(requestDataNH3, 4000);    
         },
         cache: false
     });

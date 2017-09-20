@@ -15,8 +15,8 @@ function requestDataCO2() {
             // ajouter le point
             chart_co2.series[0].addPoint(point, true, shift);
             
-            // l'appeler à nouveau après une seconde
-            setTimeout(requestDataCO2, 1000);    
+            // l'appeler à nouveau après 4 secondes
+            setTimeout(requestDataCO2, 4000);    
         },
         cache: false
     });

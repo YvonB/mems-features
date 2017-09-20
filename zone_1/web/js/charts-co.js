@@ -15,8 +15,8 @@ function requestDataCO() {
             // ajouter le point
             chart_co.series[0].addPoint(point, true, shift);
             
-            // l'appeler à nouveau après une seconde
-            setTimeout(requestDataCO, 1000);    
+            // l'appeler à nouveau après 4 secondes
+            setTimeout(requestDataCO, 4000);    
         },
         cache: false
     });
