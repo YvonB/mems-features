@@ -3,7 +3,8 @@
 
 	  // icon marker
 	  var image = {
-	  	url: '/img/marker.png'
+	  	url: '/img/marker.png',
+	  	size: new google.maps.Size(100, 100)
 	  }
 	
 	  var map = new google.maps.Map(document.getElementById('map'), {
@@ -121,6 +122,11 @@
 	}
 	// ============= end modal
 
-	setTimeout(afficheModal, 5000);
-	setTimeout(cacheModal, 12000);
+	var explode = function(){
+			setTimeout(afficheModal, 5000);
+			setTimeout(cacheModal, 12000);
+	};
+
+	setInterval(explode, 15000);
+
 })();	
