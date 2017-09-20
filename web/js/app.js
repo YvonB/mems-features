@@ -3,8 +3,7 @@
 
 	  // icon marker
 	  var image = {
-	  	url: '/img/marker.png',
-	  	size: new google.maps.Size(100, 100)
+	  	url: '/img/marker.png'
 	  }
 	
 	  var map = new google.maps.Map(document.getElementById('map'), {
