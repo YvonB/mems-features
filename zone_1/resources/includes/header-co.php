@@ -15,6 +15,10 @@
                   { 
                     ?>
                     <br><a href="https://mail.google.com/"><img src="/img/gmail-with-notif.png" id="gmail-with-notif" class="shake-rotate" /></a><b id="notif_mail"><?php echo $notif_mail; ?></b> 
+                    <audio autoplay>
+                        Votre navigateur ne prend pas en charge l'élément <code>audio</code>.
+                    <source src="/medias/notification.mp3" type="audio/mp3">
+                    </audio>
                     <?php
                   } 
                   else
