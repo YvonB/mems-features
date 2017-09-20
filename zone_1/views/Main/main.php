@@ -139,7 +139,7 @@ require_once '../../controllers/Main/getSession.php';
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
 <h2><i class="fa fa-bell" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
 Notifications</h2>
-<dd>Les valeurs ci-desous(dans le cas où elles existent)sont en milligramme par mètre cube. On l'obtient multipliant le poid moléculaire en gramme du polluant par sa valeur en partie par million retournée par le capteur et en divisant le résultat par le volume molaire d'un gaz à temperature et pression ambiantes normales.</dd>
+<dd>Les valeurs ci-dessous(dans le cas où elles existent)sont en milligramme par mètre cube. On l'obtient multipliant le poids moléculaire en gramme du polluant par sa valeur en partie par million retournée par le capteur et en divisant le résultat par le volume molaire d'un gaz à temperature et pression ambiantes normales.</dd>
 <div class="brute" id="mg_m3" style="height: 300px;">
     <?php 
         // Appelle controlleur
