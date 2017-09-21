@@ -41,7 +41,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="pull-left"><b class="bold"> Copyright © 2017 | YvonB | All rights reserved.</b></div>
-            <div class="pull-right"><b class="bold">Suivez votre santez de près avec le SDPE</b><button class="order_btn"><b class="bold">COMMANDER</b></button></div>
+            <div class="pull-right"><b class="bold">Suivez votre santez de près avec le SDPE</b><a href="/contact_views"><button class="order_btn"><b class="bold">COMMANDER</b></button></a></div>
         </div>
     </div>
     <!--/.footer-bottom-->
