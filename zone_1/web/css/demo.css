@@ -839,6 +839,13 @@ div.float {
 .footer-bottom p.pull-left {
   padding-top: 6px;
 }
+.order_btn
+{
+  background-color: #039be5;
+  color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  padding: 8px 16px;
+}
 .payments
 {
   display: none;
