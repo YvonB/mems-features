@@ -792,6 +792,11 @@ div.float {
       padding: 5px 5px 5px 10px; 
       background-color: #ffffff;
     }
+
+    .input_cmd
+    {
+      width:100%;
+    }
 /*fin commande*/
 /*footer*/
 .footer {
