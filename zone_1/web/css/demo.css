@@ -808,12 +808,13 @@ div.float {
 }
 .footer a {
   color: #cfd8dc;
+  font-size: 14px;
 }
 
 .footer a:hover {
   color: #fff !important;
   text-decoration: none !important;
-  transition: 1.0s !important;
+  transition: 1.5s !important;
 }
 
 .supportLi h4 {
@@ -842,9 +843,27 @@ div.float {
 .order_btn
 {
   background-color: #039be5;
-  color: #fff;
+  color: #fafafa;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-  padding: 8px 16px;
+  padding: 8px 10px;
+  margin-left: 40px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.order_btn:hover
+{
+  background-color: #039bff;
+  color: #fff;
+  box-shadow: 0 2px 26px 0 rgba(0,0,0,1.26);
+}
+.bold
+{
+  font-weight: 800 !important;
+  letter-spacing: 0.8px;
+}
+.pull-left
+{
+  margin-top: 10px;
 }
 .payments
 {

@@ -40,8 +40,8 @@
 
     <div class="footer-bottom">
         <div class="container">
-            <div class="pull-left"> Copyright © 2017, YvonB. All rights reserved.</div>
-            <div class="pull-right">Suivez votre santez de près<button class="btn-default order_btn"><b>ORDER</b></button></div>
+            <div class="pull-left"><b class="bold"> Copyright © 2017 | YvonB | All rights reserved.</b></div>
+            <div class="pull-right"><b class="bold">Suivez votre santez de près avec le SDPE</b><button class="order_btn"><b class="bold">COMMANDER</b></button></div>
             <div class="pull-right">
                 <ul class="nav nav-pills payments">
                     <li><i class="fa fa-cc-visa"></i></li>
