@@ -42,14 +42,6 @@
         <div class="container">
             <div class="pull-left"><b class="bold"> Copyright © 2017 | YvonB | All rights reserved.</b></div>
             <div class="pull-right"><b class="bold">Suivez votre santez de près avec le SDPE</b><button class="order_btn"><b class="bold">COMMANDER</b></button></div>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                    <li><i class="fa fa-cc-visa"></i></li>
-                    <li><i class="fa fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-cc-amex"></i></li>
-                    <li><i class="fa fa-cc-paypal"></i></li>
-                </ul>
-            </div>
         </div>
     </div>
     <!--/.footer-bottom-->
