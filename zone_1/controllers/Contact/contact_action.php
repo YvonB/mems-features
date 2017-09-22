@@ -12,7 +12,7 @@ $copie = 'oui'; // 'oui' ou 'non'
  
 // Messages de confirmation du mail
 $message_envoye = "Votre message nous est bien parvenu !";
-$message_non_envoye = "L'envoi du mail a échoué, veuillez réessayer SVP.";
+$message_non_envoye = "L'envoi du mail a echoue. Il se peut que le nombre de commendes est depase. On ne peut pas recevoir que 5 commandes par jours.  Veuillez reessayer demain. Merci";
  
 // Messages d'erreur du formulaire
 $message_erreur_formulaire = "Vous devez d'abord envoyer le formulaire.";

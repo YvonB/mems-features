@@ -14,24 +14,24 @@
 <body>
 <div class="container">
 <br>
-<div class="panel panel-default">
+<div class="panel panel-default histoco2" style="margin-top: 50px;">
 
-	<div class="panel-heading" style="font-size: 20px;">Envoyer nous votre commande</div>
+	<div class="panel-heading head_panel">Envoyer nous votre commande</div>
 	<div class="panel-body">
 	<form id="contact" method="post" action="/contact_action">
 	<fieldset class="col-md-6" style="width: 100%;"><legend>Vos coordonnées</legend>
 		<div class="form-group"><label for="nom">Nom :</label><input class="form-control input_cmd" type="text" id="nom" name="nom" tabindex="1" placeholder="Votre Nom" /></div>
-		<div class="form-group"><label for="email">Email :</label><input class="form-control input_cmd" type="text" id="email" name="email" tabindex="2" value="sdpeiot@tunnel-ambanidia.appspotmail.com" /></div>
+		<div class="form-group"><label for="email">Email :</label><input class="form-control input_cmd" type="text" id="email" name="email" tabindex="2" value="sdpeiot@tunnel-ambanidia-180707.appspotmail.com" /></div>
 	</fieldset>
  	<div class="clearfix"></div>
  	<br>
 	<fieldset class="col-md-6" style="width: 100%;"><legend>Votre message :</legend>
 		<div class="form-group"><label for="objet">Objet :</label><input class="form-control input_cmd" type="text" id="objet" name="objet" tabindex="3" placeholder="Vous voulez faire quoi ?" /></div>
-		<div class="form-group"><label for="message">Message :</label><textarea class="form-control input_cmd" id="message" name="message" tabindex="4" cols="30" rows="8" placeholder="Un petit message pour le SPDE - IoT"></textarea></div>
+		<div class="form-group"><label for="message">Message :</label><textarea class="form-control input_cmd" id="message" name="message" tabindex="4" cols="30" rows="8" placeholder="Un petit message pour les gars du SPDE - IoT. Par exemple vous en voulez combien ?"></textarea></div>
 	</fieldset>
  	<div class="clearfix"></div>
  	<br>
-	<div style="text-align:center;"><button class="btn btn-default" type="submit" name="envoi">Envoyer ma commande</button></div>
+	<div style="text-align:center;"><button class="btn btn-success" type="submit" name="envoi"><b>ENVOYER MA COMMANDE</b></button></div>
 	</form> <!-- end form -->
 
 </div><!-- end panel body -->

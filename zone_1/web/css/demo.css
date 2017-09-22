@@ -776,11 +776,17 @@ div.float {
 }
 
 /*commande*/
+.head_panel
+{
+  font-size: 20px !important;
+  color: #fafafa !important;
+  background: #5cb85c !important;
+}
     fieldset 
   {
     border: 1px solid #ddd !important;
     margin: 0;
-    xmin-width: 0;
+    min-width: 0;
     padding: 10px;       
     position: relative;
     border-radius:4px;
@@ -790,6 +796,9 @@ div.float {
   
     legend
     {
+      color: #fafafa;
+      background-color: #5cb85c;
+
       font-size:14px;
       font-weight:bold;
       margin-bottom: 0px; 
@@ -797,13 +806,36 @@ div.float {
       border: 1px solid #ddd;
       border-radius: 4px; 
       padding: 5px 5px 5px 10px; 
-      background-color: #ffffff;
     }
 
-    .input_cmd
-    {
-      width:100%;
-    }
+label
+{
+  color: #757575;
+}
+
+.input_cmd
+{
+  width:100%;
+  color: #757575;
+}
+
+.mess_envoy
+{
+     margin: auto;
+    width: 30%;
+    font-size: 23px;
+    background: #00CEAB;
+    color: #fafafa;
+}
+
+.mess_non_envoy
+{
+    margin: auto;
+    width: 30%;
+    font-size: 23px;
+    background: #FF0000;
+    color: #fafafa;
+}
 /*fin commande*/
 
 /*footer*/

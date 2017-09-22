@@ -11,12 +11,12 @@ $destinataire = 'yvonbenahita@gmail.com';
 $copie = 'oui'; // 'oui' ou 'non'
  
 // Messages de confirmation du mail
-$message_envoye = "Votre message nous est bien parvenu !";
-$message_non_envoye = "L'envoi du mail a échoué, veuillez réessayer SVP.";
+$message_envoye = "SDPE - IoT a bien recue votre message. Merci";
+$message_non_envoye = "L'envoi du mail a echoue. Il se peut que le nombre de commendes est depase. On ne peut pas recevoir que 5 commandes par jours. Veuillez reessayer demain. Merci"";
  
 // Messages d'erreur du formulaire
 $message_erreur_formulaire = "Vous devez d'abord envoyer le formulaire.";
-$message_formulaire_invalide = "Vérifiez que tous les champs soient bien remplis et que l'email soit sans erreur.";
+$message_formulaire_invalide = "Verifiez que tous les champs soient bien remplis et que l'email soit sans erreur.";
  
 /*
 	********************************************************************************************
