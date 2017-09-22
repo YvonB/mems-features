@@ -112,7 +112,7 @@ else
 		else
 		{
 			echo '<p>'.$message_non_envoye.'</p>';
-		};
+		}
 	}
 	else
 	{

@@ -21,7 +21,7 @@
 	<form id="contact" method="post" action="/contact_action">
 	<fieldset class="col-md-6" style="width: 100%;"><legend>Vos coordonnées</legend>
 		<div class="form-group"><label for="nom">Nom :</label><input class="form-control input_cmd" type="text" id="nom" name="nom" tabindex="1" placeholder="Votre Nom" /></div>
-		<div class="form-group"><label for="email">Email :</label><input class="form-control input_cmd" type="text" id="email" name="email" tabindex="2" placeholder="anything@[APP_NAME].appspotmail.com" /></div>
+		<div class="form-group"><label for="email">Email :</label><input class="form-control input_cmd" type="text" id="email" name="email" tabindex="2" value="sdpeiot@tunnel-ambanidia.appspotmail.com" /></div>
 	</fieldset>
  	<div class="clearfix"></div>
  	<br>
