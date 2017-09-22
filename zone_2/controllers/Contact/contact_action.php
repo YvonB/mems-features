@@ -12,7 +12,7 @@ $copie = 'oui'; // 'oui' ou 'non'
  
 // Messages de confirmation du mail
 $message_envoye = "SDPE - IoT a bien recue votre message. Merci";
-$message_non_envoye = "L'envoi du mail a echoue. Il se peut que le nombre de commendes est depase. On ne peut pas recevoir que 5 commandes par jours. Veuillez reessayer demain. Merci"";
+$message_non_envoye = "L'envoi du mail a echoue. Il se peut que le nombre de commandes est depase. On ne peut pas recevoir que 5 commandes par jours. Veuillez reessayer demain. Merci"";
  
 // Messages d'erreur du formulaire
 $message_erreur_formulaire = "Vous devez d'abord envoyer le formulaire.";
