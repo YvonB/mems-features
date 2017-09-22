@@ -19,6 +19,13 @@ body, html
 	color: #454545;
 }
 
+.title_marker_hover
+{
+    font-size: 16px;
+    background: #fff;
+    color: #454545;
+}
+
 /*modal*/
 /* The Modal (background) */
 .modal {
