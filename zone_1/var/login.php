@@ -143,7 +143,7 @@ body
       	<h3 align="center" style="color:#fafafa">SDP - IoT</h3>
     </div>
     <div class="modal-body">
-      <p align="center">Une connexion à votre compte est requise pour voir le contenu de la page que vous avez demandée !</p>
+      <p align="center">Une connexion à votre compte est requise pour voir le contenu de la page que vous avez demandé !</p>
       <p align="center">Cliquer sur <mark class="mark_ok">"Accept"</mark> pour <mark class="mark_ok">accepter et continuer</mark> , sinon <mark class="mark_cancel">fermez</mark> cette fenêtre ou cliquez le bouton <mark class="mark_cancel">"Cancel" pour annuler</mark>. Merci !</p>
      
       <button type="button" onclick="document.location.href='javascript:history.back()'" class="btn btn-primary cancelbtn">Cancel</button>

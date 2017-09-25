@@ -58,7 +58,7 @@
               <ul class="nav navbar-nav navbar-right colortextnav">
                 <li><a href="/home"><b><i class="fa fa-home" style="margin-right: 4px;font-size: 18px;"></i>Back Home</b><span style="text-transform: lowercase;">Retour vers le home</span></a></li>
                 <li><a href="/home/co">Monoxyde de Carbone<span style="text-transform: lowercase;">Courbe de co</span></a></li>
-                <li><a href="/home/nh3">Amoniaque<span style="text-transform: lowercase;">Courbe de nh3</span></a></li>
+                <li><a href="/home/nh3">Ammoniaque<span style="text-transform: lowercase;">Courbe de nh3</span></a></li>
                 <li class="dropdown colortextnav">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;font-size: 16px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><p class="caret karoty"></p></a>
                   <ul class="dropdown-menu">

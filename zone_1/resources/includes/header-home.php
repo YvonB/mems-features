@@ -59,7 +59,7 @@
               <ul class="nav navbar-nav navbar-right colortextnav">
                 <li><a href="/home/co2">Gaz Carbonique<span style="text-transform: lowercase;">Courbe de co2</span></a></li>
                 <li><a href="/home/co">Monoxyde de Carbone<span style="text-transform: lowercase;">Courbe de co</span></a></li>
-                <li><a href="/home/nh3">Amoniaque<span style="text-transform: lowercase;">Courbe de nh3</span></a></li>
+                <li><a href="/home/nh3">Ammoniaque<span style="text-transform: lowercase;">Courbe de nh3</span></a></li>
                 <li class="dropdown colortextnav">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="font-size: 16px;margin-right: 2px;" aria-hidden="true"></i>
                     <b><?php echo htmlspecialchars($user->getNickname());?></b><p class="caret karoty"></p></a>
