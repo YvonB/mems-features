@@ -985,4 +985,16 @@ label
   {
     display: none !important;
   }
+  .dropdown-toggle
+  {
+    float: right !important;
+  }
+  .connect-btn
+  {
+    background-color: rgb(6, 130, 300) !important;
+  }
+  #toggler_legend, #toggle
+  {
+    display: none;
+  }
 }

@@ -63,7 +63,7 @@
                         Voir l'état de NH3</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="<?php require_once 'href-login-or-logout.php'; ?>">
-                    <button type="submit" class="btn btn-primary" align="center"><?php echo (isset($user) ? "Deconnexion" : "Se Connecter"); ?></button></a></li>
+                    <button type="submit" class="btn btn-primary connect-btn" align="center"><?php echo (isset($user) ? "Deconnexion" : "Se Connecter"); ?></button></a></li>
                   </ul>
                 </li>
               </ul>

@@ -49,9 +49,9 @@ require_once '../../controllers/Main/getSession.php';
                 <div class="col-md-8">
                     <h2><i class="fa fa-info" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
                         What is it ?</h2>
-                    <dd>Etes vous stricte à l’air que vous respirez ? Il est important pour vous de savoir le taux des polluants vous entour pour respirer tranquille ? Ce site et le système que nous avons conçue est faite pour vous. 
-                    Ici vous pouvez visualisez en temps réelle et même recevoir des notifications lorsque le taux des polluants dépasse leur seuil acceptable.
-                    En plus, ce sont les trois polluants qui sont très répandu et dangereux voire mortel que notre système détecte pour vous alerter et vous pouvez prendre une décision appropriée. Ce sont premièrement le dioxyde de carbone ou gaz carbonique provenant du secteur des transports de l’industrie, de l’habitat et aussi lors de la respiration des animaux et de la photosynthèse des végétaux. Ensuite le monoxyde de carbone issu de la combustion incomplète des combustibles et des carburants (la combustion complète produisant du CO2). Et enfin l’ammoniaque qui provient de rejets organiques de l’élevage, épandage de fertilisants.
+                    <dd>Etes vous <b>stricte</b> à <b>l’air</b> que vous respirez ? Il est important pour vous de savoir le <b>taux</b> des <b>polluants</b> vous entour pour <mark> respirer tranquille </mark>? Ce site et le système que nous avons conçue est faite <b>pour vous</b>. 
+                    Ici vous pouvez <b>visualiser en temps réel</b> et même <mark>recevoir des notifications</mark> lorsque le taux des polluants dépasse leur seuil acceptable.
+                    En plus, ce sont les trois polluants qui sont très répandu et dangereux voire mortel que notre système détecte pour vous <b>alerter</b> et vous pouvez prendre une décision appropriée. Ce sont premièrement <i>le dioxyde de carbone</i> ou gaz carbonique provenant du secteur des transports de l’industrie, de l’habitat et aussi lors de la respiration des animaux et de la photosynthèse des végétaux. Ensuite <i>le monoxyde de carbone</i> issu de la combustion incomplète des combustibles et des carburants (la combustion complète produisant du CO2). Et enfin <i>l’ammoniaque</i> qui provient de rejets organiques de l’élevage, épandage de fertilisants.
                     </dd>
                 </div>
                 <!-- Dadhboard -->
@@ -129,7 +129,7 @@ require_once '../../controllers/Main/getSession.php';
                 <h2><i class="fa fa-map-marker" style="margin-right: 4px;margin-left: 3px;" aria-hidden="true"></i>
                         Where are our sensors?</h2>
                         <dd>C'est l'endroit où est installé le capteur en ce moment même.</dd>
-                <div class="my_map">
+                <div class="my_map histoco2">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d963367.6427555117!2d46.800975397000194!3d-19.40571407254446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21fa8238a95a8965%3A0xe11f2e914a20ec99!2sEcole+Sup%C3%A9rieur+Polytechnique+d&#39;Antananarivo!5e0!3m2!1sfr!2sfr!4v1501594670727" width="675" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>
