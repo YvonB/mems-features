@@ -49,9 +49,9 @@ require_once '../../controllers/Main/getSession.php';
                 <div class="col-md-8">
                     <h2><i class="fa fa-info" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
                         What is it ?</h2>
-                        <dd>Etes vous <b>stricte</b> à <b>l’air</b> que vous respirez ? Il est important pour vous de savoir le <b>taux</b> des <b>polluants</b> vous entour pour <mark> respirer tranquille </mark>? Ce site et le système que nous avons conçue est faite <b>pour vous</b>. 
-                        Ici vous pouvez <b>visualiser en temps réel</b> et même <mark>recevoir des notifications</mark> lorsque le taux des polluants dépasse leur seuil acceptable.
-                        En plus, ce sont les trois polluants qui sont très répandu et dangereux voire mortel que notre système détecte pour vous <b>alerter</b> et vous pouvez prendre une décision appropriée. Ce sont premièrement <i>le dioxyde de carbone</i> ou gaz carbonique provenant du secteur des transports de l’industrie, de l’habitat et aussi lors de la respiration des animaux et de la photosynthèse des végétaux. Ensuite <i>le monoxyde de carbone</i> issu de la combustion incomplète des combustibles et des carburants (la combustion complète produisant du CO2). Et enfin <i>l’ammoniaque</i> qui provient de rejets organiques de l’élevage, épandage de fertilisants.
+                        <dd>Etes vous <b>stricte</b> à <b>l’air</b> que vous respirez ? Il est important pour vous de savoir le <b>taux</b> des <b>polluants</b> vous entour pour <mark> <b>respirer tranquille </b></mark>?<br>Ce site et le système que nous avons conçue est faite <b>pour vous</b>. 
+                        Ici vous pouvez <b>visualiser en temps réel</b> et même <mark><b>recevoir des notifications</b></mark> lorsque le taux des polluants dépasse leur seuil acceptable. <br>
+                        En plus, ce sont les trois polluants qui sont très répandu et dangereux voire mortel que notre système détecte pour vous <b>alerter</b> et vous pouvez prendre une décision appropriée. <br> Ce sont premièrement <em><b>le dioxyde de carbone</b></em> ou gaz carbonique provenant du secteur des transports de l’industrie, de l’habitat et aussi lors de la respiration des animaux et de la photosynthèse des végétaux. Ensuite <em><b>le monoxyde de carbone</b></em> issu de la combustion incomplète des combustibles et des carburants (la combustion complète produisant du CO2). Et enfin <em><b>l’ammoniaque</b></em> qui provient de rejets organiques de l’élevage, épandage de fertilisants.
                         </dd>
                 </div>
                 <!-- Dadhboard -->
@@ -139,7 +139,13 @@ require_once '../../controllers/Main/getSession.php';
 <!-- ========================== Tableau des dernièrs valeurs en mg/m3 ========================== -->
 <h2><i class="fa fa-bell" style="margin-left: 3px;margin-right: 4px;" aria-hidden="true"></i>
 Notifications</h2>
-<dd>Les valeurs ci-dessous(dans le cas où elles existent)sont en milligramme par mètre cube. On l'obtient multipliant le poids moléculaire en gramme du polluant par sa valeur en partie par million retournée par le capteur et en divisant le résultat par le volume molaire d'un gaz à temperature et pression ambiantes normales.</dd>
+<dd>Les valeurs ci-dessous (dans le cas où elles existent) sont les valeurs d'un polluant en milligramme par mètre cube. Notons-les <b>p</b>. On les obtient en multipliant le poids moléculaire en gramme du polluant <b>M</b> par sa valeur <b>v</b> en partie par million retournée par le capteur et en divisant le résultat par le volume molaire d'un gaz à temperature et pression ambiantes normales <b>V = 22,4 L<b>. 
+</dd>
+<br>
+    <div class="formule-div">
+        <mark><em class="formule"> p = ( M  *  v ) / V </em><mark>
+    </div>
+
 <div class="brute" id="mg_m3" style="height: 420px;">
 
     <?php 

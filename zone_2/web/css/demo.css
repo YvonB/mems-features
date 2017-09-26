@@ -122,6 +122,17 @@ a:hover span, a:focus span{
   cursor: pointer;
   transition: 1.0s;
 }
+
+.formule-div
+{
+  margin: auto;
+  width: 50%;
+  padding-bottom: 20px;
+}
+.formule
+{
+  font-size: 20px;
+}
 /*modal co co2 nh3*/
                     /* The Modal (background) */
                     .modal 
