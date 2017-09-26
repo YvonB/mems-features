@@ -29,5 +29,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMtlCONmXj3VunLv9V4UpSlFFLFgCNPJ0">
     </script>
     <script type="text/javascript" src="/js/map.js"></script>
+		<script type="text/javascript" src="/js/modal.js"></script>
 </body>
 </html>
