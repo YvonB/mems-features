@@ -53,7 +53,7 @@
 	//4eme zone == 4eme marqueur
 	  createMarker({lat: -18.9375253 , lng: 47.55352289999996}, "Aller vers la page SDPE au Gare de Mandroseza", 'http://zone-4.appspot.com', '<h2 class="sous_titre">Gare Mandroseza</h2>');
 	//seconde zone == second marqueur
-	   createMarker({lat: -19.565559 , lng:47.35861999999997}, "Aller vers la page SDPE Ampitatafika", 'http://zone-5.appspot.com', '<h2 class="sous_titre">Ampitatafika</h2>');
+	   createMarker({lat: -18.9368961 , lng: 47.47699590000002}, "Aller vers la page SDPE Ampitatafika", 'http://zone-5.appspot.com', '<h2 class="sous_titre">Ampitatafika</h2>');
 	  
 	//la boite modale
 	// Get the modal
