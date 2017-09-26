@@ -16,7 +16,8 @@ body, html
 .sous_titre
 {
 	text-align: center;
-	color: #454545;
+    color: #454545;
+    margin: auto;
 }
 
 .title_marker_hover
