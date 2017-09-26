@@ -24,19 +24,7 @@
 	 	animation: google.maps.Animation.DROP
 	 
 	 });
-	  // fonction pour animer le marker
-	  function toggleBounceCur()
-	   {
-  			if (cur.getAnimation() !== null) 
-	  			{
-	    			cur.setAnimation(null);
-	  			} 
-  			else 
-	  			{
-	    			cur.setAnimation(google.maps.Animation.BOUNCE);
-	  			}
-		}
-	cur.addListener('onload', toggleBounceCur);
+	  
 	 //info sur lui
 	var content_cur = '<h2 class="sous_titre">Cur Vontovorona</h2>';
 	var info_cur = new google.maps.InfoWindow({
@@ -62,19 +50,7 @@
 	  	draggable: true,
 	 	animation: google.maps.Animation.DROP
 	  });
-	 // fonction pour animer le marker
-	  function toggleBounceTunnel()
-	   {
-  			if (tunnel.getAnimation() !== null) 
-	  			{
-	    			tunnel.setAnimation(null);
-	  			} 
-  			else 
-	  			{
-	    			tunnel.setAnimation(google.maps.Animation.BOUNCE);
-	  			}
-		}
-	tunnel.addListener('onload', toggleBounceTunnel);
+	 
 	 //info sur lui
 	var content_tunnel = '<h2 class="sous_titre">Tunnel Ambanidia</h2>';
 	var info_tunnel = new google.maps.InfoWindow({
