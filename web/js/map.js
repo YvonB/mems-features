@@ -1,75 +1,55 @@
 
 (function(){
 
-	  // icon marker
-	  var image = {
-	  	url: '/img/marker.png'
-	  }
-	
-	  var map = new google.maps.Map(document.getElementById('map'), {
+	// Un Map avec comme centre 'Ambodiafontsy'
+	var map = new google.maps.Map(document.getElementById('map'), {
 	    zoom: 13,
-	    center: {lat: -18.9413966, lng: 47.46252389999995}, // Ambodiafontsy
+	    center: {lat: -18.9413966, lng: 47.46252389999995}, 
 	    mapTypeId: google.maps.MapTypeId.TERRAIN
-	  });
+	});
+
+	// Icon de mes futures marqueurs
+	var image = {
+			url: '/img/marker.png'
+	}
+
+	// Création des marqueurs
+	function createMarker(pos, info_bulle, lien, titre)
+	  	{
+			var theMarker = new google.maps.Marker({
+			position: pos,
+			map: map,
+			icon: image,
+			url: lien,
+			title: info_bulle,
+			draggable: true,
+			animation: google.maps.Animation.DROP
+			});
+
+			var content_marker = titre;
+			var info = new google.maps.InfoWindow({
+				content: content_marker
+			});
+
+			function afficheTitre(){
+				info.open(map, theMarker);
+			}
+
+			afficheTitre();
+
+			// lors d'un clique
+	  		google.maps.event.addListener(theMarker, 'click', function() {
+				window.location.href = theMarker.url;
+			});
+			
+		}
 
 	  // premier marqueur == première zone
-	  var cur = new google.maps.Marker({
-	    position: {lat: -18.9703576 , lng: 47.42391939999993},
-	 
-	 	map: map,
-	 	icon: image,
-	 	title: "Cliquer pour voir ce qui se passe au Cur Vontovorona",
-	 	url: 'http://premiere-zone.appspot.com',
-	 	draggable: true,
-	 	animation: google.maps.Animation.DROP
-	 
-	 });
+	  createMarker({lat: -18.9703576 , lng: 47.42391939999993}, "Aller vers la page SDPE Vontovorona", 'http://premiere-zone.appspot.com', '<h2 class="sous_titre">Cur Vontovorona</h2>');
+	 //seconde zone == second marqueur
+	  createMarker({lat: -18.9074364 , lng: 47.52175009999996}, "Aller vers la page SDPE Antsahavola", 'http://seconde-zone.appspot.com', '<h2 class="sous_titre">Antsahavola</h2>');
 	  
-	 //info sur lui
-	var content_cur = '<h2 class="sous_titre">Cur Vontovorona</h2>';
-	var info_cur = new google.maps.InfoWindow({
-		content:content_cur
-	});
-	// on affiche cette info lorsque la page est chargée
-	function popUpCur(){
-		info_cur.open(map, cur);
-	}
-	 // lorsqu'on clique dessus
-	 google.maps.event.addListener(cur, 'click', function() {
-	  window.location.href = cur.url;
-	  });
-	 
-	 // 2eme marqueuer == 2nd zone
-	 var tunnel = new google.maps.Marker({
-	    position: {lat: -18.914834, lng: 47.531656699999985},
-	 
-	    map: map,
-	    icon: image,
-	    title: "Cliquer pour voir ce qui se passe au Tunnel d'Ambanidia",
-	  	url: 'https://seconde-zone.appspot.com',
-	  	draggable: true,
-	 	animation: google.maps.Animation.DROP
-	  });
-	 
-	 //info sur lui
-	var content_tunnel = '<h2 class="sous_titre">Tunnel Ambanidia</h2>';
-	var info_tunnel = new google.maps.InfoWindow({
-		content:content_tunnel
-	});
-		// on affiche cette info lorsque la page est chargée
-	 function popUpTunnel(){
-		info_tunnel.open(map, tunnel);
-	}
-	 // lorsqu'on clique dessus
-	  google.maps.event.addListener(tunnel, 'click', function() {
-	  window.location.href = tunnel.url;
-	  });
-
-	popUpCur();
-	popUpTunnel();
-
-	
-	// ============= modal
+	//la boite modale
 	// Get the modal
 	var modal = document.getElementById('myModal');
 
