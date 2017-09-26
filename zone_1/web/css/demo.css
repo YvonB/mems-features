@@ -965,3 +965,24 @@ label
     }
 
 }
+
+@media (max-width: 767px){
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+      color: #ffffff !important;
+  }
+
+  .order_btn
+  {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 170px;
+  }
+  .copyright, .suivez
+  {
+    margin-left: 65px;
+  }
+  .navbar-form
+  {
+    display: none !important;
+  }
+}
