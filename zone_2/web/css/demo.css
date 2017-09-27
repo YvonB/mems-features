@@ -1476,10 +1476,22 @@ label
   }
   .connect-btn
   {
-    background-color: rgb(6, 130, 300) !important;
+    background-color: rgb(6, 95, 201) !important;
   }
   #toggler_legend, #toggle
   {
     display: none;
+  }
+  a span
+  {
+    display: none;
+  }
+  .navbar-default .navbar-nav > .active > a
+  {
+    background-color: rgb(6, 95, 201) !important;
+  }
+  .navbar-default .navbar-nav > .open > a
+  {
+    background-color: rgb(59, 120, 231) !important;
   }
 }

@@ -140,7 +140,7 @@ body
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      	<h3 align="center" style="color:#fafafa">SDP - IoT</h3>
+      	<h3 align="center" style="color:#fafafa">SDPE - IoT</h3>
     </div>
     <div class="modal-body">
       <p align="center">Une connexion à votre compte est requise pour voir le contenu de la page que vous avez demandé !</p>

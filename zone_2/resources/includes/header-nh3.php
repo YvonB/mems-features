@@ -62,7 +62,7 @@
                 <li class="dropdown colortextnav">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true" style="margin-right: 4px;font-size: 16px;"></i><b><?php echo htmlspecialchars($user->getNickname());?></b><p class="caret karoty"></p></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/login"><button type="submit" class="btn btn-primary" align="center">Se Deconnecter</button></a></li>
+                    <li><a href="/login"><button type="submit" class="btn btn-primary connect-btn" align="center">Se Deconnecter</button></a></li>
                   </ul>
                 </li>
               </ul>
