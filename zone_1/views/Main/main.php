@@ -70,7 +70,23 @@ require_once '../../controllers/Main/getSession.php';
                      {
                         ?>
                          <p>En attente des <strong>données</strong> provenant des <strong>capteurs</strong>...</p>
-                         <div class="loader_compteurs"></div>
+                         <div class="windows8">
+                            <div class="wBall" id="wBall_1">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_2">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_3">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_4">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_5">
+                                <div class="wInnerBall"></div>
+                            </div>
+                        </div>
                         <?php
                      }
                         ?>
@@ -164,7 +180,16 @@ Notifications</h2>
                                                         else 
                                                             {
                                                                 ?>
-                                                                <div class="loader_notif_co2_nh3"></div>
+                                                                <div id="fountainG">
+	<div id="fountainG_1" class="fountainG"></div>
+	<div id="fountainG_2" class="fountainG"></div>
+	<div id="fountainG_3" class="fountainG"></div>
+	<div id="fountainG_4" class="fountainG"></div>
+	<div id="fountainG_5" class="fountainG"></div>
+	<div id="fountainG_6" class="fountainG"></div>
+	<div id="fountainG_7" class="fountainG"></div>
+	<div id="fountainG_8" class="fountainG"></div>
+</div>
                                                                 <?php
                                                             }
                                                         ?></span>
@@ -191,7 +216,16 @@ Notifications</h2>
                                                         else 
                                                         {
                                                             ?>
-                                                                <div class="loader_notif_co"></div>
+                                                                                                                                <div id="fountainG">
+	<div id="fountainG_1" class="fountainG"></div>
+	<div id="fountainG_2" class="fountainG"></div>
+	<div id="fountainG_3" class="fountainG"></div>
+	<div id="fountainG_4" class="fountainG"></div>
+	<div id="fountainG_5" class="fountainG"></div>
+	<div id="fountainG_6" class="fountainG"></div>
+	<div id="fountainG_7" class="fountainG"></div>
+	<div id="fountainG_8" class="fountainG"></div>
+</div>
                                                             <?php
                                                         }
                                                         ?></span>
@@ -218,7 +252,16 @@ Notifications</h2>
                                                         else 
                                                            {
                                                                 ?>
-                                                                <div class="loader_notif_co2_nh3"></div>
+                                                                                                                                <div id="fountainG">
+	<div id="fountainG_1" class="fountainG"></div>
+	<div id="fountainG_2" class="fountainG"></div>
+	<div id="fountainG_3" class="fountainG"></div>
+	<div id="fountainG_4" class="fountainG"></div>
+	<div id="fountainG_5" class="fountainG"></div>
+	<div id="fountainG_6" class="fountainG"></div>
+	<div id="fountainG_7" class="fountainG"></div>
+	<div id="fountainG_8" class="fountainG"></div>
+</div>
                                                                 <?php
                                                            }
                                                         ?></span>
