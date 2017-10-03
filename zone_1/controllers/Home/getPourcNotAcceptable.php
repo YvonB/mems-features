@@ -2,10 +2,10 @@
 
     require_once('../../vendor/autoload.php');  // pour notre lib
                         
-    // On crée un objet de type Repository.
-    $obj_repo = new \GDS\Demo\Repository();
+    // On crée un objet de type Percentage.
+    $obj_perc = new \GDS\Perce\Percentage();
     // Chercher TOUS 'All' les gazs insérées récemment.
-    $arr_posts = $obj_repo->getAllRecentPost();
+    $arr_posts = $obj_perc->getAllRecentPost();
 
     // au début 
     $nbr_co2_na = 0;
