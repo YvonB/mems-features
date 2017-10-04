@@ -37,8 +37,7 @@
          }
      
     /**
-     * Pour prendre les 10 valeurs insérées les plus récentes.(pour l'affichage brute) 
-     *
+     * Pour prendre les 10 valeurs insérées les plus récentes
      * @return array
      */
     public function getRecentPosts()
@@ -56,7 +55,7 @@
     }
 
     /**
-     * Mettre à jour le cache de Datastore (pour l'affichage brute des 10 dernières valeurs)
+     * Mettre à jour le cache de Datastore
      *
      * @return array
      */
