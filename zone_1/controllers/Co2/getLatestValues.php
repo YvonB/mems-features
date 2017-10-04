@@ -1,8 +1,7 @@
     <?php
-    // Pour notre lib
-    require_once('../../vendor/autoload.php');
 
-    // On crée un objet de type Repository.
-    $obj_repo = new \GDS\Demo\Repository();
-    // Chercher juste les dernières valeurs insérées.
-    $arr_posts = $obj_repo->getLatestRecentPost();
+    require_once '../../vendor/autoload.php';
+    use GDS\OneLatest\OneLatest;
+    
+    $obj_one = new OneLatest(); // On crée un objet de type OneLatest.
+    $arr_posts = $obj_one->getLatestRecentPost(); // Chercher juste la dernière valeur insérée.
