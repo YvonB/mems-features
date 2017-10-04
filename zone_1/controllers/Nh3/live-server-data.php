@@ -1,7 +1,8 @@
 <?php
 	// Pour notre lib
     require_once '../../vendor/autoload.php';
-    
+	use GDS\OneLatest\OneLatest;
+	
     // Définir l'en-tête JSON
 	header("Content-type: text/json");
 
@@ -13,11 +14,10 @@
 
 	function getDataNh3()
 				{
-					// On crée un objet de type Repository.
-				    $obj_repo = new \GDS\Demo\Repository();
-				    // Chercher juste les dernières valeurs insérées.
-				    $arr_posts = $obj_repo->getLatestRecentPost();
-
+					// On crée un objet de type OneLatest.
+				    $obj_last = new OneLatest();
+				    // Chercher juste la dernière valeurs insérée.
+				    $arr_posts = $obj_last->getLatestRecentPost();
 
 				    // val ppm  
 				    if(isset($arr_posts))
