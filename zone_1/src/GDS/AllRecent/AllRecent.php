@@ -57,7 +57,7 @@ class AllRecent{
     {
         $obj_store = $this->getStore();
 
-        $arr_posts = $obj_store->query("SELECT * FROM zone_1")->fetchAll();
+        $arr_posts = $obj_store->query("SELECT * FROM zone_1 ORDER BY posted DESC")->fetchAll();
 
         $this->getCache()->set('recent',$arr_posts);
 
