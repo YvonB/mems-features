@@ -36,7 +36,7 @@ class AllRecent{
      */
      public function getAllRecentPost()
      {
-         $arr_posts = $this->getCache()->get('recent');
+         $arr_posts = $this->getCache()->get('all');
  
          if(is_array($arr_posts)) 
              {
@@ -59,7 +59,7 @@ class AllRecent{
 
         $arr_posts = $obj_store->query("SELECT * FROM zone_1 ORDER BY posted DESC")->fetchAll();
 
-        $this->getCache()->set('recent',$arr_posts);
+        $this->getCache()->set('all',$arr_posts);
 
         return $arr_posts;
     }
